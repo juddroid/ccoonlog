@@ -29,16 +29,27 @@ const margins = {
   xxxl: calcRem(42),
 };
 
+const gap = {
+  small: calcRem(8),
+  base: calcRem(10),
+  lg: calcRem(12),
+  xl: calcRem(14),
+  xxl: calcRem(32),
+  xxxl: calcRem(42),
+};
+
 const colors = {
   black: '#000',
   white: '#FFF',
   dark: '#222',
   pink: '#ffa7c4',
+  yellow: 'yellow',
 };
 
 const theme: DefaultTheme = {
   fontSizes,
   colors,
+  gap,
   paddings,
   margins,
 };
