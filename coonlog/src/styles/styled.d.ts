@@ -6,6 +6,7 @@ declare module 'styled-components' {
     colors: ColorsTheme;
     paddings: DefaultSize;
     margins: DefaultSize;
+    gap: DefaultSize;
   }
 }
 
@@ -24,4 +25,5 @@ interface ColorsTheme {
   white: string;
   dark: string;
   pink: string;
+  yellow: string;
 }
