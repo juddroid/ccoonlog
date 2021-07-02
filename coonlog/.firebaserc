@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "raccoon-project-960db"
+    "default": "raccoon-project-960db",
+    "ccoonlog": "ccoonlog"
   }
 }
