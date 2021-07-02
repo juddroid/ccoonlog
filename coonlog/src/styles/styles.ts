@@ -121,3 +121,27 @@ export const AsideMain = {
     }
   `,
 };
+
+export const AsideSticky = {
+  AsideSticky: styled.div`
+    position: relative;
+    top: 270px;
+    left: -30px;
+  `,
+
+  AsideStickyBOX: styled.div`
+    position: sticky;
+    border: 1px solid #ffa7c4;
+    top: 100px;
+    border-radius: 10px;
+    color: ${({ theme }) => theme.colors.black};
+    height: 100px;
+    width: 100%;
+    height: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  `,
+};
