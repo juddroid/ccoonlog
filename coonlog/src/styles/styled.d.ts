@@ -6,7 +6,7 @@ declare module 'styled-components' {
     colors: ColorsTheme;
     paddings: DefaultSize;
     margins: DefaultSize;
-    gap: DefaultSize;
+    sizes: DefaultSize;
   }
 }
 

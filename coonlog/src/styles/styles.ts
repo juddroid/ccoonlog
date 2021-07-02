@@ -1,7 +1,27 @@
 import styled from 'styled-components';
 
+export const App = {
+  App: styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    padding: 2.625rem 1.3125rem;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-weight: 400;
+    font: 100%/1.75 'Merriweather', 'Georgia', serif;
+  `,
+};
+
 export const Home = {
-  Home: styled.div``,
+  Home: styled.div`
+    position: relative;
+    width: 43rem;
+    padding: 2.625rem 1.3125rem;
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-weight: 400;
+    font: 100%/1.75 'Merriweather', 'Georgia', serif;
+  `,
 };
 
 export const Header = {
@@ -17,7 +37,7 @@ export const Header = {
     font-family: Montserrat, sans-serif;
     font-weight: 900;
     color: ${({ theme }) => theme.colors.white};
-    line-height: ${({ theme }) => theme.gap.xxxl};
+    line-height: ${({ theme }) => theme.sizes.xxxl};
   `,
 };
 
@@ -58,5 +78,46 @@ export const ReactToggle = {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     transform: ${({ modePosition }: { modePosition: number }) =>
       `translateX(${modePosition}px)`};
+  `,
+};
+
+export const AsideMain = {
+  AsideMain: styled.div`
+    display: flex;
+    align-items: center;
+
+    p {
+      color: ${({ theme }) => theme.colors.black};
+      max-width: 310px;
+      margin-bottom: ${({ theme }) => theme.margins.xl};
+
+      a {
+        box-shadow: 0 1px 0 0 currentColor;
+        color: ${({ theme }) => theme.colors.pink};
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  `,
+  ProfileImageBox: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 0.875rem;
+    margin-bottom: 1.75rem;
+    border-radius: 50%;
+  `,
+
+  ProfileImage: styled.img`
+    width: 100%;
+    transition: all ease-out 0.4s;
+
+    :hover {
+      width: 150%;
+    }
   `,
 };
