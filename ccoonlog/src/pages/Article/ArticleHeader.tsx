@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Info from '../common/Info/Info';
+import Info from '../../components/common/Info/Info';
 import { Common as S } from '../../styles/CommonStyles';
 import { ArticleProps } from '../../types/types';
 
@@ -11,7 +11,9 @@ const ArticleHeader = ({ article }: { article: ArticleProps }) => {
         to={{
           pathname: `pages/post/${fileName}`,
           state: {
-            id: `${article.id}`,
+            id: article.id,
+            title: article.title,
+            date: article.date,
           },
         }}
       >

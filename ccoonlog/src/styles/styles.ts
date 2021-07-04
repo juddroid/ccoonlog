@@ -36,7 +36,7 @@ export const Header = {
   `,
 
   Title: styled.div`
-    font-size: ${({ theme }) => theme.fontSizes.xxxl};
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
     font-family: Montserrat, sans-serif;
     font-weight: 900;
     color: ${({ theme }) => theme.colors.white};
@@ -155,6 +155,68 @@ export const Article = {
     font-family: 'Merriweather', 'Georgia', serif;
     p {
       margin-bottom: 1.75rem;
+    }
+  `,
+
+  ArticleDetailHeader: styled.div`
+    color: ${({ theme }) => theme.colors.black};
+
+    h2 {
+      font-family: Montserrat, sans-serif;
+      font-weight: 900;
+      font-size: ${({ theme }) => theme.fontSizes.xxxl};
+      margin-bottom: 0.4375rem;
+      margin-top: 3.5rem;
+      line-height: 1.1;
+    }
+  `,
+
+  ArticleDetailViewer: styled.div`
+    .tui-editor-contents p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    li,
+    hr {
+      color: #fff;
+      line-height: 2;
+      margin: 20px 0;
+    }
+
+    .tui-editor-contents h1 {
+      font-size: 28px;
+    }
+    .tui-editor-contents p {
+      font-size: 20px;
+    }
+    .tui-editor-contents li,
+    .tui-editor-contents ul {
+      font-size: 20px;
+
+      ::before {
+        color: #fff;
+        line-height: 2;
+      }
+    }
+
+    .tui-editor-contents code {
+      color: #fff;
+      background-color: #363c48;
+      padding: 2px 3px;
+      letter-spacing: -0.3px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .tui-editor-contents pre {
+      margin: 2px 0 8px;
+      padding: 18px;
+      background-color: #363c48;
+      border-radius: 5px;
     }
   `,
 };
