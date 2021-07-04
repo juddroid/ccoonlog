@@ -5,8 +5,8 @@ import firebase from '../../firebase';
 
 const AsideMain = () => {
   const handleClick = async () => {
-    const auth = firebase.auth();
-    await auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
+    // const auth = firebase.auth();
+    // await auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
   };
 
   return (

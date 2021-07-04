@@ -15,3 +15,10 @@ export const SIZE = {
   SIZE_DEFAULT_WIDTH: 100,
   SIZE_DEFAULT_HEIGHT: 50,
 };
+
+// Button Name
+export const NAME = {
+  POST: 'Post',
+  TITLE: 'Title',
+  SUB_TITLE: 'SubTitle',
+};
