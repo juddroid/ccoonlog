@@ -12,8 +12,6 @@ const ArticleHeader = ({ article }: { article: ArticleProps }) => {
           pathname: `pages/post/${fileName}`,
           state: {
             id: article.id,
-            title: article.title,
-            date: article.date,
           },
         }}
       >

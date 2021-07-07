@@ -169,6 +169,15 @@ export const Article = {
       margin-top: 3.5rem;
       line-height: 1.1;
     }
+
+    h3 {
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: ${({ theme }) => theme.fontSizes.xl};
+      margin-bottom: 0.4375rem;
+      margin-top: 1rem;
+      line-height: 1.1;
+    }
   `,
 
   ArticleDetailViewer: styled.div`

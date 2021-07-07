@@ -7,25 +7,17 @@ import ArticleDetailHeader from './ArticleDetailHeader';
 import ArticleDetailViewer from './ArticleDetailViewer';
 
 const ArticleDetail = () => {
-  const [articleDetail, setArticleDetail] = useState<ArticleDetailProps>({
-    id: 0,
-    title: '',
-    date: '',
-  });
+  const [articleDetail, setArticleDetail] =
+    useState<ArticleDetailProps | null>(null);
 
   const location = useLocation<ArticleLocationState>();
-  console.log(location);
+
   const articleRef = firebase.database().ref('article');
 
   useEffect(() => {
     articleRef.on('value', (snapshot) => {
       const article = snapshot.val();
-      // const currentArticle = article[location.state.id];
-      const currentArticle = {
-        id: 1,
-        title: 'Test',
-        date: 'Mon Jul 05 2021 02:26:31 GMT+0900',
-      };
+      const currentArticle = article[location.state.id];
 
       setArticleDetail(currentArticle);
     });

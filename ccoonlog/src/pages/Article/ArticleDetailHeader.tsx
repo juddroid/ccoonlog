@@ -11,6 +11,7 @@ const ArticleDetailHeader = ({
     <S.ArticleDetailHeader>
       <h2>{articleDetail.title}</h2>
       <Info date={articleDetail.date} />
+      <h3>{articleDetail.subTitle}</h3>
     </S.ArticleDetailHeader>
   );
 };

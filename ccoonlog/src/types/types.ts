@@ -12,6 +12,7 @@ export interface ArticleLocationState {
 export interface ArticleDetailProps {
   id: number;
   title: string;
+  subTitle?: string;
   date: string;
   content?: string;
 }

@@ -3,7 +3,6 @@ import { Article as S } from '../../styles/styles';
 import { ArticleProps } from '../../types/types';
 
 const Article = ({ article }: { article: ArticleProps }) => {
-  console.log(article);
   return (
     <S.Article>
       <ArticleHeader {...{ article }} />

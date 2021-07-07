@@ -38,7 +38,6 @@ const Post = () => {
     window.history.back();
   };
 
-  console.log(title, subTitle);
   const handleChangeInputTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
