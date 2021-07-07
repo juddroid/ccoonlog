@@ -1,3 +1,4 @@
+import { ArticleDetailProps } from './../types/types';
 import styled from 'styled-components';
 
 export const App = {
@@ -156,6 +157,10 @@ export const Article = {
     p {
       margin-bottom: 1.75rem;
     }
+  `,
+
+  ArticleDetail: styled.div`
+    margin-top: 3.5rem;
   `,
 
   ArticleDetailHeader: styled.div`
