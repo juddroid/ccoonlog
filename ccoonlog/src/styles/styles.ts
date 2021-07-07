@@ -220,3 +220,52 @@ export const Article = {
     }
   `,
 };
+
+export const Post = {
+  Post: styled.div`
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3.5rem 0;
+    width: 100%;
+  `,
+
+  PostBox: styled.div`
+    margin: 5px 0;
+    display: flex;
+  `,
+
+  PostTitle: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    border-radius: 5px;
+    color: ${({ theme }) => theme.colors.black};
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    margin-right: 5px;
+  `,
+
+  PostInput: styled.input`
+    outline: none;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    padding: 10px 10px 10px 20px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: 900;
+
+    ::placeholder {
+      color: ${({ theme }) => theme.colors.dark};
+      opacity: 0.2;
+    }
+  `,
+
+  Editor: styled.div``,
+};
