@@ -6,7 +6,7 @@ export interface ArticleProps {
 }
 
 export interface ArticleLocationState {
-  id: number;
+  id: string;
 }
 
 export interface ArticleDetailProps {

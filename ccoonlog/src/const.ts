@@ -20,6 +20,7 @@ export const SIZE = {
 export const NAME = {
   POST: 'Post',
   DELETE: 'Delete',
+  EDIT: 'Edit',
   TITLE: 'Title',
   SUB_TITLE: 'SubTitle',
 };

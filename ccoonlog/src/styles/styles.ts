@@ -159,6 +159,12 @@ export const Article = {
     }
   `,
 
+  ArticleButtonBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3.5rem;
+  `,
+
   ArticleDetail: styled.div`
     margin-top: 3.5rem;
   `,
