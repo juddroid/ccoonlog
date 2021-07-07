@@ -5,12 +5,12 @@ import firebase from '../firebase';
 // import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 // import tableMergedCell from '@toast-ui/editor-plugin-table-merged-cell';
 // import uml from '@toast-ui/editor-plugin-uml';
-// import { Editor } from '@toast-ui/react-editor';
-// import 'codemirror/lib/codemirror.css';
-// import '@toast-ui/editor/dist/toastui-editor.css';
-// import 'tui-chart/dist/tui-chart.css';
-// import 'highlight.js/styles/github.css';
-// import 'tui-color-picker/dist/tui-color-picker.css';
+import { Editor } from '@toast-ui/react-editor';
+import 'codemirror/lib/codemirror.css';
+import '@toast-ui/editor/dist/toastui-editor.css';
+import 'tui-chart/dist/tui-chart.css';
+import 'highlight.js/styles/github.css';
+import 'tui-color-picker/dist/tui-color-picker.css';
 import { Button } from '../styles/CommonStyles';
 import { v1 as uuidv1 } from 'uuid';
 import { Post as S } from '../styles/styles';
@@ -21,22 +21,24 @@ const Post = () => {
   const [subTitle, setSubTitle] = useState('');
 
   const articleRef = firebase.database().ref('article');
-  const editorRef = useRef();
+  const editorRef: React.MutableRefObject<any> = useRef<any>();
 
   const handleClickPostButton = () => {
-    // const editorInstance = editorRef.current.getInstance();
-    // const markdownContent = editorInstance.getMarkdown();
+    const editorInstance = editorRef.current.getInstance();
+    const markdownContent = editorInstance.getMarkdown();
 
     const newArticle = {
       id: uuidv1(),
       date: `${new Date()}`,
       title: title,
       subTitle: subTitle,
-      // content: markdownContent,
+      content: markdownContent,
     };
     articleRef.push(newArticle);
     window.history.back();
   };
+
+  console.log(title, subTitle);
   const handleChangeInputTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
@@ -66,21 +68,23 @@ const Post = () => {
       </S.PostBox>
 
       <S.Editor>
-        {/* <Editor
+        <Editor
           initialValue=""
           previewStyle="vertical"
           height="1000px"
           initialEditType="markdown"
           useCommandShortcut={true}
-          plugins={[
-            chart,
-            codeSyntaxHighlight,
-            colorSyntax,
-            tableMergedCell,
-            uml,
-          ]}
+          plugins={
+            [
+              // chart,
+              // codeSyntaxHighlight,
+              // colorSyntax,
+              // tableMergedCell,
+              // uml,
+            ]
+          }
           ref={editorRef}
-        /> */}
+        />
       </S.Editor>
       <Button.AsideButton onClick={handleClickPostButton}>
         {NAME.POST}

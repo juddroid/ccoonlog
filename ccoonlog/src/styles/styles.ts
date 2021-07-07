@@ -227,7 +227,7 @@ export const Post = {
     margin-left: auto;
     margin-right: auto;
     padding: 3.5rem 0;
-    width: 200%;
+    width: 100%;
   `,
 
   PostBox: styled.div`
