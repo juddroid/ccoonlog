@@ -7,6 +7,7 @@ export interface ArticleProps {
 
 export interface ArticleLocationState {
   id: string;
+  title: string;
 }
 
 export interface ArticleDetailProps {
@@ -15,4 +16,8 @@ export interface ArticleDetailProps {
   subTitle?: string;
   date: string;
   content?: string;
+}
+
+export interface ArticleDetailState {
+  articleDetail: ArticleDetailProps;
 }

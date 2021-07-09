@@ -16,7 +16,7 @@ const Main = () => {
       const articleList = [];
 
       for (let id in article) {
-        articleList.push({ ...article[id], id });
+        articleList.push(article[id]);
       }
 
       setData(articleList);
@@ -25,11 +25,15 @@ const Main = () => {
   }, []);
 
   if (!data) return null;
+
   return (
     <S.Main>
-      {[...data].reverse().map((article) => (
-        <Article article={article} key={uuidv4()} />
-      ))}
+      {[...data]
+        .sort((a: any, b: any) => +new Date(b.date) - +new Date(a.date))
+        // .reverse()
+        .map((article) => (
+          <Article article={article} key={uuidv4()} />
+        ))}
     </S.Main>
   );
 };

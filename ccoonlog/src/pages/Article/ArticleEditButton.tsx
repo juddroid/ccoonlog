@@ -1,26 +1,24 @@
 import { NAME } from '../../const';
 import { Button } from '../../styles/CommonStyles';
-import firebase from '../../firebase';
+import { Link } from 'react-router-dom';
+import { ArticleDetailProps } from '../../types/types';
 
-const ArticleEditButton = ({ articleID }: { articleID: string }) => {
-  const handleClickEditButton = () => {
-    const editRef = firebase.database().ref('article/' + articleID);
-
-    editRef
-      .remove()
-      .then(function () {
-        console.log('Remove succeeded.');
-        window.history.back();
-      })
-      .catch(function (error) {
-        console.log('Remove failed: ' + error.message);
-      });
-  };
-
+const ArticleEditButton = ({
+  articleDetail,
+}: {
+  articleDetail: ArticleDetailProps;
+}) => {
   return (
-    <Button.MenuButton onClick={handleClickEditButton}>
-      {NAME.EDIT}
-    </Button.MenuButton>
+    <Link
+      to={{
+        pathname: `edit/${articleDetail.title}`,
+        state: {
+          articleDetail: articleDetail,
+        },
+      }}
+    >
+      <Button.MenuButton>{NAME.EDIT}</Button.MenuButton>
+    </Link>
   );
 };
 

@@ -33,7 +33,7 @@ const ArticleDetail = () => {
       <ArticleDetailHeader {...{ articleDetail }} />
       <ArticleDetailViewer {...{ articleDetail }} />
       <S.ArticleButtonBox>
-        <ArticleEditButton articleID={location.state.id} />
+        <ArticleEditButton {...{ articleDetail }} />
         <ArticleDeleteButton articleID={location.state.id} />
       </S.ArticleButtonBox>
     </S.ArticleDetail>

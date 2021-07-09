@@ -1,4 +1,3 @@
-import { ArticleDetailProps } from './../types/types';
 import styled from 'styled-components';
 
 export const App = {
@@ -25,6 +24,7 @@ export const Home = {
     padding: 2.625rem 1.3125rem;
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
+    margin: 0 10px;
   `,
 };
 
@@ -130,10 +130,10 @@ export const AsideSticky = {
   AsideSticky: styled.div`
     position: relative;
     top: 270px;
-    left: -30px;
+    left: -10px;
   `,
 
-  AsideStickyBOX: styled.div`
+  AsideStickyBox: styled.div`
     position: sticky;
     border: 1px solid #ffa7c4;
     top: 100px;
