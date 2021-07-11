@@ -24,6 +24,7 @@ export const Home = {
     padding: 2.625rem 1.3125rem;
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
+    margin: 0 10px;
   `,
 };
 
@@ -129,10 +130,10 @@ export const AsideSticky = {
   AsideSticky: styled.div`
     position: relative;
     top: 270px;
-    left: -30px;
+    left: -10px;
   `,
 
-  AsideStickyBOX: styled.div`
+  AsideStickyBox: styled.div`
     position: sticky;
     border: 1px solid #ffa7c4;
     top: 100px;
@@ -158,6 +159,16 @@ export const Article = {
     }
   `,
 
+  ArticleButtonBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3.5rem;
+  `,
+
+  ArticleDetail: styled.div`
+    margin-top: 3.5rem;
+  `,
+
   ArticleDetailHeader: styled.div`
     color: ${({ theme }) => theme.colors.black};
 
@@ -167,6 +178,15 @@ export const Article = {
       font-size: ${({ theme }) => theme.fontSizes.xxxl};
       margin-bottom: 0.4375rem;
       margin-top: 3.5rem;
+      line-height: 1.1;
+    }
+
+    h3 {
+      font-family: Montserrat, sans-serif;
+      font-weight: 700;
+      font-size: ${({ theme }) => theme.fontSizes.xl};
+      margin-bottom: 0.4375rem;
+      margin-top: 1rem;
       line-height: 1.1;
     }
   `,

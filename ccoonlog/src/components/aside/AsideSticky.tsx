@@ -5,7 +5,7 @@ import { Button as CS } from '../../styles/CommonStyles';
 const AsideSticky = () => {
   return (
     <S.AsideSticky>
-      <S.AsideStickyBOX>
+      <S.AsideStickyBox>
         <Link to="/">
           <CS.AsideButton>Algorithm</CS.AsideButton>
         </Link>
@@ -18,7 +18,7 @@ const AsideSticky = () => {
         <Link to="/">
           <CS.AsideButton>About</CS.AsideButton>
         </Link>
-      </S.AsideStickyBOX>
+      </S.AsideStickyBox>
     </S.AsideSticky>
   );
 };

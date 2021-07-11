@@ -12,45 +12,47 @@ import 'tui-chart/dist/tui-chart.css';
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import { Button } from '../styles/CommonStyles';
-import { v1 as uuidv1 } from 'uuid';
-import { Post as S } from '../styles/styles';
+import { Post as S, Article as A } from '../styles/styles';
 import { NAME } from '../const';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { ArticleDetailState } from '../types/types';
 
-const Post = () => {
-  const [title, setTitle] = useState('');
-  const [subTitle, setSubTitle] = useState('');
+const Edit = () => {
+  const location = useLocation<ArticleDetailState>();
 
-  const location = useLocation();
-  const history = useHistory();
+  const { title, subTitle, content, date } = location.state.articleDetail;
+
+  const [editTitle, setEditTitle] = useState(title);
+  const [editSubTitle, setEditSubTitle] = useState(subTitle);
+
   const editorRef: React.MutableRefObject<any> = useRef<any>();
+  const articleID = location.state.articleDetail.id;
+  const editRef = firebase.database().ref('article/' + articleID);
 
-  const handleClickPostButton = () => {
-    const id = uuidv1();
-    const articleRef = firebase.database().ref('article/' + id);
+  const handleClickEditButton = () => {
     const editorInstance = editorRef.current.getInstance();
     const markdownContent = editorInstance.getMarkdown();
 
-    const newArticle = {
-      id: id,
-      date: `${new Date()}`,
-      title: title,
-      subTitle: subTitle,
+    const editArticle = {
+      id: articleID,
+      date: date,
+      title: editTitle,
+      subTitle: editSubTitle,
       content: markdownContent,
     };
-    articleRef.set(newArticle);
-
-    // 썼던 글을 바로 볼 수 있도록 바꿔야함
-    history.push(`/`);
+    editRef.update(editArticle);
+    window.history.back();
   };
 
+  const handleClickCancelButton = () => window.history.back();
+
   const handleChangeInputTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
+    setEditTitle(e.target.value);
   };
   const handleChangeInputsubTitle = (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setSubTitle(e.target.value);
+    setEditSubTitle(e.target.value);
   };
 
   return (
@@ -59,7 +61,7 @@ const Post = () => {
         <S.PostTitle>{NAME.TITLE}</S.PostTitle>
         <S.PostInput
           placeholder={NAME.TITLE}
-          value={title}
+          value={editTitle}
           onChange={handleChangeInputTitle}
         />
       </S.PostBox>
@@ -67,14 +69,14 @@ const Post = () => {
         <S.PostTitle>{NAME.SUB_TITLE}</S.PostTitle>
         <S.PostInput
           placeholder={NAME.SUB_TITLE}
-          value={subTitle}
+          value={editSubTitle}
           onChange={handleChangeInputsubTitle}
         />
       </S.PostBox>
 
       <S.Editor>
         <Editor
-          initialValue=""
+          initialValue={content}
           previewStyle="vertical"
           height="800px"
           initialEditType="markdown"
@@ -91,11 +93,16 @@ const Post = () => {
           ref={editorRef}
         />
       </S.Editor>
-      <Button.AsideButton onClick={handleClickPostButton}>
-        {NAME.POST}
-      </Button.AsideButton>
+      <A.ArticleButtonBox>
+        <Button.MenuButton onClick={handleClickEditButton}>
+          {NAME.EDIT}
+        </Button.MenuButton>
+        <Button.MenuButton onClick={handleClickCancelButton}>
+          {NAME.CANCEL}
+        </Button.MenuButton>
+      </A.ArticleButtonBox>
     </S.Post>
   );
 };
 
-export default Post;
+export default Edit;

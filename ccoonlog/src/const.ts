@@ -19,6 +19,9 @@ export const SIZE = {
 // Button Name
 export const NAME = {
   POST: 'Post',
+  DELETE: 'Delete',
+  EDIT: 'Edit',
+  CANCEL: 'Cancel',
   TITLE: 'Title',
   SUB_TITLE: 'SubTitle',
 };

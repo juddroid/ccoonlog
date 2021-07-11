@@ -13,7 +13,6 @@ const ArticleHeader = ({ article }: { article: ArticleProps }) => {
           state: {
             id: article.id,
             title: article.title,
-            date: article.date,
           },
         }}
       >
