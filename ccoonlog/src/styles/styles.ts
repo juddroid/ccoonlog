@@ -5,11 +5,26 @@ export const App = {
     position: relative;
     display: flex;
     justify-content: center;
-
     padding: 2.625rem 1.3125rem;
     font-family: 'Merriweather', 'Georgia', serif;
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
+  `,
+
+  HomeContainer: styled.div`
+    display: flex;
+    flex-direction: column;
+  `,
+};
+
+export const LogIn = {
+  LogIn: styled.div`
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.pink};
+    border-radius: 16px;
+    margin-top: ${({ theme }) => theme.margins.lg};
+    margin-left: ${({ theme }) => theme.margins.lg};
+    padding: ${({ theme }) => theme.margins.small};
   `,
 };
 

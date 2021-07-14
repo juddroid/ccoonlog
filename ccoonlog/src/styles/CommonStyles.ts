@@ -81,6 +81,34 @@ export const Button = {
       color: #333;
     }
   `,
+
+  OAuthButton: styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: ${({ theme }) => theme.boxSizes.xxxl};
+    height: ${({ theme }) => theme.sizes.xxxl};
+    margin: ${({ theme }) => theme.margins.small};
+    border-radius: 11px;
+    font-family: Montserrat, sans-serif;
+    font-size: ${({ theme }) => theme.fontSizes.base};
+    font-weight: 700;
+    background: ${({ background }: { background: string | undefined }) =>
+      background ? background : `transparent`};
+    color: ${({ color }) => color};
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    border: 1px solid ${({ theme }) => theme.colors.black};
+
+    :hover {
+      font-size: 0.9rem;
+    }
+
+    :active {
+      font-size: 0.6rem;
+      color: #333;
+    }
+  `,
 };
 
 export const Info = {

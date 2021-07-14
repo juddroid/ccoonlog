@@ -25,3 +25,11 @@ export const NAME = {
   TITLE: 'Title',
   SUB_TITLE: 'SubTitle',
 };
+
+export const OAUTH_BUTTON_NAME = {
+  KAKAO: 'Log in with Kakao',
+  NAVER: 'Log in with Naver',
+  FACEBOOK: 'Log in with Facebook',
+  GOOGLE: 'Log in with Google',
+  GITHUB: 'Log in with  GitHub',
+};
