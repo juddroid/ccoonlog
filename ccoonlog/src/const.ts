@@ -33,3 +33,10 @@ export const OAUTH_BUTTON_NAME = {
   GOOGLE: 'Log in with Google',
   GITHUB: 'Log in with  GitHub',
 };
+
+export const URL = {
+  GITHUB: `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`,
+  GITHUB_POST: `https://github.com/login/oauth/access_token`,
+};
+
+export const LOADING_MESSAGE = 'Loading...';

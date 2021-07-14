@@ -304,3 +304,21 @@ export const Post = {
 
   Editor: styled.div``,
 };
+
+export const Loader = {
+  Loader: styled.div`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  `,
+  LoaderContent: styled.div`
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1rem;
+    font-size: 30px;
+    color: ${({ theme }) => theme.colors.black};
+    border-radius: 20px;
+  `,
+};

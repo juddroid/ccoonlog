@@ -7,6 +7,7 @@ import { Home, LogIn } from '../pages';
 import { App as S } from '../styles/styles';
 import AsideSticky from '../components/aside/AsideSticky';
 import { RecoilRoot } from 'recoil';
+import Authentication from '../pages/Authentication';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           <S.HomeContainer>
             <Route path="/" component={Home} />
             <Route path="/login" component={LogIn} />
+            <Route
+              path="/__/auth/handler/authentication"
+              component={Authentication}
+            />
           </S.HomeContainer>
         </S.App>
       </ThemeProvider>
