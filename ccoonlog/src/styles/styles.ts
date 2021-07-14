@@ -177,9 +177,7 @@ export const Article = {
     margin-top: 3.5rem;
   `,
 
-  ArticleDetail: styled.div`
-    margin-top: 3.5rem;
-  `,
+  ArticleDetail: styled.div``,
 
   ArticleDetailHeader: styled.div`
     color: ${({ theme }) => theme.colors.black};
