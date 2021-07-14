@@ -6,7 +6,7 @@ const AsideSticky = () => {
   return (
     <S.AsideSticky>
       <S.AsideStickyBox>
-        <Link to="/">
+        <Link to="/login">
           <CS.AsideButton>Algorithm</CS.AsideButton>
         </Link>
         <Link to="/">
