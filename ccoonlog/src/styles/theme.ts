@@ -26,7 +26,7 @@ const margins = {
   lg: calcRem(18),
   xl: calcRem(28),
   xxl: calcRem(32),
-  xxxl: calcRem(42),
+  xxxl: calcRem(60),
 };
 
 const sizes = {

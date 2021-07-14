@@ -10,11 +10,6 @@ export const App = {
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
   `,
-
-  HomeContainer: styled.div`
-    display: flex;
-    flex-direction: column;
-  `,
 };
 
 export const LogIn = {
@@ -22,7 +17,7 @@ export const LogIn = {
     width: fit-content;
     border: 1px solid ${({ theme }) => theme.colors.pink};
     border-radius: 16px;
-    margin-top: ${({ theme }) => theme.margins.lg};
+    margin-top: ${({ theme }) => theme.margins.xxxl};
     margin-left: ${({ theme }) => theme.margins.lg};
     padding: ${({ theme }) => theme.margins.small};
   `,
@@ -35,6 +30,8 @@ export const Main = {
 export const Home = {
   Home: styled.div`
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 43rem;
     padding: 2.625rem 1.3125rem;
     font-weight: 400;

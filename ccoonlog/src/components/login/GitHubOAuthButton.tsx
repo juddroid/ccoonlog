@@ -1,5 +1,5 @@
 import OAuthButton from '../common/OAuthButton';
-import { OAUTH_BUTTON_NAME as O } from '../../const';
+import { OAUTH_BUTTON_NAME as O, LOCAL_STORAGE as LOCAL } from '../../const';
 import theme from '../../styles/theme';
 import firebase from 'firebase';
 
@@ -13,7 +13,8 @@ const GitHubOAuthButton = () => {
         const credential = res.credential as firebase.auth.OAuthCredential;
         const token = credential.accessToken;
         const user = res.user;
-        console.log(token, user);
+        localStorage.setItem(LOCAL.TOKEN, JSON.stringify(token));
+        localStorage.setItem(LOCAL.USER, JSON.stringify(user));
       })
       .catch((error) => {
         const errorCode = error.code;
