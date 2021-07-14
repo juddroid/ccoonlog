@@ -4,16 +4,23 @@ import NaverOAuthButton from '../components/login/NaverOAuthButton';
 import KakaoOAuthButton from '../components/login/KakaoOAuthButton';
 import FacebookOAuthButton from '../components/login/FacebookOAuthButton';
 import { LogIn as S } from '../styles/styles';
+import { Redirect } from 'react-router-dom';
 
-const LogIn = () => {
+const LogIn = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
   return (
-    <S.LogIn>
-      <GitHubOAuthButton />
-      <GoogleOAuthButton />
-      <NaverOAuthButton />
-      <FacebookOAuthButton />
-      <KakaoOAuthButton />
-    </S.LogIn>
+    <>
+      {isLoggedIn ? (
+        <Redirect from="*" to="/" />
+      ) : (
+        <S.LogIn>
+          <GitHubOAuthButton />
+          <GoogleOAuthButton />
+          <NaverOAuthButton />
+          <FacebookOAuthButton />
+          <KakaoOAuthButton />
+        </S.LogIn>
+      )}
+    </>
   );
 };
 

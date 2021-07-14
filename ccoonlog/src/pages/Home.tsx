@@ -1,12 +1,8 @@
 import AsideMain from '../components/aside/AsideMain';
 import Header from './Header';
-import Main from './Main';
-import Post from './Post';
 import LogIn from './LogIn';
-import ArticleDetail from './Article/ArticleDetail';
 import { Route } from 'react-router-dom';
 import { Home as S } from '../styles/styles';
-import Edit from './Edit';
 import { useState, useEffect } from 'react';
 import firebase from 'firebase';
 import Router from './Router';
@@ -29,7 +25,9 @@ const Home = () => {
       <Header />
       <AsideMain />
       {init ? <Router {...{ isLoggedIn }} /> : <Loader />}
-      <Route exact path="/login" component={LogIn} />
+      <Route exact path="/login">
+        <LogIn {...{ isLoggedIn }} />
+      </Route>
     </S.Home>
   );
 };
