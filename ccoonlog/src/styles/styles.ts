@@ -5,11 +5,21 @@ export const App = {
     position: relative;
     display: flex;
     justify-content: center;
-
     padding: 2.625rem 1.3125rem;
     font-family: 'Merriweather', 'Georgia', serif;
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
+  `,
+};
+
+export const LogIn = {
+  LogIn: styled.div`
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.pink};
+    border-radius: 16px;
+    margin-top: ${({ theme }) => theme.margins.xxxl};
+    margin-left: ${({ theme }) => theme.margins.lg};
+    padding: ${({ theme }) => theme.margins.small};
   `,
 };
 
@@ -20,6 +30,8 @@ export const Main = {
 export const Home = {
   Home: styled.div`
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 43rem;
     padding: 2.625rem 1.3125rem;
     font-weight: 400;
@@ -165,9 +177,7 @@ export const Article = {
     margin-top: 3.5rem;
   `,
 
-  ArticleDetail: styled.div`
-    margin-top: 3.5rem;
-  `,
+  ArticleDetail: styled.div``,
 
   ArticleDetailHeader: styled.div`
     color: ${({ theme }) => theme.colors.black};
@@ -288,4 +298,22 @@ export const Post = {
   `,
 
   Editor: styled.div``,
+};
+
+export const Loader = {
+  Loader: styled.div`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  `,
+  LoaderContent: styled.div`
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1rem;
+    font-size: 30px;
+    color: ${({ theme }) => theme.colors.black};
+    border-radius: 20px;
+  `,
 };

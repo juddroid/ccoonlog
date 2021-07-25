@@ -7,6 +7,7 @@ declare module 'styled-components' {
     paddings: DefaultSize;
     margins: DefaultSize;
     sizes: DefaultSize;
+    boxSizes: DefaultSize;
   }
 }
 
@@ -26,4 +27,7 @@ interface ColorsTheme {
   dark: string;
   pink: string;
   yellow: string;
+  facebook: string;
+  naver: string;
+  kakao: string;
 }

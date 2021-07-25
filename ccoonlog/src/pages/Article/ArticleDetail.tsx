@@ -7,13 +7,13 @@ import ArticleDetailViewer from './ArticleDetailViewer';
 import { Article as S } from '../../styles/styles';
 import ArticleDeleteButton from './ArticleDeleteButton';
 import ArticleEditButton from './ArticleEditButton';
+import { isAuth } from '../../utils/utils';
 
 const ArticleDetail = () => {
   const [articleDetail, setArticleDetail] =
     useState<ArticleDetailProps | null>(null);
-
+  const auth = isAuth();
   const location = useLocation<ArticleLocationState>();
-
   const articleRef = firebase.database().ref('article');
 
   useEffect(() => {
@@ -23,19 +23,22 @@ const ArticleDetail = () => {
 
       setArticleDetail(currentArticle);
     });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!articleDetail) return null;
-
+  console.log(auth);
   return (
     <S.ArticleDetail>
       <ArticleDetailHeader {...{ articleDetail }} />
       <ArticleDetailViewer {...{ articleDetail }} />
-      <S.ArticleButtonBox>
-        <ArticleEditButton {...{ articleDetail }} />
-        <ArticleDeleteButton articleID={location.state.id} />
-      </S.ArticleButtonBox>
+      {auth && (
+        <S.ArticleButtonBox>
+          <ArticleEditButton {...{ articleDetail }} />
+          <ArticleDeleteButton articleID={location.state.id} />
+        </S.ArticleButtonBox>
+      )}
     </S.ArticleDetail>
   );
 };

@@ -25,3 +25,23 @@ export const NAME = {
   TITLE: 'Title',
   SUB_TITLE: 'SubTitle',
 };
+
+export const OAUTH_BUTTON_NAME = {
+  KAKAO: 'Log in with Kakao',
+  NAVER: 'Log in with Naver',
+  FACEBOOK: 'Log in with Facebook',
+  GOOGLE: 'Log in with Google',
+  GITHUB: 'Log in with  GitHub',
+};
+
+export const URL = {
+  GITHUB: `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`,
+  GITHUB_POST: `https://github.com/login/oauth/access_token`,
+};
+
+export const LOADING_MESSAGE = 'Loading...';
+
+export const LOCAL_STORAGE = {
+  TOKEN: 'token',
+  USER: 'user',
+};

@@ -23,10 +23,10 @@ const paddings = {
 const margins = {
   small: calcRem(8),
   base: calcRem(10),
-  lg: calcRem(12),
+  lg: calcRem(18),
   xl: calcRem(28),
   xxl: calcRem(32),
-  xxxl: calcRem(42),
+  xxxl: calcRem(60),
 };
 
 const sizes = {
@@ -38,12 +38,24 @@ const sizes = {
   xxxl: calcRem(42),
 };
 
+const boxSizes = {
+  small: calcRem(40),
+  base: calcRem(60),
+  lg: calcRem(80),
+  xl: calcRem(100),
+  xxl: calcRem(200),
+  xxxl: calcRem(300),
+};
+
 const colors = {
   black: '#000',
   white: '#FFF',
   dark: '#222',
   pink: '#ffa7c4',
   yellow: 'yellow',
+  facebook: '#3B5A98',
+  naver: '#1DCE60',
+  kakao: '#FFEF00',
 };
 
 const theme: DefaultTheme = {
@@ -52,6 +64,7 @@ const theme: DefaultTheme = {
   sizes,
   paddings,
   margins,
+  boxSizes,
 };
 
 export default theme;
