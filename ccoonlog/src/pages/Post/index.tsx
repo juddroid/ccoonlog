@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react';
-import { Post as S } from '../styles/styles';
+import { Post as S } from '../../styles/styles';
 import { useHistory } from 'react-router-dom';
-import { isAuth } from '../utils/utils';
-import PostTitle from './Post/PostTitle';
-import PostSubTitle from './Post/PostSubTitle';
-import PostButton from './Post/PostButton';
-import PostCategory from './Post/PostCategory';
-import PostEditor from './Post/PostEditor';
+import { isAuth } from '../../utils/utils';
+import PostTitle from './PostTitle';
+import PostSubTitle from './PostSubTitle';
+import PostButton from './PostButton';
+import PostCategory from './PostCategory';
+import PostEditor from './PostEditor';
 
 const Post = () => {
   const history = useHistory();
@@ -20,8 +20,6 @@ const Post = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log('post');
 
   return (
     <S.Post>

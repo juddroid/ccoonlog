@@ -201,6 +201,28 @@ export const Article = {
     }
   `,
 
+  ArticleDetailCategory: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    border-radius: 5px;
+    color: ${({ theme }) => theme.colors.white};
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    margin-right: 5px;
+    padding: 0px 5px;
+    cursor: pointer;
+    background: ${({ theme }) => theme.colors.black};
+  `,
+
+  ArticleDetailCategoryBox: styled.div`
+    display: flex;
+    margin-top: 1rem;
+  `,
+
   ArticleDetailViewer: styled.div`
     .tui-editor-contents p,
     h1,

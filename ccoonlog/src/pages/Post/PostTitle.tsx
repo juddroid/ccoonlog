@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Post as S } from '../../styles/styles';
 import { NAME } from '../../const';
 import { useRecoilState } from 'recoil';

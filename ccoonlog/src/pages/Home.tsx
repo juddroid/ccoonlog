@@ -2,7 +2,7 @@ import AsideMain from '../components/aside/AsideMain';
 import Header from './Header';
 import { Home as S } from '../styles/styles';
 import { useState, useEffect } from 'react';
-import firebase from 'firebase';
+import firebase from '../firebase';
 import Router from './Router';
 import Loader from './Loader';
 
@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(user);
+      // console.log(user);
       user ? setIsLoggedIn(true) : setIsLoggedIn(false);
       setInit(true);
     });

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AsideSticky as S } from '../../styles/styles';
 import { Button as CS } from '../../styles/CommonStyles';
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
 
 const AsideSticky = () => {

@@ -1,19 +1,19 @@
 import { atom, selector } from 'recoil';
 import { CATEGORY_LIST as C } from '../const';
+import { CategoryProps } from '../types/types';
 
 export const articleData = atom({
   key: 'airticleData',
   default: [],
 });
 
-// category id 가 필요할까?
-export const categoryListState = atom({
+export const categoryListState = atom<CategoryProps[]>({
   key: 'categoryListState',
   default: [
-    { item: C.PERSONAL_PROJECT, state: false },
-    { item: C.TEAM_PROJECT, state: false },
-    { item: C.THINKING, state: false },
-    { item: C.ALGORITHM, state: false },
+    { item: C.PERSONAL_PROJECT, state: false, id: 0 },
+    { item: C.TEAM_PROJECT, state: false, id: 1 },
+    { item: C.THINKING, state: false, id: 2 },
+    { item: C.ALGORITHM, state: false, id: 3 },
   ],
 });
 
@@ -33,5 +33,15 @@ export const postTitleState = atom({
 
 export const postSubTitleState = atom({
   key: 'postSubTitleState',
+  default: '',
+});
+
+export const editTitleState = atom({
+  key: 'editTitleState',
+  default: '',
+});
+
+export const editSubTitleState = atom<string | undefined>({
+  key: 'editSubTitleState',
   default: '',
 });

@@ -28,7 +28,7 @@ const ArticleDetail = () => {
   }, []);
 
   if (!articleDetail) return null;
-  console.log(auth);
+
   return (
     <S.ArticleDetail>
       <ArticleDetailHeader {...{ articleDetail }} />

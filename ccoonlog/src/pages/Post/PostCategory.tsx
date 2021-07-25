@@ -11,8 +11,8 @@ const PostCategory = () => {
   const handleClickCategoryButton = (e: React.MouseEvent) => {
     const id = +e.currentTarget.id;
     setCategoryList(
-      categoryList.map((category, idx) =>
-        id === idx ? { ...category, state: !category.state } : category
+      categoryList.map((category) =>
+        id === category.id ? { ...category, state: !category.state } : category
       )
     );
   };
@@ -21,15 +21,16 @@ const PostCategory = () => {
     setCategoryList(
       categoryList.map((category) => ({ ...category, state: false }))
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <S.PostBox>
       <S.PostTitle>{NAME.CATEGORY}</S.PostTitle>
-      {categoryList.map((category, idx) => (
+      {categoryList.map((category) => (
         <S.PostCategory
           key={uuidv4()}
-          id={`${idx}`}
+          id={category.id}
           onClick={handleClickCategoryButton}
           state={category.state}
         >

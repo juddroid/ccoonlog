@@ -1,7 +1,7 @@
 import OAuthButton from '../common/OAuthButton';
-import { OAUTH_BUTTON_NAME as O, LOCAL_STORAGE as LOCAL } from '../../const';
+import { OAUTH_BUTTON_NAME as O } from '../../const';
 import theme from '../../styles/theme';
-import firebase from 'firebase';
+import firebase from '../../firebase';
 
 const FacebookOAuthButton = () => {
   const getToken = () => {

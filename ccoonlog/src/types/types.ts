@@ -10,12 +10,19 @@ export interface ArticleLocationState {
   title: string;
 }
 
+export interface CategoryProps {
+  item: string;
+  state: boolean;
+  id: number;
+}
+
 export interface ArticleDetailProps {
   id: number;
   title: string;
   subTitle?: string;
   date: string;
   content?: string;
+  category?: CategoryProps[];
 }
 
 export interface ArticleDetailState {
