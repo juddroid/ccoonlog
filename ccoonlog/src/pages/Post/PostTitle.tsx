@@ -13,6 +13,7 @@ const PostTitle = () => {
 
   useEffect(() => {
     setTitle('');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -15,6 +15,7 @@ const PostSubTitle = () => {
 
   useEffect(() => {
     setSubTitle('');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -8,9 +8,8 @@ import { ArticleProps } from '../types/types';
 const Main = () => {
   const [data, setData] = useState<ArticleProps[]>([]);
 
-  const articleRef = firebase.database().ref('article');
-
   useEffect(() => {
+    const articleRef = firebase.database().ref('article');
     articleRef.on('value', (snapshot) => {
       const article = snapshot.val();
       const articleList = [];
@@ -21,6 +20,9 @@ const Main = () => {
 
       setData(articleList);
     });
+
+    return () => articleRef.off();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
