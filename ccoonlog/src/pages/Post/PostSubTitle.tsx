@@ -2,6 +2,7 @@ import { Post as S } from '../../styles/styles';
 import { NAME } from '../../const';
 import { useRecoilState } from 'recoil';
 import { postSubTitleState } from '../../store/Recoil';
+import { useEffect } from 'react';
 
 const PostSubTitle = () => {
   const [subTitle, setSubTitle] = useRecoilState(postSubTitleState);
@@ -11,6 +12,10 @@ const PostSubTitle = () => {
   ) => {
     setSubTitle(e.target.value);
   };
+
+  useEffect(() => {
+    setSubTitle('');
+  }, []);
 
   return (
     <S.PostBox>
