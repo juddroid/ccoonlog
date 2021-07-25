@@ -24,6 +24,7 @@ export const NAME = {
   CANCEL: 'Cancel',
   TITLE: 'Title',
   SUB_TITLE: 'SubTitle',
+  CATEGORY: 'Category',
 };
 
 export const OAUTH_BUTTON_NAME = {
@@ -31,7 +32,7 @@ export const OAUTH_BUTTON_NAME = {
   NAVER: 'Log in with Naver',
   FACEBOOK: 'Log in with Facebook',
   GOOGLE: 'Log in with Google',
-  GITHUB: 'Log in with  GitHub',
+  GITHUB: 'Log in with GitHub',
 };
 
 export const URL = {
@@ -44,4 +45,11 @@ export const LOADING_MESSAGE = 'Loading...';
 export const LOCAL_STORAGE = {
   TOKEN: 'token',
   USER: 'user',
+};
+
+export const CATEGORY_LIST = {
+  TEAM_PROJECT: 'teamProject',
+  PERSONAL_PROJECT: 'personalProject',
+  ALGORITHM: 'algorithm',
+  THINKING: 'thinking',
 };

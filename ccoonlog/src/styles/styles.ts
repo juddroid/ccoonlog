@@ -269,7 +269,7 @@ export const Post = {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    min-width: 100px;
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
     color: ${({ theme }) => theme.colors.black};
@@ -277,6 +277,7 @@ export const Post = {
     font-weight: 900;
     font-size: 1rem;
     margin-right: 5px;
+    box-sizing: border-box;
   `,
 
   PostInput: styled.input`
@@ -294,6 +295,31 @@ export const Post = {
     ::placeholder {
       color: ${({ theme }) => theme.colors.dark};
       opacity: 0.2;
+    }
+  `,
+
+  PostCategory: styled.div.attrs(({ state }: { state: boolean }) => state)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    border-radius: 5px;
+    color: ${({ theme, state }) =>
+      state ? theme.colors.white : theme.colors.black};
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-right: 5px;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    background: ${({ theme, state }) =>
+      state ? theme.colors.black : theme.colors.white};
+
+    :hover {
+      background: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
     }
   `,
 

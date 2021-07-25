@@ -12,17 +12,20 @@ import 'tui-chart/dist/tui-chart.css';
 import 'highlight.js/styles/github.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 import { Button } from '../styles/CommonStyles';
-import { v1 as uuidv1 } from 'uuid';
+import { v1 as uuidv1, v4 as uuidv4 } from 'uuid';
 import { Post as S } from '../styles/styles';
 import { NAME } from '../const';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { isAuth } from '../utils/utils';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { categoryListState, selectedCategoryListState } from '../store/Recoil';
 
 const Post = () => {
   const [title, setTitle] = useState('');
   const [subTitle, setSubTitle] = useState('');
+  const [categoryList, setCategoryList] = useRecoilState(categoryListState);
+  const selectedCategoryList = useRecoilValue(selectedCategoryListState);
 
-  // const location = useLocation();
   const history = useHistory();
   const editorRef: React.MutableRefObject<any> = useRef<any>();
 
@@ -38,6 +41,7 @@ const Post = () => {
       title: title,
       subTitle: subTitle,
       content: markdownContent,
+      category: selectedCategoryList,
     };
     articleRef.set(newArticle);
 
@@ -53,7 +57,17 @@ const Post = () => {
   ) => {
     setSubTitle(e.target.value);
   };
+  const handleClickCategoryButton = (e: React.MouseEvent) => {
+    const id = +e.currentTarget.id;
+    setCategoryList(
+      categoryList.map((category, idx) =>
+        id === idx ? { ...category, state: !category.state } : category
+      )
+    );
+  };
 
+  console.log(categoryList);
+  console.log(selectedCategoryList);
   useEffect(() => {
     const auth = isAuth();
     if (!auth) {
@@ -80,6 +94,19 @@ const Post = () => {
           value={subTitle}
           onChange={handleChangeInputsubTitle}
         />
+      </S.PostBox>
+      <S.PostBox>
+        <S.PostTitle>{NAME.CATEGORY}</S.PostTitle>
+        {categoryList.map((category, idx) => (
+          <S.PostCategory
+            key={uuidv4()}
+            id={`${idx}`}
+            onClick={handleClickCategoryButton}
+            state={category.state}
+          >
+            {category.item}
+          </S.PostCategory>
+        ))}
       </S.PostBox>
 
       <S.Editor>
