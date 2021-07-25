@@ -25,3 +25,13 @@ export const selectedCategoryListState = selector({
     return selectedList;
   },
 });
+
+export const postTitleState = atom({
+  key: 'postTitleState',
+  default: '',
+});
+
+export const postSubTitleState = atom({
+  key: 'postSubTitleState',
+  default: '',
+});
