@@ -1,3 +1,5 @@
+import { LOCAL_STORAGE as LOCAL } from '../const';
+
 export const calcRem = (size: number) => `${size / 16}rem`;
 
 export const getFormatDate = (currentDate: string) => {
@@ -14,4 +16,12 @@ export const getInfoDate = (currentDate: string) => {
   const date = new Date(currentDate);
   const infoDateList = date.toString().split(' ');
   return `${infoDateList[1]} ${infoDateList[2]}, ${infoDateList[3]}`;
+};
+
+export const isAuth = () => {
+  const UID = 'w7M03TM5niOM8aAwmxYgrhOdOjf1';
+  const user = localStorage.getItem(LOCAL.USER);
+  const uid = user && JSON.parse(user).uid;
+
+  return UID === uid;
 };

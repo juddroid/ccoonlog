@@ -16,7 +16,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { Post as S } from '../styles/styles';
 import { NAME } from '../const';
 import { useHistory, useLocation } from 'react-router-dom';
-import { LOCAL_STORAGE as LOCAL } from '../const';
+import { isAuth } from '../utils/utils';
 
 const Post = () => {
   const [title, setTitle] = useState('');
@@ -52,14 +52,6 @@ const Post = () => {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSubTitle(e.target.value);
-  };
-
-  const isAuth = () => {
-    const UID = 'w7M03TM5niOM8aAwmxYgrhOdOjf1';
-    const user = localStorage.getItem(LOCAL.USER);
-    const uid = user && JSON.parse(user).uid;
-
-    return UID === uid;
   };
 
   useEffect(() => {
