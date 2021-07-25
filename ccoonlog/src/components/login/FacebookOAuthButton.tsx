@@ -6,15 +6,17 @@ import firebase from 'firebase';
 const FacebookOAuthButton = () => {
   const getToken = () => {
     const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
     firebase
       .auth()
-      .signInWithPopup(provider)
+      .getRedirectResult()
       .then((res) => {
         const credential = res.credential as firebase.auth.OAuthCredential;
         const token = credential.accessToken;
         const user = res.user;
-        localStorage.setItem(LOCAL.TOKEN, JSON.stringify(token));
-        localStorage.setItem(LOCAL.USER, JSON.stringify(user));
+        console.log(token, user);
+        // localStorage.setItem(LOCAL.TOKEN, JSON.stringify(token));
+        // localStorage.setItem(LOCAL.USER, JSON.stringify(user));
       })
       .catch((error) => {
         const errorCode = error.code;

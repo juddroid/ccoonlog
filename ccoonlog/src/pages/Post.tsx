@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import firebase from '../firebase';
 // import chart from '@toast-ui/editor-plugin-chart';
 // import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
@@ -16,12 +16,13 @@ import { v1 as uuidv1 } from 'uuid';
 import { Post as S } from '../styles/styles';
 import { NAME } from '../const';
 import { useHistory, useLocation } from 'react-router-dom';
+import { LOCAL_STORAGE as LOCAL } from '../const';
 
 const Post = () => {
   const [title, setTitle] = useState('');
   const [subTitle, setSubTitle] = useState('');
 
-  const location = useLocation();
+  // const location = useLocation();
   const history = useHistory();
   const editorRef: React.MutableRefObject<any> = useRef<any>();
 
@@ -52,6 +53,23 @@ const Post = () => {
   ) => {
     setSubTitle(e.target.value);
   };
+
+  const isAuth = () => {
+    const UID = 'w7M03TM5niOM8aAwmxYgrhOdOjf1';
+    const user = localStorage.getItem(LOCAL.USER);
+    const uid = user && JSON.parse(user).uid;
+
+    return UID === uid;
+  };
+
+  useEffect(() => {
+    const auth = isAuth();
+    if (!auth) {
+      console.log('권한이 없어용');
+      history.push('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <S.Post>
