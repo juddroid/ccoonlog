@@ -74,6 +74,10 @@ const Post = () => {
       console.log('권한이 없어용');
       history.push('/');
     }
+
+    setCategoryList(
+      categoryList.map((category) => ({ ...category, state: false }))
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
