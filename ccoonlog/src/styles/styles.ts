@@ -15,7 +15,7 @@ export const App = {
 export const LogIn = {
   LogIn: styled.div`
     width: fit-content;
-    border: 1px solid ${({ theme }) => theme.colors.pink};
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
     border-radius: 16px;
     margin-top: ${({ theme }) => theme.margins.xxxl};
     margin-left: ${({ theme }) => theme.margins.lg};
@@ -109,7 +109,7 @@ export const AsideMain = {
 
       a {
         box-shadow: 0 1px 0 0 currentColor;
-        color: ${({ theme }) => theme.colors.pink};
+        color: ${({ theme }) => theme.colors.hotPink};
         text-decoration: none;
         cursor: pointer;
       }
@@ -147,13 +147,12 @@ export const AsideSticky = {
 
   AsideStickyBox: styled.div`
     position: sticky;
-    border: 1px solid #ffa7c4;
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
     top: 100px;
-    border-radius: 10px;
+    border-radius: 16px;
     color: ${({ theme }) => theme.colors.black};
-    height: 100px;
     width: 100%;
-    height: 375px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -346,6 +345,12 @@ export const Post = {
   `,
 
   Editor: styled.div``,
+
+  PostButtonBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: ${({ theme }) => theme.margins.base};
+  `,
 };
 
 export const Loader = {
@@ -363,5 +368,11 @@ export const Loader = {
     font-size: 30px;
     color: ${({ theme }) => theme.colors.black};
     border-radius: 20px;
+  `,
+};
+
+export const About = {
+  About: styled.div`
+    margin-top: 3.5rem;
   `,
 };

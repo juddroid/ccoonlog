@@ -27,7 +27,9 @@ const Post = () => {
       <PostSubTitle />
       <PostCategory />
       <PostEditor {...{ editorRef }} />
-      <PostButton {...{ editorRef }} />
+      <S.PostButtonBox>
+        <PostButton {...{ editorRef }} />
+      </S.PostButtonBox>
     </S.Post>
   );
 };

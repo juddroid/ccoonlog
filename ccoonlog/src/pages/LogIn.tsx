@@ -7,7 +7,7 @@ import { LogIn as S } from '../styles/styles';
 import { Redirect } from 'react-router-dom';
 
 const LogIn = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
-  isLoggedIn && console.log('이미 로그인했어요~');
+  isLoggedIn && console.log('로그인되었습니다.');
 
   return (
     <>

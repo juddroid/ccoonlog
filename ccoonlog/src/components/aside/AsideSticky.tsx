@@ -28,6 +28,12 @@ const AsideSticky = () => {
           <CS.AsideButton>Project</CS.AsideButton>
         </Link>
         <Link to="/">
+          <CS.AsideButton>Algorithm</CS.AsideButton>
+        </Link>
+        <Link to="/">
+          <CS.AsideButton>Thinking</CS.AsideButton>
+        </Link>
+        <Link to="/about">
           <CS.AsideButton>About</CS.AsideButton>
         </Link>
       </S.AsideStickyBox>

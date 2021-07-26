@@ -22,12 +22,5 @@ interface DefaultSize {
 }
 
 interface ColorsTheme {
-  black: string;
-  white: string;
-  dark: string;
-  pink: string;
-  yellow: string;
-  facebook: string;
-  naver: string;
-  kakao: string;
+  [key: string];
 }

@@ -48,8 +48,8 @@ export const LOCAL_STORAGE = {
 };
 
 export const CATEGORY_LIST = {
-  TEAM_PROJECT: 'teamProject',
-  PERSONAL_PROJECT: 'personalProject',
-  ALGORITHM: 'algorithm',
-  THINKING: 'thinking',
+  TEAM_PROJECT: 'Team',
+  PERSONAL_PROJECT: 'Personal',
+  ALGORITHM: 'Algorithm',
+  THINKING: 'Thinking',
 };

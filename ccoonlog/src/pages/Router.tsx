@@ -4,6 +4,7 @@ import Post from './Post';
 import ArticleDetail from './Article/ArticleDetail';
 import Edit from './Edit';
 import LogIn from './LogIn';
+import About from './About';
 
 const Router = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
   return (
@@ -26,6 +27,10 @@ const Router = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
 
       <Route exact path="/pages/post/edit/:id">
         {isLoggedIn ? <Edit /> : <Redirect from="*" to="/login" />}
+      </Route>
+
+      <Route exact path="/about">
+        <About />
       </Route>
 
       <Redirect from="*" to="/" />

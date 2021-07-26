@@ -52,6 +52,7 @@ const colors = {
   white: '#FFF',
   dark: '#222',
   pink: '#ffa7c4',
+  hotPink: '#d23669',
   yellow: 'yellow',
   facebook: '#3B5A98',
   naver: '#1DCE60',
