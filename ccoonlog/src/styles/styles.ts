@@ -195,6 +195,7 @@ export const Article = {
 
   ArticleDetailHeader: styled.div`
     color: ${({ theme }) => theme.colors.black};
+    margin-bottom: ${({ theme }) => theme.margins.xxxl};
 
     h2 {
       font-family: Montserrat, sans-serif;
