@@ -5,6 +5,12 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
   font-family: 'Merriweather', 'Georgia', serif;
   
+  
+  body {
+    overflow-y: scroll;
+  }
+  
+  
   a {
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black}
