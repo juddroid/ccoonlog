@@ -11,11 +11,13 @@ const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    const off = firebase.auth().onAuthStateChanged((user) => {
       // console.log(user);
       user ? setIsLoggedIn(true) : setIsLoggedIn(false);
       setInit(true);
     });
+
+    return () => off();
   }, []);
 
   console.log('init', init, 'isloggedin', isLoggedIn);

@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { Button } from './CommonStyles';
 
+// App
 export const App = {
   App: styled.div`
     position: relative;
@@ -12,6 +14,7 @@ export const App = {
   `,
 };
 
+// LogIn
 export const LogIn = {
   LogIn: styled.div`
     width: fit-content;
@@ -23,10 +26,12 @@ export const LogIn = {
   `,
 };
 
+// Main
 export const Main = {
   Main: styled.main``,
 };
 
+// Home
 export const Home = {
   Home: styled.div`
     position: relative;
@@ -40,6 +45,7 @@ export const Home = {
   `,
 };
 
+// Header
 export const Header = {
   Header: styled.div`
     display: flex;
@@ -57,6 +63,7 @@ export const Header = {
   `,
 };
 
+// ReactToggle
 export const ReactToggle = {
   ReactToggle: styled.div`
     touch-action: pan-x;
@@ -97,6 +104,7 @@ export const ReactToggle = {
   `,
 };
 
+// AsideMain
 export const AsideMain = {
   AsideMain: styled.div`
     display: flex;
@@ -138,6 +146,7 @@ export const AsideMain = {
   `,
 };
 
+// AsideSticky
 export const AsideSticky = {
   AsideSticky: styled.div`
     position: relative;
@@ -159,8 +168,13 @@ export const AsideSticky = {
     padding: 10px 20px;
     box-sizing: border-box;
   `,
+
+  LogInButton: styled(Button.AsideButton)`
+    color: ${({ theme }) => theme.colors.hotPink};
+  `,
 };
 
+// Article
 export const Article = {
   Article: styled.div`
     color: ${({ theme }) => theme.colors.black};
@@ -354,6 +368,7 @@ export const Post = {
   `,
 };
 
+// Loader
 export const Loader = {
   Loader: styled.div`
     position: fixed;
@@ -372,6 +387,7 @@ export const Loader = {
   `,
 };
 
+// About
 export const About = {
   About: styled.div`
     margin-top: 3.5rem;

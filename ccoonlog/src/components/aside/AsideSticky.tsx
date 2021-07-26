@@ -5,25 +5,24 @@ import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
 
 const AsideSticky = () => {
-  const userLogOut = () => firebase.auth().signOut();
+  const userLogOut = () =>
+    firebase
+      .auth()
+      .signOut()
+      .then(() => console.log('로그아웃되었습니다.'))
+      .catch((error) => console.error(error));
 
   const handleClickLogOutButton = () => {
     userLogOut();
     localStorage.removeItem(LOCAL.TOKEN);
     localStorage.removeItem(LOCAL.USER);
-    console.log('로그아웃 되었습니다.');
   };
 
   return (
     <S.AsideSticky>
       <S.AsideStickyBox>
-        <Link to="/login">
-          <CS.AsideButton>LogIn</CS.AsideButton>
-        </Link>
         <Link to="/">
-          <CS.AsideButton onClick={handleClickLogOutButton}>
-            LogOut
-          </CS.AsideButton>
+          <CS.AsideButton>Return</CS.AsideButton>
         </Link>
         <Link to="/">
           <CS.AsideButton>Project</CS.AsideButton>
@@ -36,6 +35,15 @@ const AsideSticky = () => {
         </Link>
         <Link to="/about">
           <CS.AsideButton>About</CS.AsideButton>
+        </Link>
+
+        <Link to="/login">
+          <S.LogInButton>LogIn</S.LogInButton>
+        </Link>
+        <Link to="/">
+          <S.LogInButton onClick={handleClickLogOutButton}>
+            LogOut
+          </S.LogInButton>
         </Link>
       </S.AsideStickyBox>
     </S.AsideSticky>
