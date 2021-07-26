@@ -8,7 +8,6 @@ export const App = {
     display: flex;
     justify-content: center;
     padding: 2.625rem 1.3125rem;
-    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 400;
     font: 100%/1.75;
   `,
@@ -178,7 +177,10 @@ export const AsideSticky = {
 export const Article = {
   Article: styled.div`
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
     p {
       margin-bottom: 1.75rem;
     }
@@ -198,7 +200,10 @@ export const Article = {
     margin-bottom: ${({ theme }) => theme.margins.xxxl};
 
     h2 {
-      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
       font-weight: 900;
       font-size: ${({ theme }) => theme.fontSizes.xxxl};
       margin-bottom: 0.4375rem;
@@ -207,7 +212,10 @@ export const Article = {
     }
 
     h3 {
-      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
       font-weight: 700;
       font-size: ${({ theme }) => theme.fontSizes.xl};
       margin-bottom: 0.4375rem;
@@ -251,8 +259,11 @@ export const Article = {
     hr {
       color: #222;
       line-height: 1.3;
-      margin: 20px 0;
-      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+      margin: 10px 0;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
     }
 
     .toastui-editor-contents h1 {
@@ -272,9 +283,14 @@ export const Article = {
     .toastui-editor-contents ul {
       font-size: ${({ theme }) => theme.fontSizes.base};
 
+      p {
+        line-height: 2;
+      }
+
       ::before {
         color: #222;
         line-height: 2;
+        margin-top: 12px;
       }
     }
 
@@ -316,7 +332,10 @@ export const Post = {
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
     font-weight: 900;
     font-size: 1rem;
     margin-right: 5px;

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Common = {
   Header: styled.div`
     color: #fff;
+    font-family: Montserrat, -apple-system;
 
     h3 {
-      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
       font-weight: 900;
       font-size: 1.75rem;
       margin-bottom: 0.4375rem;
