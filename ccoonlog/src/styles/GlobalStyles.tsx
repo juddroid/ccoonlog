@@ -3,8 +3,10 @@ import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
-  font-family: 'Merriweather', 'Georgia', serif;
-  
+  * {
+  font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia',
+      sans-serif;
+  }  
   
   body {
     overflow-y: scroll;

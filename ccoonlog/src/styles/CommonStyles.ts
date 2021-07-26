@@ -5,7 +5,7 @@ export const Common = {
     color: #fff;
 
     h3 {
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
       font-weight: 900;
       font-size: 1.75rem;
       margin-bottom: 0.4375rem;
@@ -34,7 +34,7 @@ export const Button = {
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
     font-size: 1rem;
     margin: 5px 0;
@@ -62,7 +62,7 @@ export const Button = {
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
     font-size: 1rem;
     margin: 10px 0px;
@@ -90,7 +90,7 @@ export const Button = {
     height: ${({ theme }) => theme.sizes.xxxl};
     margin: ${({ theme }) => theme.margins.small};
     border-radius: 11px;
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-size: ${({ theme }) => theme.fontSizes.base};
     font-weight: 700;
     background: ${({ background }: { background: string | undefined }) =>

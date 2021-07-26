@@ -8,9 +8,9 @@ export const App = {
     display: flex;
     justify-content: center;
     padding: 2.625rem 1.3125rem;
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 400;
-    font: 100%/1.75 'Merriweather', 'Georgia', serif;
+    font: 100%/1.75;
   `,
 };
 
@@ -56,7 +56,7 @@ export const Header = {
 
   Title: styled.div`
     font-size: ${({ theme }) => theme.fontSizes.xxl};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
     color: ${({ theme }) => theme.colors.white};
     line-height: ${({ theme }) => theme.sizes.xxxl};
@@ -178,7 +178,7 @@ export const AsideSticky = {
 export const Article = {
   Article: styled.div`
     color: ${({ theme }) => theme.colors.black};
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     p {
       margin-bottom: 1.75rem;
     }
@@ -198,7 +198,7 @@ export const Article = {
     margin-bottom: ${({ theme }) => theme.margins.xxxl};
 
     h2 {
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
       font-weight: 900;
       font-size: ${({ theme }) => theme.fontSizes.xxxl};
       margin-bottom: 0.4375rem;
@@ -207,7 +207,7 @@ export const Article = {
     }
 
     h3 {
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
       font-weight: 700;
       font-size: ${({ theme }) => theme.fontSizes.xl};
       margin-bottom: 0.4375rem;
@@ -224,7 +224,7 @@ export const Article = {
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
     color: ${({ theme }) => theme.colors.white};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 500;
     font-size: 0.7rem;
     margin-right: 5px;
@@ -252,7 +252,7 @@ export const Article = {
       color: #222;
       line-height: 1.3;
       margin: 20px 0;
-      font-family: Montserrat, 'Merriweather', 'Georgia', sans-serif;
+      font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     }
 
     .toastui-editor-contents h1 {
@@ -316,7 +316,7 @@ export const Post = {
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
     font-size: 1rem;
     margin-right: 5px;
@@ -332,7 +332,7 @@ export const Post = {
     padding: 10px 10px 10px 20px;
     box-sizing: border-box;
     font-size: 1.5rem;
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
 
     ::placeholder {
@@ -350,7 +350,7 @@ export const Post = {
     border-radius: 5px;
     color: ${({ theme, state }) =>
       state ? theme.colors.white : theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 500;
     font-size: 1rem;
     margin-right: 5px;
