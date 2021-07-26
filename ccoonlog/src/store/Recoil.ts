@@ -12,8 +12,9 @@ export const categoryListState = atom<CategoryProps[]>({
   default: [
     { item: C.PERSONAL_PROJECT, state: false, id: 0 },
     { item: C.TEAM_PROJECT, state: false, id: 1 },
-    { item: C.THINKING, state: false, id: 2 },
-    { item: C.ALGORITHM, state: false, id: 3 },
+    { item: C.ALGORITHM, state: false, id: 2 },
+    { item: C.INTERESTING, state: false, id: 3 },
+    { item: C.THINKING, state: false, id: 4 },
   ],
 });
 

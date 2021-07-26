@@ -11,6 +11,7 @@ const AsideSticky = () => {
     userLogOut();
     localStorage.removeItem(LOCAL.TOKEN);
     localStorage.removeItem(LOCAL.USER);
+    console.log('로그아웃 되었습니다.');
   };
 
   return (

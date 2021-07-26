@@ -31,7 +31,7 @@ const EditCategory = () => {
         categoryList.map((category) =>
           activeCategoryIDList.includes(category.id)
             ? { ...category, state: true }
-            : category
+            : { ...category, state: false }
         )
       );
     // eslint-disable-next-line react-hooks/exhaustive-deps

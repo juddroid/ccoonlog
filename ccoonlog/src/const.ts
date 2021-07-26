@@ -51,5 +51,6 @@ export const CATEGORY_LIST = {
   TEAM_PROJECT: 'Team',
   PERSONAL_PROJECT: 'Personal',
   ALGORITHM: 'Algorithm',
+  INTERESTING: 'Interesting',
   THINKING: 'Thinking',
 };

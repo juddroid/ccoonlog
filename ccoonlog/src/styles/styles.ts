@@ -173,6 +173,7 @@ export const Article = {
   ArticleButtonBox: styled.div`
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-top: 3.5rem;
   `,
 

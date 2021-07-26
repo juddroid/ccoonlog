@@ -33,7 +33,7 @@ const Router = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
         <About />
       </Route>
 
-      <Redirect from="*" to="/" />
+      {/* <Redirect from="*" to="/" /> */}
     </>
   );
 };

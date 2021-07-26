@@ -3,8 +3,9 @@ import firebase from '../../firebase';
 import { Button } from '../../styles/CommonStyles';
 import { ArticleDetailState } from '../../types/types';
 import { NAME } from '../../const';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import {
+  categoryListState,
   editSubTitleState,
   editTitleState,
   selectedCategoryListState,
@@ -23,6 +24,7 @@ const EditButton = ({
   const editTitle = useRecoilValue(editTitleState);
   const editSubTitle = useRecoilValue(editSubTitleState);
   const selectedCategoryList = useRecoilValue(selectedCategoryListState);
+  const [categoryList, setCategoryList] = useRecoilState(categoryListState);
 
   const handleClickEditButton = () => {
     const editorInstance = editorRef.current.getInstance();
@@ -37,6 +39,10 @@ const EditButton = ({
       category: selectedCategoryList,
     };
     editRef.update(editArticle);
+    setCategoryList(
+      categoryList.map((category) => ({ ...category, state: false }))
+    );
+
     window.history.back();
   };
 
