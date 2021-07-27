@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AsideMain as S } from '../../styles/styles';
 import { ASIDE } from '../../const';
-import firebase from '../../firebase';
+// import firebase from '../../firebase';
 
 const AsideMain = () => {
   const handleClick = async () => {

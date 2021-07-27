@@ -7,7 +7,10 @@ const Loader = () => {
   return (
     <S.Loader>
       <S.LoaderContent>{LOADING_MESSAGE}</S.LoaderContent>
-      <CircularProgress style={{ color: `${theme.colors.pink}` }} size={100} />
+      <CircularProgress
+        style={{ color: `${theme.colors.hotPink}` }}
+        size={100}
+      />
     </S.Loader>
   );
 };

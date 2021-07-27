@@ -1,3 +1,4 @@
+import { SetterOrUpdater } from 'recoil';
 import { LOCAL_STORAGE as LOCAL } from '../const';
 
 export const calcRem = (size: number) => `${size / 16}rem`;
@@ -24,4 +25,12 @@ export const isAuth = () => {
   const uid = user && JSON.parse(user).uid;
 
   return UID === uid;
+};
+
+export const handleClickFilteringButton = (
+  e: React.MouseEvent,
+  callback: SetterOrUpdater<number | null>
+) => {
+  const id = e.currentTarget.id === 'null' ? null : +e.currentTarget.id;
+  callback(id);
 };

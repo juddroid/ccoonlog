@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const Common = {
   Header: styled.div`
     color: #fff;
+    font-family: Montserrat, -apple-system;
 
     h3 {
-      font-family: Montserrat, sans-serif;
       font-weight: 900;
       font-size: 1.75rem;
       margin-bottom: 0.4375rem;
@@ -15,7 +15,7 @@ export const Common = {
     a {
       cursor: pointer;
       text-decoration: none;
-      color: #ffa7c4;
+      color: ${({ theme }) => theme.colors.hotPink};
     }
 
     small {
@@ -31,13 +31,13 @@ export const Button = {
     outline: none;
     background: transparent;
     border-radius: 10px;
-    border: 1px solid ${({ theme }) => theme.colors.pink};
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
     font-size: 1rem;
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 10px;
     cursor: pointer;
     transition: all 0.4s;
@@ -59,10 +59,10 @@ export const Button = {
     outline: none;
     background: transparent;
     border-radius: 10px;
-    border: 1px solid ${({ theme }) => theme.colors.pink};
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
     text-decoration: none;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
     font-size: 1rem;
     margin: 10px 0px;
@@ -90,7 +90,7 @@ export const Button = {
     height: ${({ theme }) => theme.sizes.xxxl};
     margin: ${({ theme }) => theme.margins.small};
     border-radius: 11px;
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-size: ${({ theme }) => theme.fontSizes.base};
     font-weight: 700;
     background: ${({ background }: { background: string | undefined }) =>

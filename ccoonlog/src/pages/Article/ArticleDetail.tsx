@@ -14,9 +14,9 @@ const ArticleDetail = () => {
     useState<ArticleDetailProps | null>(null);
   const auth = isAuth();
   const location = useLocation<ArticleLocationState>();
-  const articleRef = firebase.database().ref('article');
 
   useEffect(() => {
+    const articleRef = firebase.database().ref('article');
     articleRef.on('value', (snapshot) => {
       const article = snapshot.val();
       const currentArticle = article[location.state.id];
@@ -24,11 +24,12 @@ const ArticleDetail = () => {
       setArticleDetail(currentArticle);
     });
 
+    return () => articleRef.off();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!articleDetail) return null;
-  console.log(auth);
+
   return (
     <S.ArticleDetail>
       <ArticleDetailHeader {...{ articleDetail }} />

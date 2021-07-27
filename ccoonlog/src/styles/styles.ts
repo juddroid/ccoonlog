@@ -1,21 +1,23 @@
 import styled from 'styled-components';
+import { Button } from './CommonStyles';
 
+// App
 export const App = {
   App: styled.div`
     position: relative;
     display: flex;
     justify-content: center;
     padding: 2.625rem 1.3125rem;
-    font-family: 'Merriweather', 'Georgia', serif;
     font-weight: 400;
-    font: 100%/1.75 'Merriweather', 'Georgia', serif;
+    font: 100%/1.75;
   `,
 };
 
+// LogIn
 export const LogIn = {
   LogIn: styled.div`
     width: fit-content;
-    border: 1px solid ${({ theme }) => theme.colors.pink};
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
     border-radius: 16px;
     margin-top: ${({ theme }) => theme.margins.xxxl};
     margin-left: ${({ theme }) => theme.margins.lg};
@@ -23,10 +25,17 @@ export const LogIn = {
   `,
 };
 
+// Main
 export const Main = {
   Main: styled.main``,
+
+  Error: styled.main`
+    margin-top: 3.5rem;
+    color: ${({ theme }) => theme.colors.gray};
+  `,
 };
 
+// Home
 export const Home = {
   Home: styled.div`
     position: relative;
@@ -40,6 +49,7 @@ export const Home = {
   `,
 };
 
+// Header
 export const Header = {
   Header: styled.div`
     display: flex;
@@ -50,13 +60,15 @@ export const Header = {
 
   Title: styled.div`
     font-size: ${({ theme }) => theme.fontSizes.xxl};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.dark};
     line-height: ${({ theme }) => theme.sizes.xxxl};
+    cursor: pointer;
   `,
 };
 
+// ReactToggle
 export const ReactToggle = {
   ReactToggle: styled.div`
     touch-action: pan-x;
@@ -97,6 +109,7 @@ export const ReactToggle = {
   `,
 };
 
+// AsideMain
 export const AsideMain = {
   AsideMain: styled.div`
     display: flex;
@@ -109,7 +122,7 @@ export const AsideMain = {
 
       a {
         box-shadow: 0 1px 0 0 currentColor;
-        color: ${({ theme }) => theme.colors.pink};
+        color: ${({ theme }) => theme.colors.hotPink};
         text-decoration: none;
         cursor: pointer;
       }
@@ -138,6 +151,7 @@ export const AsideMain = {
   `,
 };
 
+// AsideSticky
 export const AsideSticky = {
   AsideSticky: styled.div`
     position: relative;
@@ -147,33 +161,38 @@ export const AsideSticky = {
 
   AsideStickyBox: styled.div`
     position: sticky;
-    border: 1px solid #ffa7c4;
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
     top: 100px;
-    border-radius: 10px;
+    border-radius: 16px;
     color: ${({ theme }) => theme.colors.black};
-    height: 100px;
     width: 100%;
-    height: 375px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px 20px;
     box-sizing: border-box;
   `,
+
+  LogInButton: styled(Button.AsideButton)`
+    color: ${({ theme }) => theme.colors.hotPink};
+  `,
 };
 
+// Article
 export const Article = {
   Article: styled.div`
     color: ${({ theme }) => theme.colors.black};
-    font-family: 'Merriweather', 'Georgia', serif;
-    p {
-      margin-bottom: 1.75rem;
-    }
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
   `,
 
   ArticleButtonBox: styled.div`
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     margin-top: 3.5rem;
   `,
 
@@ -181,9 +200,13 @@ export const Article = {
 
   ArticleDetailHeader: styled.div`
     color: ${({ theme }) => theme.colors.black};
+    margin-bottom: ${({ theme }) => theme.margins.xxxl};
 
     h2 {
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
       font-weight: 900;
       font-size: ${({ theme }) => theme.fontSizes.xxxl};
       margin-bottom: 0.4375rem;
@@ -192,7 +215,10 @@ export const Article = {
     }
 
     h3 {
-      font-family: Montserrat, sans-serif;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
       font-weight: 700;
       font-size: ${({ theme }) => theme.fontSizes.xl};
       margin-bottom: 0.4375rem;
@@ -201,8 +227,34 @@ export const Article = {
     }
   `,
 
+  ArticleCategoryBox: styled.div`
+    display: flex;
+  `,
+
+  ArticleDetailCategory: styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    border-radius: 5px;
+    color: ${({ theme }) => theme.colors.white};
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+    font-weight: 500;
+    font-size: 0.7rem;
+    margin-right: 5px;
+    padding: 0px 5px;
+    cursor: pointer;
+    background: ${({ theme }) => theme.colors.black};
+  `,
+
+  ArticleDetailCategoryBox: styled.div`
+    display: flex;
+    margin-top: 1rem;
+  `,
+
   ArticleDetailViewer: styled.div`
-    .tui-editor-contents p,
+    .toastui-editor-contents p,
     h1,
     h2,
     h3,
@@ -212,40 +264,54 @@ export const Article = {
     ol,
     li,
     hr {
-      color: #fff;
-      line-height: 2;
-      margin: 20px 0;
+      color: #222;
+      line-height: 1.3;
+      margin: 10px 0;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
     }
 
-    .tui-editor-contents h1 {
-      font-size: 28px;
+    .toastui-editor-contents h1 {
+      font-size: ${({ theme }) => theme.fontSizes.xxxl};
+      margin-top: ${({ theme }) => theme.margins.xxl};
     }
-    .tui-editor-contents p {
-      font-size: 20px;
+
+    .toastui-editor-contents h2 {
+      font-size: ${({ theme }) => theme.fontSizes.xxl};
+      margin-top: ${({ theme }) => theme.margins.xxl};
     }
-    .tui-editor-contents li,
-    .tui-editor-contents ul {
-      font-size: 20px;
+
+    .toastui-editor-contents p {
+      font-size: ${({ theme }) => theme.fontSizes.base};
+    }
+    .toastui-editor-contents li,
+    .toastui-editor-contents ul {
+      font-size: ${({ theme }) => theme.fontSizes.base};
+
+      p {
+        line-height: 2;
+      }
 
       ::before {
-        color: #fff;
+        color: #222;
         line-height: 2;
+        margin-top: 12px;
       }
     }
 
-    .tui-editor-contents code {
-      color: #fff;
-      background-color: #363c48;
+    .toastui-editor-contents code {
       padding: 2px 3px;
       letter-spacing: -0.3px;
       border-radius: 5px;
       font-size: 16px;
     }
 
-    .tui-editor-contents pre {
+    .toastui-editor-contents pre {
       margin: 2px 0 8px;
       padding: 18px;
-      background-color: #363c48;
+      font-size: ${({ theme }) => theme.fontSizes.base};
       border-radius: 5px;
     }
   `,
@@ -269,14 +335,18 @@ export const Post = {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    min-width: 100px;
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
     color: ${({ theme }) => theme.colors.black};
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
     font-weight: 900;
     font-size: 1rem;
     margin-right: 5px;
+    box-sizing: border-box;
   `,
 
   PostInput: styled.input`
@@ -288,7 +358,7 @@ export const Post = {
     padding: 10px 10px 10px 20px;
     box-sizing: border-box;
     font-size: 1.5rem;
-    font-family: Montserrat, sans-serif;
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
 
     ::placeholder {
@@ -297,9 +367,41 @@ export const Post = {
     }
   `,
 
+  PostCategory: styled.div.attrs(({ state }: { state: boolean }) => state)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid ${({ theme }) => theme.colors.dark};
+    border-radius: 5px;
+    color: ${({ theme, state }) =>
+      state ? theme.colors.white : theme.colors.black};
+    font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-right: 5px;
+    padding: 0px 5px;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+    background: ${({ theme, state }) =>
+      state ? theme.colors.black : theme.colors.white};
+
+    :hover {
+      background: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
+    }
+  `,
+
   Editor: styled.div``,
+
+  PostButtonBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
+    margin-top: ${({ theme }) => theme.margins.base};
+  `,
 };
 
+// Loader
 export const Loader = {
   Loader: styled.div`
     position: fixed;
@@ -315,5 +417,12 @@ export const Loader = {
     font-size: 30px;
     color: ${({ theme }) => theme.colors.black};
     border-radius: 20px;
+  `,
+};
+
+// About
+export const About = {
+  About: styled.div`
+    margin-top: 3.5rem;
   `,
 };
