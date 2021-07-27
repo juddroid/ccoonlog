@@ -11,6 +11,10 @@ export const Common = {
       margin-bottom: 0.4375rem;
       margin-top: 3.5rem;
       line-height: 1.1;
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
     a {
       cursor: pointer;

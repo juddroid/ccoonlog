@@ -9,6 +9,7 @@ export const App = {
     justify-content: center;
     padding: 2.625rem 1.3125rem;
     font-weight: 400;
+    min-width: 500px;
   `,
 };
 
@@ -65,6 +66,10 @@ export const Header = {
     color: ${({ theme }) => theme.colors.dark};
     line-height: ${({ theme }) => theme.sizes.xxxl};
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
+    }
   `,
 };
 
