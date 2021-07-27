@@ -117,8 +117,10 @@ export const ReactToggle = {
 // AsideMain
 export const AsideMain = {
   AsideMain: styled.div`
+    position: relative;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
     p {
       color: ${({ theme }) => theme.colors.black};
@@ -133,6 +135,19 @@ export const AsideMain = {
       }
     }
   `,
+
+  AsideInfoWrapper: styled.div`
+    display: flex;
+  `,
+
+  AsideSmallWrapper: styled.div`
+    position: relative;
+    display: none;
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  `,
+
   ProfileImageBox: styled.div`
     display: flex;
     justify-content: center;
@@ -152,6 +167,65 @@ export const AsideMain = {
 
     :hover {
       width: 150%;
+    }
+  `,
+};
+
+// AsideSmall
+export const AsideSmall = {
+  AsideSmall: styled.div``,
+
+  AsideSmallBox: styled.div`
+    background: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+
+    border-radius: 16px;
+    color: ${({ theme }) => theme.colors.black};
+
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  `,
+
+  AsideSmallButton: styled(Button.AsideButton)`
+    width: 75px;
+    height: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 3px;
+    padding: 0px;
+
+    :hover {
+      background: ${({ theme }) => theme.colors.white};
+      font-size: 13px;
+    }
+
+    :active {
+      font-size: 0.6rem;
+      color: #333;
+    }
+  `,
+
+  LogInButton: styled(Button.AsideButton)`
+    width: 75px;
+    height: 30px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 3px;
+    padding: 0px;
+    color: ${({ theme }) => theme.colors.hotPink};
+
+    :hover {
+      background: ${({ theme }) => theme.colors.white};
+      font-size: 13px;
+    }
+
+    :active {
+      font-size: 0.6rem;
+      color: #333;
     }
   `,
 };
