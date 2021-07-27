@@ -9,11 +9,6 @@ export const App = {
     justify-content: center;
     padding: 2.625rem 1.3125rem;
     font-weight: 400;
-    transition: all ease-in-out 0.4s;
-
-    @media (max-width: 768px) {
-      transform: translateX(-150px);
-    }
   `,
 };
 
@@ -158,7 +153,7 @@ export const AsideMain = {
 
 // AsideSticky
 export const AsideSticky = {
-  AsideSticky: styled.div.attrs(({ display }: { display: boolean }) => display)`
+  AsideSticky: styled.div`
     position: relative;
     top: 270px;
     left: -10px;
@@ -167,7 +162,7 @@ export const AsideSticky = {
     @media (max-width: 768px) {
       opacity: 0;
       transform: translateX(-100px);
-      /* display: ${({ display }) => !display && 'none'}; */
+      display: none;
     }
   `,
 

@@ -3,14 +3,12 @@ import { AsideSticky as S } from '../../styles/styles';
 import { Button as CS } from '../../styles/CommonStyles';
 import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL, CATEGORY_LIST as CATEGORY } from '../../const';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { asideStickyBoxState, categoryIDState } from '../../store/Recoil';
+import { useSetRecoilState } from 'recoil';
+import { categoryIDState } from '../../store/Recoil';
 import { handleClickFilteringButton } from '../../utils/utils';
 
 const AsideSticky = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
-  const [asideStickyBox, setAsideStickyBox] =
-    useRecoilState(asideStickyBoxState);
 
   const userLogOut = () =>
     firebase
@@ -25,17 +23,8 @@ const AsideSticky = () => {
     localStorage.removeItem(LOCAL.USER);
   };
 
-  const handleTransitionEnd = () => {
-    console.log('call');
-    setAsideStickyBox(false);
-  };
-
-  console.log(asideStickyBox);
   return (
-    <S.AsideSticky
-      display={asideStickyBox}
-      onTransitionEnd={handleTransitionEnd}
-    >
+    <S.AsideSticky>
       <S.AsideStickyBox>
         <Link to="/">
           <CS.AsideButton
