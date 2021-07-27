@@ -21,7 +21,8 @@ export const articleDataForRender = selector({
     if (!articleList) return;
 
     switch (categoryID) {
-      case 0 || 1:
+      case 0:
+      case 1:
         return articleList.filter(
           (article) =>
             (article.category &&

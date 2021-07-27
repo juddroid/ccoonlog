@@ -8,13 +8,13 @@ const Article = ({ article }: { article: ArticleProps }) => {
     <S.Article>
       <ArticleHeader {...{ article }} />
       <p>{article.subTitle}</p>
-      <>
+      <S.ArticleCategoryBox>
         {article.category?.map((category) => (
           <S.ArticleDetailCategory key={uuidv4()}>
             {category.item}
           </S.ArticleDetailCategory>
         ))}
-      </>
+      </S.ArticleCategoryBox>
     </S.Article>
   );
 };

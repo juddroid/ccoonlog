@@ -39,21 +39,26 @@ const AsideSticky = () => {
   return (
     <S.AsideSticky>
       <S.AsideStickyBox>
-        <CS.AsideButton onClick={handleClickReturnButton}>
-          Return
-        </CS.AsideButton>
-
-        <CS.AsideButton onClick={handleClickProjectButton}>
-          Project
-        </CS.AsideButton>
-
-        <CS.AsideButton onClick={handleClickAlgorithmButton}>
-          Algorithm
-        </CS.AsideButton>
-
-        <CS.AsideButton onClick={handleClickThinkingButton}>
-          Thinking
-        </CS.AsideButton>
+        <Link to="/">
+          <CS.AsideButton onClick={handleClickReturnButton}>
+            Return
+          </CS.AsideButton>
+        </Link>
+        <Link to="/">
+          <CS.AsideButton onClick={handleClickProjectButton}>
+            Project
+          </CS.AsideButton>
+        </Link>
+        <Link to="/">
+          <CS.AsideButton onClick={handleClickAlgorithmButton}>
+            Algorithm
+          </CS.AsideButton>
+        </Link>
+        <Link to="/">
+          <CS.AsideButton onClick={handleClickThinkingButton}>
+            Thinking
+          </CS.AsideButton>
+        </Link>
 
         <Link to="/about">
           <CS.AsideButton>About</CS.AsideButton>

@@ -227,6 +227,10 @@ export const Article = {
     }
   `,
 
+  ArticleCategoryBox: styled.div`
+    display: flex;
+  `,
+
   ArticleDetailCategory: styled.div`
     display: flex;
     justify-content: center;
