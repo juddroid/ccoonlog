@@ -58,11 +58,11 @@ export const articleDataForRender = selector({
 export const categoryListState = atom<CategoryProps[]>({
   key: 'categoryListState',
   default: [
-    { item: C.PERSONAL_PROJECT, state: false, id: 0 },
-    { item: C.TEAM_PROJECT, state: false, id: 1 },
-    { item: C.ALGORITHM, state: false, id: 2 },
-    { item: C.INTERESTING, state: false, id: 3 },
-    { item: C.THINKING, state: false, id: 4 },
+    { id: C.PERSONAL_PROJECT.id, item: C.PERSONAL_PROJECT.name, state: false },
+    { id: C.TEAM_PROJECT.id, item: C.TEAM_PROJECT.name, state: false },
+    { id: C.ALGORITHM.id, item: C.ALGORITHM.name, state: false },
+    { id: C.INTERESTING.id, item: C.INTERESTING.name, state: false },
+    { id: C.THINKING.id, item: C.THINKING.name, state: false },
   ],
 });
 

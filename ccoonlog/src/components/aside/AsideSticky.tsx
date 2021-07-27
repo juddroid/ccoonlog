@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import { AsideSticky as S } from '../../styles/styles';
 import { Button as CS } from '../../styles/CommonStyles';
 import firebase from '../../firebase';
-import { LOCAL_STORAGE as LOCAL } from '../../const';
+import { LOCAL_STORAGE as LOCAL, CATEGORY_LIST as CATEGORY } from '../../const';
 import { useSetRecoilState } from 'recoil';
 import { categoryIDState } from '../../store/Recoil';
+import { handleClickFilteringButton } from '../../utils/utils';
 
 const AsideSticky = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
@@ -22,40 +23,38 @@ const AsideSticky = () => {
     localStorage.removeItem(LOCAL.USER);
   };
 
-  const handleClickThinkingButton = () => {
-    setCategoryID(4);
-  };
-  const handleClickAlgorithmButton = () => {
-    setCategoryID(2);
-  };
-  const handleClickProjectButton = () => {
-    setCategoryID(0);
-  };
-
-  const handleClickReturnButton = () => {
-    setCategoryID(null);
-  };
-
   return (
     <S.AsideSticky>
       <S.AsideStickyBox>
         <Link to="/">
-          <CS.AsideButton onClick={handleClickReturnButton}>
+          <CS.AsideButton
+            id={`${null}`}
+            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+          >
             Return
           </CS.AsideButton>
         </Link>
         <Link to="/">
-          <CS.AsideButton onClick={handleClickProjectButton}>
+          <CS.AsideButton
+            id={`${CATEGORY.PERSONAL_PROJECT.id}`}
+            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+          >
             Project
           </CS.AsideButton>
         </Link>
         <Link to="/">
-          <CS.AsideButton onClick={handleClickAlgorithmButton}>
+          <CS.AsideButton
+            id={`${CATEGORY.ALGORITHM.id}`}
+            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+          >
             Algorithm
           </CS.AsideButton>
         </Link>
         <Link to="/">
-          <CS.AsideButton onClick={handleClickThinkingButton}>
+          <CS.AsideButton
+            id={`${CATEGORY.THINKING.id}`}
+            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+          >
             Thinking
           </CS.AsideButton>
         </Link>

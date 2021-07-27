@@ -34,8 +34,6 @@ const Main = () => {
   if (!articleDataRender) return null;
   if (articleDataRender.length === 0) return <S.Error>{TEXT.NO_DATA}</S.Error>;
 
-  console.log(articleDataRender);
-
   return (
     <S.Main>
       {[...articleDataRender]

@@ -47,15 +47,30 @@ export const LOCAL_STORAGE = {
   USER: 'user',
 };
 
-export const CATEGORY_LIST = {
-  TEAM_PROJECT: 'Team',
-  PERSONAL_PROJECT: 'Personal',
-  ALGORITHM: 'Algorithm',
-  INTERESTING: 'Interesting',
-  THINKING: 'Thinking',
-};
-
 // Text
 export const TEXT = {
   NO_DATA: 'There is no Article...😅',
+};
+
+export const CATEGORY_LIST = {
+  PERSONAL_PROJECT: {
+    id: 0,
+    name: 'Personal',
+  },
+  TEAM_PROJECT: {
+    id: 1,
+    name: 'Team',
+  },
+  ALGORITHM: {
+    id: 2,
+    name: 'Algorithm',
+  },
+  INTERESTING: {
+    id: 3,
+    name: 'Interesting',
+  },
+  THINKING: {
+    id: 4,
+    name: 'Thinking',
+  },
 };
