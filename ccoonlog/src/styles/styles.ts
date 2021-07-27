@@ -10,6 +10,7 @@ export const App = {
     padding: 2.625rem 1.3125rem;
     font-weight: 400;
     font: 100%/1.75;
+    width: 100%;
   `,
 };
 
@@ -48,9 +49,9 @@ export const Home = {
     margin: 0 10px;
     transition: all ease-in-out 0.4s;
 
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       transform: translateX(-150px);
-    }
+    } */
   `,
 };
 
@@ -167,6 +168,9 @@ export const AsideSticky = {
     @media (max-width: 768px) {
       opacity: 0;
       transform: translateX(-100px);
+
+      // display
+      display: none;
     }
   `,
 
