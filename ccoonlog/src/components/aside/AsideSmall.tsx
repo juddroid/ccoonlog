@@ -25,51 +25,54 @@ const AsideSmall = () => {
   return (
     <S.AsideSmall>
       <S.AsideSmallBox>
-        <Link to="/">
-          <S.AsideSmallButton
-            id={`${null}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Return
-          </S.AsideSmallButton>
-        </Link>
-        <Link to="/">
-          <S.AsideSmallButton
-            id={`${CATEGORY.PERSONAL_PROJECT.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Project
-          </S.AsideSmallButton>
-        </Link>
-        <Link to="/">
-          <S.AsideSmallButton
-            id={`${CATEGORY.ALGORITHM.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Algorithm
-          </S.AsideSmallButton>
-        </Link>
-        <Link to="/">
-          <S.AsideSmallButton
-            id={`${CATEGORY.THINKING.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Thinking
-          </S.AsideSmallButton>
-        </Link>
+        <S.AsideSmallFilterBox>
+          <Link to="/">
+            <S.AsideSmallButton
+              id={`${null}`}
+              onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+            >
+              Return
+            </S.AsideSmallButton>
+          </Link>
+          <Link to="/">
+            <S.AsideSmallButton
+              id={`${CATEGORY.PERSONAL_PROJECT.id}`}
+              onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+            >
+              Project
+            </S.AsideSmallButton>
+          </Link>
+          <Link to="/">
+            <S.AsideSmallButton
+              id={`${CATEGORY.ALGORITHM.id}`}
+              onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+            >
+              Algorithm
+            </S.AsideSmallButton>
+          </Link>
+          <Link to="/">
+            <S.AsideSmallButton
+              id={`${CATEGORY.THINKING.id}`}
+              onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+            >
+              Thinking
+            </S.AsideSmallButton>
+          </Link>
 
-        <Link to="/about">
-          <S.AsideSmallButton>About</S.AsideSmallButton>
-        </Link>
-
-        <Link to="/login">
-          <S.LogInButton>LogIn</S.LogInButton>
-        </Link>
-        <Link to="/">
-          <S.LogInButton onClick={handleClickLogOutButton}>
-            LogOut
-          </S.LogInButton>
-        </Link>
+          <Link to="/about">
+            <S.AsideSmallButton>About</S.AsideSmallButton>
+          </Link>
+        </S.AsideSmallFilterBox>
+        <S.AsideSmallLogInBox>
+          <Link to="/login">
+            <S.LogInButton>LogIn</S.LogInButton>
+          </Link>
+          <Link to="/">
+            <S.LogInButton onClick={handleClickLogOutButton}>
+              LogOut
+            </S.LogInButton>
+          </Link>
+        </S.AsideSmallLogInBox>
       </S.AsideSmallBox>
     </S.AsideSmall>
   );

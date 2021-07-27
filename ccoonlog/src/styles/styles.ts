@@ -178,25 +178,27 @@ export const AsideSmall = {
   AsideSmallBox: styled.div`
     background: ${({ theme }) => theme.colors.white};
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
-
+    max-width: 420px;
     border-radius: 16px;
     color: ${({ theme }) => theme.colors.black};
-
     height: fit-content;
-
-    display: flex;
-    align-items: center;
     padding: 5px 10px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
   `,
 
   AsideSmallButton: styled(Button.AsideButton)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 75px;
     height: 30px;
     font-size: 11px;
     font-weight: 600;
     margin-right: 3px;
     padding: 0px;
+    box-sizing: border-box;
 
     :hover {
       background: ${({ theme }) => theme.colors.white};
@@ -210,6 +212,9 @@ export const AsideSmall = {
   `,
 
   LogInButton: styled(Button.AsideButton)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 75px;
     height: 30px;
     font-size: 11px;
@@ -227,6 +232,15 @@ export const AsideSmall = {
       font-size: 0.6rem;
       color: #333;
     }
+  `,
+
+  AsideSmallFilterBox: styled.div`
+    display: flex;
+  `,
+
+  AsideSmallLogInBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
   `,
 };
 
