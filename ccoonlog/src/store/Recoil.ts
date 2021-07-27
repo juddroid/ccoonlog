@@ -94,3 +94,8 @@ export const editSubTitleState = atom<string | undefined>({
   key: 'editSubTitleState',
   default: '',
 });
+
+export const asideStickyBoxState = atom({
+  key: 'asideStickyBoxState',
+  default: true,
+});
