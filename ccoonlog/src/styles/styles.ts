@@ -46,6 +46,11 @@ export const Home = {
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
     margin: 0 10px;
+    transition: all ease-in-out 0.4s;
+
+    @media (max-width: 768px) {
+      transform: translateX(-150px);
+    }
   `,
 };
 
@@ -157,6 +162,12 @@ export const AsideSticky = {
     position: relative;
     top: 270px;
     left: -10px;
+    transition: all ease-in-out 0.4s;
+
+    @media (max-width: 768px) {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
   `,
 
   AsideStickyBox: styled.div`

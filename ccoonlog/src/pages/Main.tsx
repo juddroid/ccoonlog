@@ -4,13 +4,13 @@ import Article from './Article';
 import { v4 as uuidv4 } from 'uuid';
 import { Main as S } from '../styles/styles';
 import { ArticleProps } from '../types/types';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { articleDataForRender, articleDataState } from '../store/Recoil';
 import { TEXT } from '../const';
 
 const Main = () => {
-  const [articleData, setArticleData] =
-    useRecoilState<ArticleProps[] | null>(articleDataState);
+  const setArticleData =
+    useSetRecoilState<ArticleProps[] | null>(articleDataState);
   const articleDataRender = useRecoilValue(articleDataForRender);
 
   useEffect(() => {
