@@ -57,6 +57,7 @@ const colors = {
   facebook: '#3B5A98',
   naver: '#1DCE60',
   kakao: '#FFEF00',
+  gray: '#555',
 };
 
 const theme: DefaultTheme = {

@@ -3,8 +3,12 @@ import { AsideSticky as S } from '../../styles/styles';
 import { Button as CS } from '../../styles/CommonStyles';
 import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
+import { useSetRecoilState } from 'recoil';
+import { categoryIDState } from '../../store/Recoil';
 
 const AsideSticky = () => {
+  const setCategoryID = useSetRecoilState(categoryIDState);
+
   const userLogOut = () =>
     firebase
       .auth()
@@ -18,21 +22,39 @@ const AsideSticky = () => {
     localStorage.removeItem(LOCAL.USER);
   };
 
+  const handleClickThinkingButton = () => {
+    setCategoryID(4);
+  };
+  const handleClickAlgorithmButton = () => {
+    setCategoryID(2);
+  };
+  const handleClickProjectButton = () => {
+    setCategoryID(0);
+  };
+
+  const handleClickReturnButton = () => {
+    setCategoryID(null);
+  };
+
   return (
     <S.AsideSticky>
       <S.AsideStickyBox>
-        <Link to="/">
-          <CS.AsideButton>Return</CS.AsideButton>
-        </Link>
-        <Link to="/">
-          <CS.AsideButton>Project</CS.AsideButton>
-        </Link>
-        <Link to="/">
-          <CS.AsideButton>Algorithm</CS.AsideButton>
-        </Link>
-        <Link to="/">
-          <CS.AsideButton>Thinking</CS.AsideButton>
-        </Link>
+        <CS.AsideButton onClick={handleClickReturnButton}>
+          Return
+        </CS.AsideButton>
+
+        <CS.AsideButton onClick={handleClickProjectButton}>
+          Project
+        </CS.AsideButton>
+
+        <CS.AsideButton onClick={handleClickAlgorithmButton}>
+          Algorithm
+        </CS.AsideButton>
+
+        <CS.AsideButton onClick={handleClickThinkingButton}>
+          Thinking
+        </CS.AsideButton>
+
         <Link to="/about">
           <CS.AsideButton>About</CS.AsideButton>
         </Link>

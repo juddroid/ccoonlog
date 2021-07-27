@@ -28,6 +28,11 @@ export const LogIn = {
 // Main
 export const Main = {
   Main: styled.main``,
+
+  Error: styled.main`
+    margin-top: 3.5rem;
+    color: ${({ theme }) => theme.colors.gray};
+  `,
 };
 
 // Home
@@ -57,8 +62,9 @@ export const Header = {
     font-size: ${({ theme }) => theme.fontSizes.xxl};
     font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 900;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.dark};
     line-height: ${({ theme }) => theme.sizes.xxxl};
+    cursor: pointer;
   `,
 };
 

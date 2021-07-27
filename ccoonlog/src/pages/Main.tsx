@@ -4,9 +4,14 @@ import Article from './Article';
 import { v4 as uuidv4 } from 'uuid';
 import { Main as S } from '../styles/styles';
 import { ArticleProps } from '../types/types';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { articleDataForRender, articleDataState } from '../store/Recoil';
+import { TEXT } from '../const';
 
 const Main = () => {
-  const [data, setData] = useState<ArticleProps[]>([]);
+  const [articleData, setArticleData] =
+    useRecoilState<ArticleProps[] | null>(articleDataState);
+  const articleDataRender = useRecoilValue(articleDataForRender);
 
   useEffect(() => {
     const articleRef = firebase.database().ref('article');
@@ -18,7 +23,7 @@ const Main = () => {
         articleList.push(article[id]);
       }
 
-      setData(articleList);
+      setArticleData(articleList);
     });
 
     return () => articleRef.off();
@@ -26,11 +31,14 @@ const Main = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!data) return null;
+  if (!articleDataRender) return null;
+  if (articleDataRender.length === 0) return <S.Error>{TEXT.NO_DATA}</S.Error>;
+
+  console.log(articleDataRender);
 
   return (
     <S.Main>
-      {[...data]
+      {[...articleDataRender]
         .sort((a: any, b: any) => +new Date(b.date) - +new Date(a.date))
         // .reverse()
         .map((article) => (

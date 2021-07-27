@@ -54,3 +54,8 @@ export const CATEGORY_LIST = {
   INTERESTING: 'Interesting',
   THINKING: 'Thinking',
 };
+
+// Text
+export const TEXT = {
+  NO_DATA: 'There is no Article...😅',
+};

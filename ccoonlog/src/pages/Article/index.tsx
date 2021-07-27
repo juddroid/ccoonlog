@@ -4,7 +4,6 @@ import { ArticleProps } from '../../types/types';
 import { v4 as uuidv4 } from 'uuid';
 
 const Article = ({ article }: { article: ArticleProps }) => {
-  console.log(article);
   return (
     <S.Article>
       <ArticleHeader {...{ article }} />
