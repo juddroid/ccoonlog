@@ -31,6 +31,6 @@ export const handleClickFilteringButton = (
   e: React.MouseEvent,
   callback: SetterOrUpdater<number | null>
 ) => {
-  const id = !e.currentTarget.id ? null : +e.currentTarget.id;
+  const id = e.currentTarget.id === 'null' ? null : +e.currentTarget.id;
   callback(id);
 };
