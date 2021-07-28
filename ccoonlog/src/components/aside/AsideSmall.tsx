@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom';
 import { AsideSmall as S } from '../../styles/styles';
 import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL, CATEGORY_LIST as CATEGORY } from '../../const';
-import { useSetRecoilState } from 'recoil';
-import { categoryIDState } from '../../store/Recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { categoryIDState, isLoggedInState } from '../../store/Recoil';
 import { handleClickFilteringButton } from '../../utils/utils';
 
 const AsideSmall = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
+  const isLoggedIn = useRecoilValue(isLoggedInState);
 
   const userLogOut = () =>
     firebase
@@ -64,14 +65,17 @@ const AsideSmall = () => {
           </Link>
         </S.AsideSmallFilterBox>
         <S.AsideSmallLogInBox>
-          <Link to="/login">
-            <S.LogInButton>LogIn</S.LogInButton>
-          </Link>
-          <Link to="/">
-            <S.LogInButton onClick={handleClickLogOutButton}>
-              LogOut
-            </S.LogInButton>
-          </Link>
+          {isLoggedIn ? (
+            <Link to="/">
+              <S.LogInButton onClick={handleClickLogOutButton}>
+                LogOut
+              </S.LogInButton>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <S.LogInButton>LogIn</S.LogInButton>
+            </Link>
+          )}
         </S.AsideSmallLogInBox>
       </S.AsideSmallBox>
     </S.AsideSmall>

@@ -3,12 +3,13 @@ import { AsideSticky as S } from '../../styles/styles';
 import { Button as CS } from '../../styles/CommonStyles';
 import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL, CATEGORY_LIST as CATEGORY } from '../../const';
-import { useSetRecoilState } from 'recoil';
-import { categoryIDState } from '../../store/Recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { categoryIDState, isLoggedInState } from '../../store/Recoil';
 import { handleClickFilteringButton } from '../../utils/utils';
 
 const AsideSticky = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
+  const isLoggedIn = useRecoilValue(isLoggedInState);
 
   const userLogOut = () =>
     firebase
@@ -62,15 +63,17 @@ const AsideSticky = () => {
         <Link to="/about">
           <CS.AsideButton>About</CS.AsideButton>
         </Link>
-
-        <Link to="/login">
-          <S.LogInButton>LogIn</S.LogInButton>
-        </Link>
-        <Link to="/">
-          <S.LogInButton onClick={handleClickLogOutButton}>
-            LogOut
-          </S.LogInButton>
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/">
+            <S.LogInButton onClick={handleClickLogOutButton}>
+              LogOut
+            </S.LogInButton>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <S.LogInButton>LogIn</S.LogInButton>
+          </Link>
+        )}
       </S.AsideStickyBox>
     </S.AsideSticky>
   );

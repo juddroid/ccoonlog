@@ -1,36 +1,15 @@
 import OAuthButton from '../common/OAuthButton';
-import { OAUTH_BUTTON_NAME as O, LOCAL_STORAGE as LOCAL } from '../../const';
+import { OAUTH_BUTTON_NAME as O } from '../../const';
 import theme from '../../styles/theme';
 import firebase from '../../firebase';
 
 const GitHubOAuthButton = () => {
-  const getToken = () => {
+  const signInWithRedirect = () => {
     const provider = new firebase.auth.GithubAuthProvider();
-    firebase
-      .auth()
-      .signInWithPopup(provider)
-      .then((res) => {
-        const credential = res.credential as firebase.auth.OAuthCredential;
-        const token = credential.accessToken;
-        const user = res.user;
-        localStorage.setItem(LOCAL.TOKEN, JSON.stringify(token));
-        localStorage.setItem(LOCAL.USER, JSON.stringify(user));
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = error.credential;
-        console.table({
-          errorCode: errorCode,
-          errorMessage: errorMessage,
-          email: email,
-          credential: credential,
-        });
-      });
+    firebase.auth().signInWithRedirect(provider);
   };
 
-  const handleClickLogInButton = () => getToken();
+  const handleClickLogInButton = () => signInWithRedirect();
 
   return (
     <OAuthButton
