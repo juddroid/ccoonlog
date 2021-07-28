@@ -33,7 +33,7 @@ export const Main = {
 
   Error: styled.main`
     margin-top: 3.5rem;
-    color: ${({ theme }) => theme.colors.gray};
+    color: ${({ theme }) => theme.colors.black};
   `,
 };
 
@@ -95,6 +95,19 @@ export const ReactToggle = {
     padding: 0;
     margin-left: 40px;
   `,
+
+  ReactToggleTrack: styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50px;
+    height: 24px;
+    padding: 0;
+    border-radius: 30px;
+    background-color: #0f1114;
+    transition: all 0.4s ease;
+  `,
+
   ReactToggleTrackCheck: styled.div`
     border: 1px solid #fff;
     position: absolute;
@@ -547,5 +560,66 @@ export const Loader = {
 export const About = {
   About: styled.div`
     margin-top: 3.5rem;
+
+    .toastui-editor-contents p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    li,
+    hr {
+      color: ${({ theme }) => theme.colors.dark};
+      line-height: 1.5;
+      margin: 10px 0;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
+    }
+
+    .toastui-editor-contents h1 {
+      font-size: ${({ theme }) => theme.fontSizes.xxxl};
+      margin-top: ${({ theme }) => theme.margins.xxl};
+    }
+
+    .toastui-editor-contents h2 {
+      font-size: ${({ theme }) => theme.fontSizes.xxl};
+      margin-top: ${({ theme }) => theme.margins.xxl};
+    }
+
+    .toastui-editor-contents p {
+      font-size: ${({ theme }) => theme.fontSizes.base};
+    }
+    .toastui-editor-contents li,
+    .toastui-editor-contents ul {
+      font-size: ${({ theme }) => theme.fontSizes.base};
+
+      p {
+        line-height: 2;
+      }
+
+      ::before {
+        color: #222;
+        line-height: 2;
+        margin-top: 12px;
+      }
+    }
+
+    .toastui-editor-contents code {
+      padding: 2px 3px;
+      letter-spacing: -0.3px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .toastui-editor-contents pre {
+      margin: 2px 0 8px;
+      padding: 18px;
+      font-size: ${({ theme }) => theme.fontSizes.base};
+      border-radius: 5px;
+    }
   `,
 };
