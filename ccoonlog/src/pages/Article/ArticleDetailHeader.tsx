@@ -8,18 +8,21 @@ const ArticleDetailHeader = ({
 }: {
   articleDetail: ArticleDetailProps;
 }) => {
+  console.log(articleDetail);
+  const { title, date, category, subTitle, content } = articleDetail;
+
   return (
     <S.ArticleDetailHeader>
-      <h2>{articleDetail.title}</h2>
-      <Info date={articleDetail.date} />
+      <h2>{title}</h2>
+      <Info {...{ date, content }} />
       <S.ArticleDetailCategoryBox>
-        {articleDetail.category?.map((category) => (
+        {category?.map((category) => (
           <S.ArticleDetailCategory key={uuidv4()}>
             {category.item}
           </S.ArticleDetailCategory>
         ))}
       </S.ArticleDetailCategoryBox>
-      <h3>{articleDetail.subTitle}</h3>
+      <h3>{subTitle}</h3>
     </S.ArticleDetailHeader>
   );
 };
