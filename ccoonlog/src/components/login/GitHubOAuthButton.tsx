@@ -1,6 +1,6 @@
 import OAuthButton from '../common/OAuthButton';
 import { OAUTH_BUTTON_NAME as O } from '../../const';
-import theme from '../../styles/theme';
+import light from '../../styles/lightTheme';
 import firebase from '../../firebase';
 
 const GitHubOAuthButton = () => {
@@ -14,8 +14,8 @@ const GitHubOAuthButton = () => {
   return (
     <OAuthButton
       name={O.GITHUB}
-      color={theme.colors.white}
-      background={theme.colors.black}
+      color={light.colors.white}
+      background={light.colors.black}
       onClick={handleClickLogInButton}
     />
   );

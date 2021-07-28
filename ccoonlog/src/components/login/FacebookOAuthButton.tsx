@@ -1,6 +1,6 @@
 import OAuthButton from '../common/OAuthButton';
 import { OAUTH_BUTTON_NAME as O } from '../../const';
-import theme from '../../styles/theme';
+import light from '../../styles/lightTheme';
 import firebase from '../../firebase';
 
 const FacebookOAuthButton = () => {
@@ -14,8 +14,8 @@ const FacebookOAuthButton = () => {
   return (
     <OAuthButton
       name={O.FACEBOOK}
-      color={theme.colors.white}
-      background={theme.colors.facebook}
+      color={light.colors.white}
+      background={light.colors.facebook}
       onClick={handleClickLogInButton}
     />
   );

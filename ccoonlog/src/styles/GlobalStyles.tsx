@@ -12,6 +12,8 @@ const GlobalStyles = createGlobalStyle`
   
   body {
     overflow-y: scroll;
+    background: ${({ theme }) => theme.colors.white};
+    transition: all ease-in-out 0.4s;
   }
   
   

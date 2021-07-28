@@ -48,7 +48,6 @@ export const Home = {
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
     margin: 0 10px;
-    transition: all ease-in-out 0.4s;
   `,
 };
 
@@ -117,7 +116,7 @@ export const ReactToggle = {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: #fafafa;
+    background-color: #fff;
     box-sizing: border-box;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     transform: ${({ modePosition }: { modePosition: number }) =>
@@ -132,7 +131,6 @@ export const AsideMain = {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: all ease-in-out 0.4s;
 
     p {
       color: ${({ theme }) => theme.colors.black};
@@ -162,6 +160,7 @@ export const AsideMain = {
   AsideSmallWrapper: styled.div`
     display: none;
     background: ${({ theme }) => theme.colors.white};
+    transition: all ease-in-out 0.4s;
 
     @media (max-width: 768px) {
       display: flex;
@@ -194,8 +193,6 @@ export const AsideMain = {
 // AsideSmall
 export const AsideSmall = {
   AsideSmall: styled.div`
-    /* position: relative;
-    z-index: 10; */
     width: 100%;
   `,
 
@@ -209,12 +206,8 @@ export const AsideSmall = {
     padding: 3px 5px;
     box-sizing: border-box;
     display: flex;
-    transition: all ease-in-out 0.4s;
     margin-bottom: 15px;
     justify-content: space-evenly;
-
-    @media (max-width: 768px) {
-    }
   `,
 
   AsideSmallButton: styled(Button.AsideButton)`
@@ -364,14 +357,14 @@ export const Article = {
     width: fit-content;
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
-    color: ${({ theme }) => theme.colors.white};
+    color: #fff;
     font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 500;
     font-size: 0.7rem;
     margin-right: 5px;
     padding: 0px 5px;
     cursor: pointer;
-    background: ${({ theme }) => theme.colors.black};
+    background: ${({ theme }) => theme.colors.back};
   `,
 
   ArticleDetailCategoryBox: styled.div`
@@ -392,7 +385,7 @@ export const Article = {
     ol,
     li,
     hr {
-      color: #222;
+      color: ${({ theme }) => theme.colors.dark};
       line-height: 1.3;
       margin: 10px 0;
       font-family: Montserrat, -apple-system, BlinkMacSystemFont,
@@ -520,7 +513,9 @@ export const Post = {
     }
   `,
 
-  Editor: styled.div``,
+  Editor: styled.div`
+    background: #fff;
+  `,
 
   PostButtonBox: styled.div`
     display: flex;
