@@ -33,7 +33,7 @@ export const Main = {
 
   Error: styled.main`
     margin-top: 3.5rem;
-    color: ${({ theme }) => theme.colors.gray};
+    color: ${({ theme }) => theme.colors.black};
   `,
 };
 
@@ -48,7 +48,6 @@ export const Home = {
     font-weight: 400;
     font: 100%/1.75 'Merriweather', 'Georgia', serif;
     margin: 0 10px;
-    transition: all ease-in-out 0.4s;
   `,
 };
 
@@ -96,6 +95,19 @@ export const ReactToggle = {
     padding: 0;
     margin-left: 40px;
   `,
+
+  ReactToggleTrack: styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50px;
+    height: 24px;
+    padding: 0;
+    border-radius: 30px;
+    background-color: #0f1114;
+    transition: all 0.4s ease;
+  `,
+
   ReactToggleTrackCheck: styled.div`
     border: 1px solid #fff;
     position: absolute;
@@ -117,7 +129,7 @@ export const ReactToggle = {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: #fafafa;
+    background-color: #fff;
     box-sizing: border-box;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     transform: ${({ modePosition }: { modePosition: number }) =>
@@ -132,7 +144,6 @@ export const AsideMain = {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transition: all ease-in-out 0.4s;
 
     p {
       color: ${({ theme }) => theme.colors.black};
@@ -162,6 +173,7 @@ export const AsideMain = {
   AsideSmallWrapper: styled.div`
     display: none;
     background: ${({ theme }) => theme.colors.white};
+    transition: all ease-in-out 0.4s;
 
     @media (max-width: 768px) {
       display: flex;
@@ -194,8 +206,6 @@ export const AsideMain = {
 // AsideSmall
 export const AsideSmall = {
   AsideSmall: styled.div`
-    /* position: relative;
-    z-index: 10; */
     width: 100%;
   `,
 
@@ -209,12 +219,8 @@ export const AsideSmall = {
     padding: 3px 5px;
     box-sizing: border-box;
     display: flex;
-    transition: all ease-in-out 0.4s;
     margin-bottom: 15px;
     justify-content: space-evenly;
-
-    @media (max-width: 768px) {
-    }
   `,
 
   AsideSmallButton: styled(Button.AsideButton)`
@@ -364,14 +370,14 @@ export const Article = {
     width: fit-content;
     border: 1px solid ${({ theme }) => theme.colors.dark};
     border-radius: 5px;
-    color: ${({ theme }) => theme.colors.white};
+    color: #fff;
     font-family: Montserrat, 'Nanum Gothic Coding', 'Georgia', sans-serif;
     font-weight: 500;
     font-size: 0.7rem;
     margin-right: 5px;
     padding: 0px 5px;
     cursor: pointer;
-    background: ${({ theme }) => theme.colors.black};
+    background: ${({ theme }) => theme.colors.back};
   `,
 
   ArticleDetailCategoryBox: styled.div`
@@ -392,7 +398,7 @@ export const Article = {
     ol,
     li,
     hr {
-      color: #222;
+      color: ${({ theme }) => theme.colors.dark};
       line-height: 1.3;
       margin: 10px 0;
       font-family: Montserrat, -apple-system, BlinkMacSystemFont,
@@ -520,7 +526,9 @@ export const Post = {
     }
   `,
 
-  Editor: styled.div``,
+  Editor: styled.div`
+    background: #fff;
+  `,
 
   PostButtonBox: styled.div`
     display: flex;
@@ -552,5 +560,66 @@ export const Loader = {
 export const About = {
   About: styled.div`
     margin-top: 3.5rem;
+
+    .toastui-editor-contents p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    li,
+    hr {
+      color: ${({ theme }) => theme.colors.dark};
+      line-height: 1.5;
+      margin: 10px 0;
+      font-family: Montserrat, -apple-system, BlinkMacSystemFont,
+        'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
+        나눔고딕, 'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial,
+        돋움, Dotum, Tahoma, Geneva, sans-serif;
+    }
+
+    .toastui-editor-contents h1 {
+      font-size: ${({ theme }) => theme.fontSizes.xxxl};
+      margin-top: ${({ theme }) => theme.margins.xxl};
+    }
+
+    .toastui-editor-contents h2 {
+      font-size: ${({ theme }) => theme.fontSizes.xxl};
+      margin-top: ${({ theme }) => theme.margins.xxl};
+    }
+
+    .toastui-editor-contents p {
+      font-size: ${({ theme }) => theme.fontSizes.base};
+    }
+    .toastui-editor-contents li,
+    .toastui-editor-contents ul {
+      font-size: ${({ theme }) => theme.fontSizes.base};
+
+      p {
+        line-height: 2;
+      }
+
+      ::before {
+        color: #222;
+        line-height: 2;
+        margin-top: 12px;
+      }
+    }
+
+    .toastui-editor-contents code {
+      padding: 2px 3px;
+      letter-spacing: -0.3px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .toastui-editor-contents pre {
+      margin: 2px 0 8px;
+      padding: 18px;
+      font-size: ${({ theme }) => theme.fontSizes.base};
+      border-radius: 5px;
+    }
   `,
 };

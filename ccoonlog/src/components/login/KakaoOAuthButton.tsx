@@ -1,13 +1,13 @@
 import OAuthButton from '../common/OAuthButton';
 import { OAUTH_BUTTON_NAME as O } from '../../const';
-import theme from '../../styles/theme';
+import light from '../../styles/lightTheme';
 
 const KakaoOAuthButton = () => {
   return (
     <OAuthButton
       name={O.KAKAO}
-      color={theme.colors.black}
-      background={theme.colors.kakao}
+      color={light.colors.black}
+      background={light.colors.kakao}
     />
   );
 };

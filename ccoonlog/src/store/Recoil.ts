@@ -99,3 +99,9 @@ export const isLoggedInState = atom({
   key: 'isLoggedInState',
   default: false,
 });
+
+// dark mode: default = false = light
+export const displayState = atom({
+  key: 'displayState',
+  default: false,
+});

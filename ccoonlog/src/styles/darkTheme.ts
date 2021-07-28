@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import { calcRem } from './../utils/utils';
+import { calcRem } from '../utils/utils';
 
 const fontSizes = {
   small: calcRem(14),
@@ -48,19 +48,20 @@ const boxSizes = {
 };
 
 const colors = {
-  black: '#000',
-  white: '#FFF',
-  dark: '#222',
+  black: '#fff',
+  white: '#011627', //'#1C2020'
+  dark: '#fff',
   pink: '#ffa7c4',
-  hotPink: '#d23669',
+  hotPink: '#ffa7c4',
   yellow: 'yellow',
   facebook: '#3B5A98',
   naver: '#1DCE60',
   kakao: '#FFEF00',
   gray: '#555',
+  back: 'transparent',
 };
 
-const theme: DefaultTheme = {
+const dark = {
   fontSizes,
   colors,
   sizes,
@@ -69,4 +70,4 @@ const theme: DefaultTheme = {
   boxSizes,
 };
 
-export default theme;
+export default dark;

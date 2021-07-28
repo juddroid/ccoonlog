@@ -1,9 +1,12 @@
 import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import App from '../shared/App';
 
 const Root = () => (
   <BrowserRouter>
-    <App />
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
   </BrowserRouter>
 );
 
