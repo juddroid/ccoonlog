@@ -429,9 +429,15 @@ export const Article = {
       }
 
       ::before {
-        color: #222;
-        line-height: 2;
-        margin-top: 12px;
+        color: ${({ theme }) => theme.colors.dark};
+        line-height: 1.3;
+        margin-top: 6px;
+      }
+    }
+
+    .toastui-editor-contents ul > li {
+      ::before {
+        margin-top: 13px;
       }
     }
 
