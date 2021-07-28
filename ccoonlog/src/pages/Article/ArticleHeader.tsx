@@ -4,22 +4,23 @@ import { Common as S } from '../../styles/CommonStyles';
 import { ArticleProps } from '../../types/types';
 
 const ArticleHeader = ({ article }: { article: ArticleProps }) => {
-  const fileName = article.title;
+  const { id, date, title, content } = article;
+
   return (
     <S.Header>
       <Link
         to={{
-          pathname: `pages/post/${fileName}`,
+          pathname: `pages/post/${title}`,
           state: {
-            id: article.id,
-            title: article.title,
+            id: id,
+            title: title,
           },
         }}
       >
-        <h3>{article.title}</h3>
+        <h3>{title}</h3>
       </Link>
 
-      <Info date={article.date} />
+      <Info {...{ date, content }} />
     </S.Header>
   );
 };

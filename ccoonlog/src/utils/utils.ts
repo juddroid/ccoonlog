@@ -34,3 +34,32 @@ export const handleClickFilteringButton = (
   const id = e.currentTarget.id === 'null' ? null : +e.currentTarget.id;
   callback(id);
 };
+
+export const getWordCount = (content: string): number =>
+  content.split(' ').length;
+
+export const getReadingTime = (content: string) => {
+  const avgWordsPerMin = 250;
+  const wordCount = getWordCount(content);
+  const time = Math.ceil(wordCount / avgWordsPerMin);
+  return time;
+};
+
+export const getCoffee = (time: number) => {
+  const read = Math.ceil(time / 5);
+  let coffee = ``;
+
+  if (time <= 5) coffee = '☕️'.repeat(1);
+  else if (time <= 10) coffee = '☕️'.repeat(read);
+  else if (time <= 15) coffee = '☕️'.repeat(read);
+  else if (time <= 20) coffee = '☕️'.repeat(read);
+  else if (time <= 25) coffee = '☕️'.repeat(read);
+  else if (time <= 30) coffee = '🍱'.repeat(read % 5);
+  else if (time <= 35) coffee = '🍱'.repeat(read % 5);
+  else if (time <= 40) coffee = '🍱'.repeat(read % 5);
+  else if (time <= 45) coffee = '🍱'.repeat(read % 5);
+  else if (time <= 50) coffee = '🍱'.repeat(read % 5);
+  else coffee = '🥵';
+
+  return coffee;
+};
