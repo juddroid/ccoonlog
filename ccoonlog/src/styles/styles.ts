@@ -60,13 +60,13 @@ export const Header = {
     align-items: center;
     margin-bottom: ${({ theme }) => theme.paddings.xxxl};
     background: ${({ theme }) => theme.colors.white};
-    z-index: 9999;
     transition: all ease-in-out 0.4s;
 
     @media (max-width: 768px) {
       position: sticky;
       top: 0px;
       padding: 10px 0px;
+      z-index: 9999;
     }
   `,
 
@@ -151,6 +151,7 @@ export const AsideMain = {
       position: sticky;
       top: -32px;
       padding: 10px 0px;
+      z-index: 9998;
     }
   `,
 
@@ -159,7 +160,6 @@ export const AsideMain = {
   `,
 
   AsideSmallWrapper: styled.div`
-    position: relative;
     display: none;
     background: ${({ theme }) => theme.colors.white};
 
@@ -194,8 +194,8 @@ export const AsideMain = {
 // AsideSmall
 export const AsideSmall = {
   AsideSmall: styled.div`
-    position: relative;
-    z-index: 10;
+    /* position: relative;
+    z-index: 10; */
     width: 100%;
   `,
 
@@ -321,8 +321,6 @@ export const Article = {
   `,
 
   ArticleDetail: styled.div`
-    position: relative;
-    z-index: -1;
     padding: 0px 1px;
   `,
 
@@ -382,6 +380,8 @@ export const Article = {
   `,
 
   ArticleDetailViewer: styled.div`
+    position: relative;
+
     .toastui-editor-contents p,
     h1,
     h2,
