@@ -8,6 +8,7 @@ import { Article as S } from '../../styles/styles';
 import ArticleDeleteButton from './ArticleDeleteButton';
 import ArticleEditButton from './ArticleEditButton';
 import { isAuth } from '../../utils/utils';
+import Comment from '../../components/comment/Comment';
 
 const ArticleDetail = () => {
   const [articleDetail, setArticleDetail] =
@@ -40,6 +41,7 @@ const ArticleDetail = () => {
           <ArticleDeleteButton articleID={location.state.id} />
         </S.ArticleButtonBox>
       )}
+      <Comment />
     </S.ArticleDetail>
   );
 };

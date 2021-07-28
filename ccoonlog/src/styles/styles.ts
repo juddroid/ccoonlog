@@ -629,3 +629,52 @@ export const About = {
     }
   `,
 };
+
+// Comment
+
+export const Comment = {
+  Comment: styled.div`
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  `,
+  CommentInput: styled.textarea`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    height: 200px;
+    border-radius: 16px;
+    padding: 20px;
+    background: ${({ theme }) => theme.colors.white};
+    outline: none;
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    box-sizing: border-box;
+
+    :focus-within {
+      border: 1px solid ${({ theme }) => theme.colors.back};
+      background: #fff;
+    }
+  `,
+
+  CommentDisplayBox: styled.div``,
+
+  CommentButtonBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
+  `,
+
+  CommentDisplay: styled.div`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    border-radius: 16px;
+    width: 100%;
+    height: fit-content;
+    height: 100px;
+    padding: ${({ theme }) => theme.paddings.lg};
+    margin-bottom: ${({ theme }) => theme.margins.base};
+    box-sizing: border-box;
+  `,
+
+  CommentPawButton: styled(Button.MenuButton)`
+    color: ${({ theme }) => theme.colors.hotPink};
+  `,
+};
