@@ -6,36 +6,26 @@ import firebase from '../firebase';
 import Router from './Router';
 import Loader from './Loader';
 import { LOCAL_STORAGE as LOCAL } from '../const';
+import { useRecoilState } from 'recoil';
+import { isLoggedInState } from '../store/Recoil';
 
 const Home = () => {
   const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(isLoggedInState);
 
   useEffect(() => {
-    const getToken = () => {
+    const checkRedirectResult = () => {
       firebase
         .auth()
         .getRedirectResult()
         .then((res) => {
-          if (res.credential) {
-            const credential = res.credential as firebase.auth.OAuthCredential;
-            const token = credential.accessToken;
-            const user = res.user;
-
-            localStorage.setItem(LOCAL.TOKEN, JSON.stringify(token));
-            localStorage.setItem(LOCAL.USER, JSON.stringify(user));
-
-            console.log('로그인되었습니다.');
-          }
+          res.credential && console.log('로그인 성공');
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          const email = error.email;
-          const credential = error.credential;
+          const { code, message, email, credential } = error;
           console.table({
-            errorCode: errorCode,
-            errorMessage: errorMessage,
+            code: code,
+            message: message,
             email: email,
             credential: credential,
           });
@@ -43,12 +33,17 @@ const Home = () => {
     };
 
     const off = firebase.auth().onAuthStateChanged((user) => {
-      // console.log(user);
-      user ? setIsLoggedIn(true) : setIsLoggedIn(false);
+      if (user) {
+        setIsLoggedIn(true);
+        localStorage.setItem(LOCAL.USER, JSON.stringify(user));
+        console.log('로그인되었습니다.');
+      } else {
+        setIsLoggedIn(false);
+      }
       setInit(true);
     });
 
-    getToken();
+    checkRedirectResult();
     return () => off();
   }, []);
 

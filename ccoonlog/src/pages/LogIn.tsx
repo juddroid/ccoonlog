@@ -7,7 +7,6 @@ import { LogIn as S } from '../styles/styles';
 import { Redirect } from 'react-router-dom';
 
 const LogIn = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
-  console.log('login component', isLoggedIn);
   return (
     <>
       {isLoggedIn ? (
