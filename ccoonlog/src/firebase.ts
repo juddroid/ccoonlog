@@ -3,7 +3,7 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDWl7WxCpcNpNBQvQEtdbR77mum0gt_K4w',
+  apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
   authDomain: 'ccoonlog.firebaseapp.com',
   databaseURL:
     'https://ccoonlog-default-rtdb.asia-southeast1.firebasedatabase.app',
