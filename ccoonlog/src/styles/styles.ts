@@ -27,7 +27,9 @@ export const LogIn = {
 
 // Main
 export const Main = {
-  Main: styled.main``,
+  Main: styled.main`
+    padding: 0px 1px;
+  `,
 
   Error: styled.main`
     margin-top: 3.5rem;
@@ -57,6 +59,15 @@ export const Header = {
     justify-content: space-between;
     align-items: center;
     margin-bottom: ${({ theme }) => theme.paddings.xxxl};
+    background: ${({ theme }) => theme.colors.white};
+    z-index: 9999;
+    transition: all ease-in-out 0.4s;
+
+    @media (max-width: 768px) {
+      position: sticky;
+      top: 0px;
+      padding: 10px 0px;
+    }
   `,
 
   Title: styled.div`
@@ -121,6 +132,7 @@ export const AsideMain = {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: all ease-in-out 0.4s;
 
     p {
       color: ${({ theme }) => theme.colors.black};
@@ -134,6 +146,12 @@ export const AsideMain = {
         cursor: pointer;
       }
     }
+
+    @media (max-width: 768px) {
+      position: sticky;
+      top: -32px;
+      padding: 10px 0px;
+    }
   `,
 
   AsideInfoWrapper: styled.div`
@@ -143,6 +161,8 @@ export const AsideMain = {
   AsideSmallWrapper: styled.div`
     position: relative;
     display: none;
+    background: ${({ theme }) => theme.colors.white};
+
     @media (max-width: 768px) {
       display: flex;
     }
@@ -173,36 +193,44 @@ export const AsideMain = {
 
 // AsideSmall
 export const AsideSmall = {
-  AsideSmall: styled.div``,
+  AsideSmall: styled.div`
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  `,
 
   AsideSmallBox: styled.div`
-    background: ${({ theme }) => theme.colors.white};
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
-    max-width: 420px;
+    max-width: 476px;
+    width: 100%;
     border-radius: 16px;
     color: ${({ theme }) => theme.colors.black};
     height: fit-content;
-    padding: 5px 10px;
+    padding: 3px 5px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    transition: all ease-in-out 0.4s;
+    margin-bottom: 15px;
+    justify-content: space-evenly;
+
+    @media (max-width: 768px) {
+    }
   `,
 
   AsideSmallButton: styled(Button.AsideButton)`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75px;
+    width: 70px;
     height: 30px;
-    font-size: 11px;
+    font-size: 0.7rem;
     font-weight: 600;
     margin-right: 3px;
     padding: 0px;
     box-sizing: border-box;
 
     :hover {
-      background: ${({ theme }) => theme.colors.white};
-      font-size: 13px;
+      font-size: 12px;
     }
 
     :active {
@@ -215,12 +243,13 @@ export const AsideSmall = {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75px;
+    width: 70px;
     height: 30px;
-    font-size: 11px;
+    font-size: 0.7rem;
     font-weight: 600;
     margin-right: 3px;
     padding: 0px;
+    box-sizing: border-box;
     color: ${({ theme }) => theme.colors.hotPink};
 
     :hover {
@@ -232,15 +261,10 @@ export const AsideSmall = {
       font-size: 0.6rem;
       color: #333;
     }
-  `,
 
-  AsideSmallFilterBox: styled.div`
-    display: flex;
-  `,
-
-  AsideSmallLogInBox: styled.div`
-    display: flex;
-    justify-content: flex-end;
+    :last-child {
+      margin-right: 0px;
+    }
   `,
 };
 
@@ -296,7 +320,11 @@ export const Article = {
     margin-top: 3.5rem;
   `,
 
-  ArticleDetail: styled.div``,
+  ArticleDetail: styled.div`
+    position: relative;
+    z-index: -1;
+    padding: 0px 1px;
+  `,
 
   ArticleDetailHeader: styled.div`
     color: ${({ theme }) => theme.colors.black};

@@ -45,10 +45,11 @@ const Home = () => {
 
     checkRedirectResult();
     return () => off();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log('init', init, 'isloggedin', isLoggedIn);
-
+  console.log('key', process.env.REACT_APP_FIREBASE_API_KEY);
   return (
     <S.Home>
       <Header />
