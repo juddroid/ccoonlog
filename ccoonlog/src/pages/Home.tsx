@@ -49,7 +49,7 @@ const Home = () => {
   }, []);
 
   console.log('init', init, 'isloggedin', isLoggedIn);
-  console.log('key', process.env.REACT_APP_FIREBASE_API_KEY);
+
   return (
     <S.Home>
       <Header />
