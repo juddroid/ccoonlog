@@ -5,7 +5,6 @@ import firebase from '../../firebase';
 const GoogleOAuthButton = () => {
   const signInWithRedirect = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/plus.login');
     firebase.auth().signInWithRedirect(provider);
   };
 

@@ -45,6 +45,7 @@ const Home = () => {
 
     checkRedirectResult();
     return () => off();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log('init', init, 'isloggedin', isLoggedIn);

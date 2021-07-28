@@ -7,9 +7,7 @@ import { Header as S } from '../styles/styles';
 
 const Header = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
-  const handleClickTitleButton = () => {
-    setCategoryID(null);
-  };
+  const handleClickTitleButton = () => setCategoryID(null);
 
   return (
     <S.Header>
