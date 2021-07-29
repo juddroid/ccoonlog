@@ -1,4 +1,3 @@
-import { DefaultTheme } from 'styled-components';
 import { calcRem } from '../utils/utils';
 
 const fontSizes = {
@@ -49,7 +48,7 @@ const boxSizes = {
 
 const colors = {
   black: '#fff',
-  white: '#011627', //'#1C2020'
+  white: '#011627', //'#1C2020' '#011627'
   dark: '#fff',
   pink: '#ffa7c4',
   hotPink: '#ffa7c4',

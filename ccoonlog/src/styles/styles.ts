@@ -429,9 +429,15 @@ export const Article = {
       }
 
       ::before {
-        color: #222;
-        line-height: 2;
-        margin-top: 12px;
+        color: ${({ theme }) => theme.colors.dark};
+        line-height: 1.3;
+        margin-top: 6px;
+      }
+    }
+
+    .toastui-editor-contents ul > li {
+      ::before {
+        margin-top: 13px;
       }
     }
 
@@ -622,4 +628,86 @@ export const About = {
       border-radius: 5px;
     }
   `,
+};
+
+// Comment
+
+export const Comment = {
+  Comment: styled.div`
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  `,
+  CommentInput: styled.textarea`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    height: 200px;
+    border-radius: 16px;
+    padding: 20px;
+    background: ${({ theme }) => theme.colors.white};
+    outline: none;
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.4s;
+
+    :focus-within {
+      border: 1px solid ${({ theme }) => theme.colors.back};
+      background: #fff;
+    }
+  `,
+
+  CommentDisplayBox: styled.div``,
+
+  CommentButtonBox: styled.div`
+    display: flex;
+    justify-content: flex-end;
+  `,
+
+  CommentDisplay: styled.div`
+    width: 100%;
+    margin-bottom: ${({ theme }) => theme.margins.base};
+  `,
+
+  CommentDisplayHeader: styled.div`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    padding: 5px 20px;
+    box-sizing: border-box;
+    height: fit-content;
+    border-radius: 16px 16px 0px 0px;
+    font-size: 12px;
+  `,
+
+  CommentDisplayBody: styled.div`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    padding: 10px 20px;
+    box-sizing: border-box;
+    min-height: 50px;
+    border-radius: 0px 0px 16px 16px;
+    border-top: 0px;
+    font-size: 12px;
+  `,
+
+  CommentPawButton: styled(Button.MenuButton)`
+    color: ${({ theme }) => theme.colors.hotPink};
+    margin: 0px 0px 0px 3px;
+  `,
+
+  CommentButton: styled(Button.MenuButton)`
+    margin: 0px 3px;
+  `,
+
+  CommentProfileImageBox: styled.div`
+    padding: 3px 0px 0px 3px;
+  `,
+
+  CommentProfileImageWrapper: styled(AsideMain.ProfileImageBox)``,
+
+  CommentProfileImage: styled(AsideMain.ProfileImage)``,
+
+  CommentDisplayUpperBox: styled.div`
+    display: flex;
+  `,
+
+  CommentDisplayBottomBox: styled.div``,
 };
