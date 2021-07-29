@@ -36,16 +36,19 @@ const Comment = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (!commentList) return null;
   console.log(commentList);
   return (
     <S.Comment>
       <S.CommentDisplayBox>
-        {commentList?.map((articleComment) => (
-          <S.CommentDisplayUpperBox key={uuidv4()}>
-            <CommentProfileImageBox />
-            <CommentDisplay {...{ articleComment }} />
-          </S.CommentDisplayUpperBox>
-        ))}
+        {[...commentList]
+          .sort((a: any, b: any) => +new Date(a.date) - +new Date(b.date))
+          .map((articleComment) => (
+            <S.CommentDisplayUpperBox key={uuidv4()}>
+              <CommentProfileImageBox />
+              <CommentDisplay {...{ articleComment }} />
+            </S.CommentDisplayUpperBox>
+          ))}
         <S.CommentDisplayBottomBox>
           <CommentInput />
         </S.CommentDisplayBottomBox>

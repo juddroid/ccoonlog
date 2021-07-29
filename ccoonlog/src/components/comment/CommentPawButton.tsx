@@ -1,5 +1,5 @@
 import firebase from '../../firebase';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { commentInputValueState } from '../../store/Recoil';
 import { Comment as S } from '../../styles/styles';
 import { useLocation } from 'react-router-dom';
@@ -8,7 +8,9 @@ import { LOCAL_STORAGE as LOCAL } from '../../const';
 import { v4 as uuidv4 } from 'uuid';
 
 const CommentPawButton = () => {
-  const commentInputValue = useRecoilValue(commentInputValueState);
+  const [commentInputValue, setCommentInputValue] = useRecoilState(
+    commentInputValueState
+  );
   const location = useLocation<ArticleDetailProps>();
   const user = localStorage.getItem(LOCAL.USER);
   const uid = user && JSON.parse(user);
@@ -23,6 +25,8 @@ const CommentPawButton = () => {
       comment: commentInputValue,
     };
     commentRef.set(updateComment);
+
+    setCommentInputValue('');
   };
 
   return (
