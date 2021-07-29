@@ -5,9 +5,7 @@ import { Comment as S } from '../../styles/styles';
 import { ArticleLocationState, CommentProps } from '../../types/types';
 import { isAuth } from '../../utils/utils';
 import CommentCancelButton from './CommentCancelButton';
-import CommentDeleteButton from './CommentDeleteButton';
 import CommentDisplay from './CommentDisplay';
-import CommentEditButton from './CommentEditButton';
 import CommentInput from './CommentInput';
 import CommentPawButton from './CommentPawButton';
 import CommentProfileImageBox from './CommentProfileImageBox';
@@ -54,9 +52,7 @@ const Comment = () => {
         </S.CommentDisplayBottomBox>
       </S.CommentDisplayBox>
       <S.CommentButtonBox>
-        <CommentDeleteButton />
         <CommentCancelButton />
-        <CommentEditButton />
         <CommentPawButton />
       </S.CommentButtonBox>
     </S.Comment>

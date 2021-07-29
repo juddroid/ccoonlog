@@ -8,13 +8,11 @@ const ArticleDeleteButton = ({ articleID }: { articleID: string }) => {
 
     deleteRef
       .remove()
-      .then(function () {
+      .then(() => {
         console.log('Remove succeeded.');
         window.history.back();
       })
-      .catch(function (error) {
-        console.log('Remove failed: ' + error.message);
-      });
+      .catch((error) => console.log('Remove failed: ' + error.message));
   };
 
   return (

@@ -682,6 +682,16 @@ export const Comment = {
       'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
       Tahoma, Geneva, sans-serif;
     color: ${({ theme }) => theme.colors.black};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `,
+
+  CommentDisplayHeaderInfoBox: styled.div`
+    display: flex;
+  `,
+  CommentDisplayHeaderButtonBox: styled.div`
+    display: flex;
   `,
 
   CommentDisplayBody: styled.div`
@@ -706,6 +716,17 @@ export const Comment = {
 
   CommentButton: styled(Button.MenuButton)`
     margin: 0px 3px;
+  `,
+
+  CommentHeaderButton: styled.div`
+    margin-left: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    svg {
+      color: ${({ theme }) => theme.colors.hotPink};
+    }
   `,
 
   CommentProfileImageBox: styled.div`
