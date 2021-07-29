@@ -105,3 +105,8 @@ export const displayState = atom({
   key: 'displayState',
   default: false,
 });
+
+export const commentInputValueState = atom({
+  key: 'commentInputValueState',
+  default: ``,
+});

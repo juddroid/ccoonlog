@@ -16,6 +16,8 @@ const ArticleDetail = () => {
   const auth = isAuth();
   const location = useLocation<ArticleLocationState>();
 
+  console.log(articleDetail);
+
   useEffect(() => {
     const articleRef = firebase.database().ref('article');
     articleRef.on('value', (snapshot) => {

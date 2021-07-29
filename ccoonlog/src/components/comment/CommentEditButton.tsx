@@ -1,7 +1,7 @@
-import { Button } from '../../styles/CommonStyles';
+import { Comment as S } from '../../styles/styles';
 
 const CommentEditButton = () => {
-  return <Button.MenuButton>Edit</Button.MenuButton>;
+  return <S.CommentButton>Edit</S.CommentButton>;
 };
 
 export default CommentEditButton;

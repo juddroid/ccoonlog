@@ -8,7 +8,6 @@ const ArticleDetailHeader = ({
 }: {
   articleDetail: ArticleDetailProps;
 }) => {
-  console.log(articleDetail);
   const { title, date, category, subTitle, content } = articleDetail;
 
   return (

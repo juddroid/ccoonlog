@@ -2,18 +2,12 @@ import { Link } from 'react-router-dom';
 import { AsideMain as S } from '../../styles/styles';
 import { ASIDE } from '../../const';
 import AsideSmall from './AsideSmall';
-// import firebase from '../../firebase';
 
 const AsideMain = () => {
-  const handleClick = async () => {
-    // const auth = firebase.auth();
-    // await auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
-  };
-
   return (
     <S.AsideMain>
       <S.AsideInfoWrapper>
-        <Link to="/pages/post" onClick={handleClick}>
+        <Link to="/pages/post">
           <S.ProfileImageBox>
             <S.ProfileImage src={ASIDE.PROFILE} alt="aside" />
           </S.ProfileImageBox>

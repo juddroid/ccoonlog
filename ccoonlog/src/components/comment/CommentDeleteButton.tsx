@@ -1,7 +1,7 @@
-import { Button } from '../../styles/CommonStyles';
+import { Comment as S } from '../../styles/styles';
 
 const CommentDeleteButton = () => {
-  return <Button.MenuButton>Delete</Button.MenuButton>;
+  return <S.CommentButton>Delete</S.CommentButton>;
 };
 
 export default CommentDeleteButton;
