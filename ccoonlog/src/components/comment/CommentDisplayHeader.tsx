@@ -1,7 +1,10 @@
 import { Comment as S } from '../../styles/styles';
+import { getInfoDate } from '../../utils/utils';
 
-const CommentDisplayHeader = () => {
-  return <S.CommentDisplayHeader>Jul 29, 2021</S.CommentDisplayHeader>;
+const CommentDisplayHeader = ({ date }: { date: string }) => {
+  const infoDate = getInfoDate(date);
+
+  return <S.CommentDisplayHeader>{infoDate}</S.CommentDisplayHeader>;
 };
 
 export default CommentDisplayHeader;

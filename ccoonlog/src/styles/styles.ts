@@ -667,6 +667,7 @@ export const Comment = {
   CommentDisplay: styled.div`
     width: 100%;
     margin-bottom: ${({ theme }) => theme.margins.base};
+    font-family: inherit;
   `,
 
   CommentDisplayHeader: styled.div`
@@ -676,6 +677,11 @@ export const Comment = {
     height: fit-content;
     border-radius: 16px 16px 0px 0px;
     font-size: 12px;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
+    color: ${({ theme }) => theme.colors.black};
   `,
 
   CommentDisplayBody: styled.div`
@@ -686,6 +692,11 @@ export const Comment = {
     border-radius: 0px 0px 16px 16px;
     border-top: 0px;
     font-size: 12px;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
+    color: ${({ theme }) => theme.colors.black};
   `,
 
   CommentPawButton: styled(Button.MenuButton)`

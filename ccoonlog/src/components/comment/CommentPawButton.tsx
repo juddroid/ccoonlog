@@ -5,6 +5,7 @@ import { Comment as S } from '../../styles/styles';
 import { useLocation } from 'react-router-dom';
 import { ArticleDetailProps } from '../../types/types';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
+import { v4 as uuidv4 } from 'uuid';
 
 const CommentPawButton = () => {
   const commentInputValue = useRecoilValue(commentInputValueState);
@@ -13,11 +14,11 @@ const CommentPawButton = () => {
   const uid = user && JSON.parse(user);
 
   const handleClickPawButton = () => {
+    const cid = uuidv4();
     const articleID = location.state.id;
-    const commentRef = firebase
-      .database()
-      .ref(`comment/${articleID}/${uid.uid}`);
+    const commentRef = firebase.database().ref(`comment/${articleID}/${cid}`);
     const updateComment = {
+      uid: uid.uid,
       date: `${new Date()}`,
       comment: commentInputValue,
     };

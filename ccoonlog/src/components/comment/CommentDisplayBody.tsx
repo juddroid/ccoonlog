@@ -1,7 +1,7 @@
 import { Comment as S } from '../../styles/styles';
 
-const CommentDisplayBody = () => {
-  return <S.CommentDisplayBody>CommentDisplayBody</S.CommentDisplayBody>;
+const CommentDisplayBody = ({ comment }: { comment: string }) => {
+  return <S.CommentDisplayBody>{comment}</S.CommentDisplayBody>;
 };
 
 export default CommentDisplayBody;
