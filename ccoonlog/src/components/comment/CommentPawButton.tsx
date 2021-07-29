@@ -20,6 +20,7 @@ const CommentPawButton = () => {
     const articleID = location.state.id;
     const commentRef = firebase.database().ref(`comment/${articleID}/${cid}`);
     const updateComment = {
+      cid: cid,
       uid: uid.uid,
       date: `${new Date()}`,
       comment: commentInputValue,

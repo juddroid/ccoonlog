@@ -723,6 +723,11 @@ export const Comment = {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.4s;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
 
     svg {
       color: ${({ theme }) => theme.colors.hotPink};

@@ -35,4 +35,5 @@ export interface CommentProps {
   date: string;
   comment: string;
   uid: string;
+  cid: string;
 }
