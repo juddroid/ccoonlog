@@ -1,4 +1,3 @@
-import { DefaultTheme } from 'styled-components';
 import { calcRem } from '../utils/utils';
 
 const fontSizes = {

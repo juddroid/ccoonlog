@@ -649,6 +649,7 @@ export const Comment = {
     min-height: 150px;
     resize: none;
     box-sizing: border-box;
+    transition: all ease-in-out 0.4s;
 
     :focus-within {
       border: 1px solid ${({ theme }) => theme.colors.back};
@@ -664,17 +665,49 @@ export const Comment = {
   `,
 
   CommentDisplay: styled.div`
-    border: 1px solid ${({ theme }) => theme.colors.hotPink};
-    border-radius: 16px;
     width: 100%;
-    height: fit-content;
-    height: 100px;
-    padding: ${({ theme }) => theme.paddings.lg};
     margin-bottom: ${({ theme }) => theme.margins.base};
+  `,
+
+  CommentDisplayHeader: styled.div`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    padding: 5px 20px;
     box-sizing: border-box;
+    height: fit-content;
+    border-radius: 16px 16px 0px 0px;
+    font-size: 12px;
+  `,
+
+  CommentDisplayBody: styled.div`
+    border: 1px solid ${({ theme }) => theme.colors.hotPink};
+    padding: 10px 20px;
+    box-sizing: border-box;
+    min-height: 50px;
+    border-radius: 0px 0px 16px 16px;
+    border-top: 0px;
+    font-size: 12px;
   `,
 
   CommentPawButton: styled(Button.MenuButton)`
     color: ${({ theme }) => theme.colors.hotPink};
+    margin: 0px 0px 0px 3px;
   `,
+
+  CommentButton: styled(Button.MenuButton)`
+    margin: 0px 3px;
+  `,
+
+  CommentProfileImageBox: styled.div`
+    padding: 3px 0px 0px 3px;
+  `,
+
+  CommentProfileImageWrapper: styled(AsideMain.ProfileImageBox)``,
+
+  CommentProfileImage: styled(AsideMain.ProfileImage)``,
+
+  CommentDisplayUpperBox: styled.div`
+    display: flex;
+  `,
+
+  CommentDisplayBottomBox: styled.div``,
 };
