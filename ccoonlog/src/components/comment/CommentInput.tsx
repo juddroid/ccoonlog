@@ -9,7 +9,7 @@ const CommentInput = () => {
     commentInputValueState
   );
 
-  const handleClickCommentInput = () => console.log(isLoggedIn);
+  const handleClickCommentInput = () => {};
   const handleChangeCommentInputValue = (
     e: ChangeEvent<HTMLTextAreaElement>
   ) => {

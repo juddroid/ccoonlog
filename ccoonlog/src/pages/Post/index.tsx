@@ -15,7 +15,7 @@ const Post = () => {
   useEffect(() => {
     const auth = isAuth();
     if (!auth) {
-      console.log('권한이 없어용');
+      alert('권한이 없어용');
       history.push('/');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

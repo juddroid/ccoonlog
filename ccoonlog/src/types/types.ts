@@ -36,4 +36,6 @@ export interface CommentProps {
   comment: string;
   uid: string;
   cid: string;
+  name: string;
+  userImageURL?: string;
 }

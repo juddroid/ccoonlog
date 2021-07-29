@@ -13,7 +13,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Comment = () => {
   const [commentList, setCommentList] = useState<CommentProps[] | null>(null);
-  const auth = isAuth();
   const location = useLocation<ArticleLocationState>();
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const Comment = () => {
   }, []);
 
   if (!commentList) return null;
-  console.log(commentList);
+
   return (
     <S.Comment>
       <S.CommentDisplayBox>
@@ -43,7 +42,7 @@ const Comment = () => {
           .sort((a: any, b: any) => +new Date(a.date) - +new Date(b.date))
           .map((articleComment) => (
             <S.CommentDisplayUpperBox key={uuidv4()}>
-              <CommentProfileImageBox />
+              <CommentProfileImageBox {...{ articleComment }} />
               <CommentDisplay {...{ articleComment }} />
             </S.CommentDisplayUpperBox>
           ))}

@@ -690,6 +690,16 @@ export const Comment = {
   CommentDisplayHeaderInfoBox: styled.div`
     display: flex;
   `,
+
+  CommentDisplayHeaderInfoName: styled.div``,
+
+  CommentDisplayHeaderInfoDate: styled.div`
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+    font-size: 10px;
+  `,
+
   CommentDisplayHeaderButtonBox: styled.div`
     display: flex;
   `,

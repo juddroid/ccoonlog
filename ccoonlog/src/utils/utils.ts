@@ -19,12 +19,14 @@ export const getInfoDate = (currentDate: string) => {
   return `${infoDateList[1]} ${infoDateList[2]}, ${infoDateList[3]}`;
 };
 
-export const isAuth = () => {
-  const UID = 'w7M03TM5niOM8aAwmxYgrhOdOjf1';
+export const isAuth = (currentUID?: string) => {
+  const UID = `${process.env.REACT_APP_AUTH_ID}`;
   const user = localStorage.getItem(LOCAL.USER);
   const uid = user && JSON.parse(user).uid;
+  const auth = UID === uid;
+  const userAuth = currentUID === uid;
 
-  return UID === uid;
+  return currentUID ? userAuth : auth;
 };
 
 export const handleClickFilteringButton = (
