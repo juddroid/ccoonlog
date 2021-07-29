@@ -65,3 +65,9 @@ export const getCoffee = (time: number) => {
 
   return coffee;
 };
+
+export const getLocalStorageData = (key: string) => {
+  const thisData = localStorage.getItem(key);
+  const data = thisData && JSON.parse(thisData);
+  return data;
+};

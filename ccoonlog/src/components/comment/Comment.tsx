@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Comment as S } from '../../styles/styles';
 import { ArticleLocationState, CommentProps } from '../../types/types';
-import { isAuth } from '../../utils/utils';
 import CommentCancelButton from './CommentCancelButton';
 import CommentDisplay from './CommentDisplay';
 import CommentInput from './CommentInput';

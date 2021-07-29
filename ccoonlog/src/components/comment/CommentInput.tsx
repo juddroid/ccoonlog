@@ -1,10 +1,9 @@
 import { ChangeEvent } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { commentInputValueState, isLoggedInState } from '../../store/Recoil';
+import { useRecoilState } from 'recoil';
+import { commentInputValueState } from '../../store/Recoil';
 import { Comment as S } from '../../styles/styles';
 
 const CommentInput = () => {
-  const isLoggedIn = useRecoilValue(isLoggedInState);
   const [commentInputValue, setCommentInputValue] = useRecoilState(
     commentInputValueState
   );
