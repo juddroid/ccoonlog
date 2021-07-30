@@ -4,11 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { Comment as S } from '../../styles/styles';
 import { ArticleLocationState, CommentProps } from '../../types/types';
 import CommentCancelButton from './CommentCancelButton';
-import CommentDisplay from './CommentDisplay';
-import CommentInput from './CommentInput';
 import CommentPawButton from './CommentPawButton';
-import CommentProfileImageBox from './CommentProfileImageBox';
-import { v4 as uuidv4 } from 'uuid';
+import CommentDisplayUpperBox from './CommentDisplayUpperBox';
+import CommentDisplayBottomBox from './CommentDisplayBottomBox';
 
 const Comment = () => {
   const [commentList, setCommentList] = useState<CommentProps[] | null>(null);
@@ -37,17 +35,8 @@ const Comment = () => {
   return (
     <S.Comment>
       <S.CommentDisplayBox>
-        {[...commentList]
-          .sort((a: any, b: any) => +new Date(a.date) - +new Date(b.date))
-          .map((articleComment) => (
-            <S.CommentDisplayUpperBox key={uuidv4()}>
-              <CommentProfileImageBox {...{ articleComment }} />
-              <CommentDisplay {...{ articleComment }} />
-            </S.CommentDisplayUpperBox>
-          ))}
-        <S.CommentDisplayBottomBox>
-          <CommentInput />
-        </S.CommentDisplayBottomBox>
+        <CommentDisplayUpperBox {...{ commentList }} />
+        <CommentDisplayBottomBox />
       </S.CommentDisplayBox>
       <S.CommentButtonBox>
         <CommentCancelButton />
