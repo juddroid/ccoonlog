@@ -19,13 +19,16 @@ const CommentDisplayHeader = ({
   cid,
   name,
   uid,
+  updateTime,
 }: {
   date: string;
   cid: string;
   name: string;
   uid: string;
+  updateTime?: string;
 }) => {
   const infoDate = getInfoDate(date);
+  const updateDate = updateTime && getInfoDate(updateTime);
   const location = useLocation<ArticleLocationState>();
   const userAuth = isAuth(uid);
   const [commentEditID, setCommentEditID] = useRecoilState(commentEditIDState);
@@ -69,7 +72,12 @@ const CommentDisplayHeader = ({
       <S.CommentDisplayHeaderInfoBox>
         <S.CommentDisplayHeaderInfoName>{name}</S.CommentDisplayHeaderInfoName>
         <S.CommentDisplayHeaderInfoDate>
-          {infoDate}
+          <S.CommentDisplayHeaderTime>{infoDate}</S.CommentDisplayHeaderTime>
+          {updateDate && (
+            <S.CommentDisplayHeaderUpdateTime>
+              edited {updateDate}
+            </S.CommentDisplayHeaderUpdateTime>
+          )}
         </S.CommentDisplayHeaderInfoDate>
       </S.CommentDisplayHeaderInfoBox>
       {userAuth && (
