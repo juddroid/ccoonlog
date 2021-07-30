@@ -23,6 +23,24 @@ const Home = () => {
         })
         .catch((error) => {
           const { code, message, email, credential } = error;
+          if (code === 'auth/account-exists-with-different-credential') {
+            const pendingCred = credential;
+            console.log(pendingCred);
+
+            firebase
+              .auth()
+              .fetchSignInMethodsForEmail(email)
+              .then((methods) => {
+                debugger;
+                console.log(methods);
+                if (methods[0] === 'password') {
+                  console.log('render');
+                }
+
+                // const provider = getProviderForProviderId(methods[0])
+              });
+          }
+
           console.table({
             code: code,
             message: message,

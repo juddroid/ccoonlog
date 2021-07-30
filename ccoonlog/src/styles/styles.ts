@@ -776,8 +776,6 @@ export const Comment = {
   `,
 
   CommentEditTextArea: styled.textarea`
-    transition: all ease-in-out 0.4s;
-    background: ${({ theme }) => theme.colors.white};
     color: inherit;
     resize: vertical;
     width: 100%;
@@ -788,6 +786,7 @@ export const Comment = {
     border: 1px solid ${({ theme }) => theme.colors.gray};
     box-sizing: border-box;
     display: flex;
+    background: transparent;
   `,
 
   CommentDisplayHeaderTime: styled.div``,
