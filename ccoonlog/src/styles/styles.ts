@@ -452,6 +452,15 @@ export const Article = {
       padding: 18px;
       font-size: ${({ theme }) => theme.fontSizes.base};
       border-radius: 5px;
+
+      code {
+        color: #222;
+      }
+    }
+    .toastui-editor-contents td,
+    th,
+    tr {
+      color: ${({ theme }) => theme.colors.dark};
     }
   `,
 };
