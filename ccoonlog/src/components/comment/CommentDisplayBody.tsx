@@ -2,6 +2,7 @@ import { useRecoilValue } from 'recoil';
 import { commentEditIDState } from '../../store/Recoil';
 import { Comment as S } from '../../styles/styles';
 import CommentEdit from './CommentEdit';
+import { Viewer } from '@toast-ui/react-editor';
 
 const CommentDisplayBody = ({
   comment,
@@ -11,12 +12,16 @@ const CommentDisplayBody = ({
   cid: string;
 }) => {
   const commentEditID = useRecoilValue(commentEditIDState);
+
+  console.log(comment);
   return (
     <S.CommentDisplayBody>
       {commentEditID === cid ? (
         <CommentEdit {...{ comment }} />
       ) : (
-        <S.CommentDisplayContent>{comment}</S.CommentDisplayContent>
+        <S.CommentDisplayContent>
+          <Viewer initialValue={comment} />
+        </S.CommentDisplayContent>
       )}
     </S.CommentDisplayBody>
   );
