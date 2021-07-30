@@ -667,6 +667,7 @@ export const Comment = {
   CommentDisplay: styled.div`
     width: 100%;
     margin-bottom: ${({ theme }) => theme.margins.base};
+    font-family: inherit;
   `,
 
   CommentDisplayHeader: styled.div`
@@ -676,16 +677,45 @@ export const Comment = {
     height: fit-content;
     border-radius: 16px 16px 0px 0px;
     font-size: 12px;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
+    color: ${({ theme }) => theme.colors.black};
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `,
+
+  CommentDisplayHeaderInfoBox: styled.div`
+    display: flex;
+  `,
+
+  CommentDisplayHeaderInfoName: styled.div``,
+
+  CommentDisplayHeaderInfoDate: styled.div`
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
+    font-size: 10px;
+  `,
+
+  CommentDisplayHeaderButtonBox: styled.div`
+    display: flex;
   `,
 
   CommentDisplayBody: styled.div`
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
-    padding: 10px 20px;
+    padding: 5px;
     box-sizing: border-box;
-    min-height: 50px;
     border-radius: 0px 0px 16px 16px;
     border-top: 0px;
     font-size: 12px;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+      'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', 나눔고딕,
+      'Nanum Gothic', 'Noto Sans KR', 'Noto Sans CJK KR', arial, 돋움, Dotum,
+      Tahoma, Geneva, sans-serif;
+    color: ${({ theme }) => theme.colors.black};
   `,
 
   CommentPawButton: styled(Button.MenuButton)`
@@ -695,6 +725,22 @@ export const Comment = {
 
   CommentButton: styled(Button.MenuButton)`
     margin: 0px 3px;
+  `,
+
+  CommentHeaderButton: styled.div`
+    margin-left: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.4s;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+
+    svg {
+      color: ${({ theme }) => theme.colors.hotPink};
+    }
   `,
 
   CommentProfileImageBox: styled.div`
@@ -710,4 +756,25 @@ export const Comment = {
   `,
 
   CommentDisplayBottomBox: styled.div``,
+
+  CommentDisplayContent: styled.div`
+    padding: 10px 20px;
+    box-sizing: border-box;
+  `,
+
+  CommentEditTextArea: styled.textarea`
+    transition: all ease-in-out 0.4s;
+    background: ${({ theme }) => theme.colors.white};
+
+    color: inherit;
+    resize: vertical;
+    width: 100%;
+    min-height: 50px;
+    outline: none;
+    border-radius: 16px;
+    padding: 15px 20px;
+    border: 1px solid ${({ theme }) => theme.colors.gray};
+    box-sizing: border-box;
+    display: flex;
+  `,
 };

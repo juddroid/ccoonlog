@@ -1,16 +1,18 @@
+import { IoPawOutline } from 'react-icons/io5';
 import { Comment as S } from '../../styles/styles';
-import { IoIosClose } from 'react-icons/io';
 
-const CommentDeleteButton = ({
+const CommentEditPawButton = ({
   onClick,
+  id,
 }: {
   onClick: React.MouseEventHandler<HTMLDivElement>;
+  id: string;
 }) => {
   return (
     <S.CommentHeaderButton {...{ onClick }}>
-      <IoIosClose />
+      <IoPawOutline />
     </S.CommentHeaderButton>
   );
 };
 
-export default CommentDeleteButton;
+export default CommentEditPawButton;

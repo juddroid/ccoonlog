@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReactToggle as S } from '../../styles/styles';
 
 const ReactToggleThumb = ({ modePosition }: { modePosition: number }) => {

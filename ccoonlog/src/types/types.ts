@@ -30,3 +30,12 @@ export interface ArticleDetailProps {
 export interface ArticleDetailState {
   articleDetail: ArticleDetailProps;
 }
+
+export interface CommentProps {
+  date: string;
+  comment: string;
+  uid: string;
+  cid: string;
+  name: string;
+  userImageURL?: string;
+}

@@ -1,16 +1,16 @@
+import { IoBackspaceOutline } from 'react-icons/io5';
 import { Comment as S } from '../../styles/styles';
-import { IoIosClose } from 'react-icons/io';
 
-const CommentDeleteButton = ({
+const CommentEditCancelButton = ({
   onClick,
 }: {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }) => {
   return (
     <S.CommentHeaderButton {...{ onClick }}>
-      <IoIosClose />
+      <IoBackspaceOutline />
     </S.CommentHeaderButton>
   );
 };
 
-export default CommentDeleteButton;
+export default CommentEditCancelButton;

@@ -45,6 +45,7 @@ export const LOADING_MESSAGE = 'Loading...';
 export const LOCAL_STORAGE = {
   TOKEN: 'token',
   USER: 'user',
+  DISPLAY: 'display',
 };
 
 // Text
