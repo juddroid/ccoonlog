@@ -721,6 +721,12 @@ export const Comment = {
   CommentPawButton: styled(Button.MenuButton)`
     color: ${({ theme }) => theme.colors.hotPink};
     margin: 0px 0px 0px 3px;
+
+    :disabled {
+      opacity: 0.2;
+      font-size: inherit;
+      cursor: default;
+    }
   `,
 
   CommentButton: styled(Button.MenuButton)`

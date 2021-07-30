@@ -26,7 +26,7 @@ const CommentDisplayHeaderButtonDefault = ({
   const handleClickCommentEditPawButton = () => {
     const articleID = location.state.id;
     const uid = getLocalStorageData(LOCAL.USER);
-    const email = uid?.email.split('@')[0] || null;
+    const email = uid?.email?.split('@')[0] || null;
     const name = uid.displayName || email;
     const commentRef = firebase.database().ref(`comment/${articleID}/${cid}`);
     const updateComment = {
