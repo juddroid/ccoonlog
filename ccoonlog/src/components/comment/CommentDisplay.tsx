@@ -13,7 +13,7 @@ const CommentDisplay = ({
   return (
     <S.CommentDisplay>
       <CommentDisplayHeader {...{ date, cid, name, uid }} />
-      <CommentDisplayBody {...{ comment }} />
+      <CommentDisplayBody {...{ comment, cid }} />
     </S.CommentDisplay>
   );
 };

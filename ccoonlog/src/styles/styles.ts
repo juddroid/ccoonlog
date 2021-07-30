@@ -706,9 +706,8 @@ export const Comment = {
 
   CommentDisplayBody: styled.div`
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
-    padding: 10px 20px;
+    padding: 5px;
     box-sizing: border-box;
-    min-height: 50px;
     border-radius: 0px 0px 16px 16px;
     border-top: 0px;
     font-size: 12px;
@@ -757,4 +756,25 @@ export const Comment = {
   `,
 
   CommentDisplayBottomBox: styled.div``,
+
+  CommentDisplayContent: styled.div`
+    padding: 10px 20px;
+    box-sizing: border-box;
+  `,
+
+  CommentEditTextArea: styled.textarea`
+    transition: all ease-in-out 0.4s;
+    background: ${({ theme }) => theme.colors.white};
+
+    color: inherit;
+    resize: vertical;
+    width: 100%;
+    min-height: 50px;
+    outline: none;
+    border-radius: 16px;
+    padding: 15px 20px;
+    border: 1px solid ${({ theme }) => theme.colors.gray};
+    box-sizing: border-box;
+    display: flex;
+  `,
 };

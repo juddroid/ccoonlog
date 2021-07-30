@@ -1,7 +1,7 @@
+import { IoPawOutline } from 'react-icons/io5';
 import { Comment as S } from '../../styles/styles';
-import { AiOutlineEdit } from 'react-icons/ai';
 
-const CommentEditButton = ({
+const CommentEditPawButton = ({
   onClick,
   id,
 }: {
@@ -9,10 +9,10 @@ const CommentEditButton = ({
   id: string;
 }) => {
   return (
-    <S.CommentHeaderButton {...{ id, onClick }}>
-      <AiOutlineEdit />
+    <S.CommentHeaderButton {...{ onClick }}>
+      <IoPawOutline />
     </S.CommentHeaderButton>
   );
 };
 
-export default CommentEditButton;
+export default CommentEditPawButton;

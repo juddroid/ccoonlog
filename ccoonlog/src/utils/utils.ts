@@ -21,8 +21,8 @@ export const getInfoDate = (currentDate: string) => {
 
 export const isAuth = (currentUID?: string) => {
   const UID = `${process.env.REACT_APP_AUTH_ID}`;
-  const user = localStorage.getItem(LOCAL.USER);
-  const uid = user && JSON.parse(user).uid;
+  const user = getLocalStorageData(LOCAL.USER);
+  const uid = user && user.uid;
   const auth = UID === uid;
   const userAuth = currentUID === uid;
 
