@@ -62,7 +62,7 @@ export const Header = {
 
     @media (max-width: 768px) {
       position: sticky;
-      top: -1px;
+      top: 0px;
       padding: 10px 0px;
       z-index: 9999;
     }
@@ -162,7 +162,6 @@ export const AsideMain = {
       top: -32px;
       padding: 10px 0px;
       z-index: 9998;
-      height: 145px;
     }
   `,
 
