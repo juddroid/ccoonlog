@@ -760,12 +760,24 @@ export const Comment = {
   CommentDisplayContent: styled.div`
     padding: 10px 20px;
     box-sizing: border-box;
+
+    .toastui-editor-contents p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    li,
+    hr {
+      color: ${({ theme }) => theme.colors.dark};
+    }
   `,
 
   CommentEditTextArea: styled.textarea`
     transition: all ease-in-out 0.4s;
     background: ${({ theme }) => theme.colors.white};
-
     color: inherit;
     resize: vertical;
     width: 100%;
