@@ -20,7 +20,6 @@ export const LogIn = {
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
     border-radius: 16px;
     margin-top: ${({ theme }) => theme.margins.xxxl};
-    margin-left: ${({ theme }) => theme.margins.lg};
     padding: ${({ theme }) => theme.margins.small};
   `,
 };
@@ -63,7 +62,7 @@ export const Header = {
 
     @media (max-width: 768px) {
       position: sticky;
-      top: 0px;
+      top: -1px;
       padding: 10px 0px;
       z-index: 9999;
     }
@@ -163,6 +162,7 @@ export const AsideMain = {
       top: -32px;
       padding: 10px 0px;
       z-index: 9998;
+      height: 145px;
     }
   `,
 

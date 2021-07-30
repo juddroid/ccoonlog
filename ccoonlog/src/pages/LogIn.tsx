@@ -13,10 +13,10 @@ const LogIn = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
         <Redirect from="*" to="/" />
       ) : (
         <S.LogIn>
-          <GitHubOAuthButton />
           <GoogleOAuthButton />
-          <NaverOAuthButton />
+          <GitHubOAuthButton />
           <FacebookOAuthButton />
+          <NaverOAuthButton />
           <KakaoOAuthButton />
         </S.LogIn>
       )}

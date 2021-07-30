@@ -8,6 +8,7 @@ const NaverOAuthButton = () => {
       name={O.NAVER}
       color={light.colors.white}
       background={light.colors.naver}
+      disabled={true}
     />
   );
 };
