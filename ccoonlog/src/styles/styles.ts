@@ -777,4 +777,11 @@ export const Comment = {
     box-sizing: border-box;
     display: flex;
   `,
+
+  CommentDisplayHeaderTime: styled.div``,
+
+  CommentDisplayHeaderUpdateTime: styled.div`
+    color: ${({ theme }) => theme.colors.gray};
+    margin-left: 10px;
+  `,
 };

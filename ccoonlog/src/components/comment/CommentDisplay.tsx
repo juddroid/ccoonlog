@@ -8,11 +8,11 @@ const CommentDisplay = ({
 }: {
   articleComment: CommentProps;
 }) => {
-  const { comment, date, cid, uid, name } = articleComment;
+  const { comment, date, cid, uid, name, updateTime } = articleComment;
 
   return (
     <S.CommentDisplay>
-      <CommentDisplayHeader {...{ date, cid, name, uid }} />
+      <CommentDisplayHeader {...{ date, cid, name, uid, updateTime }} />
       <CommentDisplayBody {...{ comment, cid }} />
     </S.CommentDisplay>
   );
