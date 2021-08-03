@@ -39,4 +39,5 @@ export interface CommentProps {
   name: string;
   userImageURL?: string;
   updateTime?: string;
+  ccid?: string;
 }

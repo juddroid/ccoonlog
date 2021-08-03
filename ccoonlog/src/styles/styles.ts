@@ -834,4 +834,10 @@ export const Cocomment = {
   CocommentButton: styled(Comment.CommentButton)``,
 
   CocommentPawButton: styled(Comment.CommentPawButton)``,
+
+  CocommentDisplayUpperBoxWrapper: styled(
+    Comment.CommentDisplayUpperBoxWrapper
+  )`
+    margin-left: 70px;
+  `,
 };

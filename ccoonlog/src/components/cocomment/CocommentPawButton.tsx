@@ -21,7 +21,7 @@ const CocommentPawButton = ({ cid }: { cid: string }) => {
 
     const ccid = uuidv4();
     const name = user.displayName || email;
-    const commentRef = firebase.database().ref(`cocomment/${cid}`);
+    const commentRef = firebase.database().ref(`cocomment/${cid}/${ccid}`);
     const updateComment = {
       cid: cid,
       ccid: ccid,
