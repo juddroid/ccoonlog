@@ -12,8 +12,8 @@
         "type": 301
       },
       {
-        "source": "/abount",
-        "destination": "https://ccoonlog.web.app/about",
+        "source": "/about",
+        "destination": "/about",
         "type": 301
       }
     ]
