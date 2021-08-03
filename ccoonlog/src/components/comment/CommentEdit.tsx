@@ -1,28 +1,30 @@
 import { ChangeEvent, useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { commentEditInputValueState } from '../../store/Recoil';
+import { SetterOrUpdater } from 'recoil';
 import { Comment as S } from '../../styles/styles';
 
-const CommentEdit = ({ comment }: { comment: string }) => {
-  const [commentEditInputValue, setCommentEditInputValue] = useRecoilState(
-    commentEditInputValueState
-  );
+const CommentEdit = ({
+  comment,
+  state,
+  setState,
+}: {
+  comment: string;
+  state: string;
+  setState: SetterOrUpdater<string>;
+}) => {
   const handleChangeCommentEditTextArea = (
     e: ChangeEvent<HTMLTextAreaElement>
-  ) => setCommentEditInputValue(e.target.value);
+  ) => setState(e.target.value);
 
   useEffect(() => {
-    setCommentEditInputValue(comment);
+    setState(comment);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <S.CommentEditTextArea
-      value={commentEditInputValue}
+      value={state}
       onChange={handleChangeCommentEditTextArea}
-    >
-      dafldfads
-    </S.CommentEditTextArea>
+    />
   );
 };
 
