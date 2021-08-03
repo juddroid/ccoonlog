@@ -120,3 +120,18 @@ export const commentEditInputValueState = atom({
   key: 'commentEditInputValueState',
   default: ``,
 });
+
+export const cocommentEditIDState = atom<string | null>({
+  key: 'cocommentEditIDState',
+  default: null,
+});
+
+export const cocommentInputValueState = atom({
+  key: 'cocommentInputValueState',
+  default: ``,
+});
+
+export const cocommentEditInputValueState = atom({
+  key: 'cocommentEditInputValueState',
+  default: ``,
+});

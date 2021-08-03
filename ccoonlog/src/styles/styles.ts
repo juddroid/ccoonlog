@@ -768,6 +768,11 @@ export const Comment = {
 
   CommentDisplayUpperBox: styled.div`
     display: flex;
+    flex-direction: column;
+  `,
+
+  CommentDisplayUpperBoxWrapper: styled.div`
+    display: flex;
   `,
 
   CommentDisplayBottomBox: styled.div``,
@@ -809,5 +814,47 @@ export const Comment = {
   CommentDisplayHeaderUpdateTime: styled.div`
     color: ${({ theme }) => theme.colors.gray};
     margin-left: 10px;
+  `,
+};
+
+export const Cocomment = {
+  Cocomment: styled(Comment.Comment)`
+    margin: 0px;
+    margin-bottom: ${({ theme }) => theme.margins.base};
+  `,
+
+  CocommentInput: styled.div``,
+
+  CocommentDisplayBox: styled(Comment.CommentDisplayBox)``,
+
+  CocommentEditButtonBox: styled(Comment.CommentButtonBox)`
+    margin-bottom: ${({ theme }) => theme.margins.small};
+  `,
+
+  CocommentDisplayUpperBox: styled(Comment.CommentDisplayUpperBox)``,
+  CocommentDisplayBottomBox: styled(Comment.CommentDisplayBottomBox)``,
+
+  CocommentButton: styled(Comment.CommentButton)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  `,
+
+  CocommentPawButton: styled(Comment.CommentPawButton)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  `,
+
+  CocommentDisplayUpperBoxWrapper: styled(
+    Comment.CommentDisplayUpperBoxWrapper
+  )`
+    margin-left: 70px;
   `,
 };

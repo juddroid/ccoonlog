@@ -1,11 +1,13 @@
 import { Comment as S } from '../../styles/styles';
 import { getInfoDate, isAuth } from '../../utils/utils';
 import CommentDisplayHeaderInfoBox from './CommentDisplayHeaderInfoBox';
-import CommentDisplayHeaderButtonBox from './CommentDisplayHeaderButtonBox';
+import CommentDisplayHeaderButtonGroup from './CommentDisplayHeaderButtonGroup';
+import CocommentButton from './CocommentButton';
 
 const CommentDisplayHeader = ({
   date,
   cid,
+  ccid,
   name,
   uid,
   updateTime,
@@ -15,6 +17,7 @@ const CommentDisplayHeader = ({
   name: string;
   uid: string;
   updateTime?: string;
+  ccid?: string;
 }) => {
   const infoDate = getInfoDate(date);
   const updateDate = updateTime && getInfoDate(updateTime);
@@ -24,7 +27,12 @@ const CommentDisplayHeader = ({
   return (
     <S.CommentDisplayHeader>
       <CommentDisplayHeaderInfoBox {...{ name, infoDate, updateDate }} />
-      {userAuth && <CommentDisplayHeaderButtonBox {...{ cid, date }} />}
+      <S.CommentDisplayHeaderButtonBox>
+        {userAuth && (
+          <CommentDisplayHeaderButtonGroup {...{ cid, ccid, date }} />
+        )}
+        {!ccid && <CocommentButton {...{ cid }} />}
+      </S.CommentDisplayHeaderButtonBox>
     </S.CommentDisplayHeader>
   );
 };
