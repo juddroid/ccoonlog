@@ -62,9 +62,9 @@ export const CATEGORY_LIST = {
     id: 1,
     name: 'Team',
   },
-  ALGORITHM: {
+  PORTFOLIO: {
     id: 2,
-    name: 'Algorithm',
+    name: 'Portfolio',
   },
   INTERESTING: {
     id: 3,
