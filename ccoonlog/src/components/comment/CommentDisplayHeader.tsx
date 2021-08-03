@@ -1,7 +1,8 @@
 import { Comment as S } from '../../styles/styles';
 import { getInfoDate, isAuth } from '../../utils/utils';
 import CommentDisplayHeaderInfoBox from './CommentDisplayHeaderInfoBox';
-import CommentDisplayHeaderButtonBox from './CommentDisplayHeaderButtonBox';
+import CommentDisplayHeaderButtonGroup from './CommentDisplayHeaderButtonGroup';
+import { IoReturnUpBackOutline } from 'react-icons/io5';
 
 const CommentDisplayHeader = ({
   date,
@@ -21,10 +22,19 @@ const CommentDisplayHeader = ({
 
   const userAuth = isAuth(uid);
 
+  const handleClickCocommentButton = () => {
+    console.log('cocomment');
+  };
+
   return (
     <S.CommentDisplayHeader>
       <CommentDisplayHeaderInfoBox {...{ name, infoDate, updateDate }} />
-      {userAuth && <CommentDisplayHeaderButtonBox {...{ cid, date }} />}
+      <S.CommentDisplayHeaderButtonBox>
+        {userAuth && <CommentDisplayHeaderButtonGroup {...{ cid, date }} />}
+        <S.CommentHeaderButton onClick={handleClickCocommentButton}>
+          <IoReturnUpBackOutline />
+        </S.CommentHeaderButton>
+      </S.CommentDisplayHeaderButtonBox>
     </S.CommentDisplayHeader>
   );
 };

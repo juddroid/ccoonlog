@@ -4,7 +4,7 @@ import { Comment as S } from '../../styles/styles';
 import CommentDisplayHeaderButtonDefault from './CommentDisplayHeaderButtonDefault';
 import CommentDisplayHeaderButtonEdit from './CommentDisplayHeaderButtonEdit';
 
-const CommenDisplayHeaderButtonBox = ({
+const CommenDisplayHeaderButtonGroup = ({
   cid,
   date,
 }: {
@@ -13,14 +13,14 @@ const CommenDisplayHeaderButtonBox = ({
 }) => {
   const commentEditID = useRecoilValue(commentEditIDState);
   return (
-    <S.CommentDisplayHeaderButtonBox>
+    <>
       {commentEditID === cid ? (
         <CommentDisplayHeaderButtonDefault {...{ cid, date }} />
       ) : (
         <CommentDisplayHeaderButtonEdit {...{ cid }} />
       )}
-    </S.CommentDisplayHeaderButtonBox>
+    </>
   );
 };
 
-export default CommenDisplayHeaderButtonBox;
+export default CommenDisplayHeaderButtonGroup;
