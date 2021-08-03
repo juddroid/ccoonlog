@@ -190,6 +190,7 @@ export const AsideMain = {
     margin-right: 0.875rem;
     margin-bottom: 1.75rem;
     border-radius: 50%;
+    /* border: 1px solid ${({ theme }) => theme.colors.dark}; */
   `,
 
   ProfileImage: styled.img`
@@ -398,7 +399,7 @@ export const Article = {
     li,
     hr {
       color: ${({ theme }) => theme.colors.dark};
-      line-height: 1.3;
+      line-height: 2;
       margin: 10px 0;
       font-family: Montserrat, -apple-system, BlinkMacSystemFont,
         'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
