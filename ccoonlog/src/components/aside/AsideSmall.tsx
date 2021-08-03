@@ -31,7 +31,15 @@ const AsideSmall = () => {
             id={`${null}`}
             onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
           >
-            Return
+            Home
+          </S.AsideSmallButton>
+        </Link>
+        <Link to="/">
+          <S.AsideSmallButton
+            id={`${CATEGORY.PORTFOLIO.id}`}
+            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+          >
+            Portfolio
           </S.AsideSmallButton>
         </Link>
         <Link to="/">
@@ -40,14 +48,6 @@ const AsideSmall = () => {
             onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
           >
             Project
-          </S.AsideSmallButton>
-        </Link>
-        <Link to="/">
-          <S.AsideSmallButton
-            id={`${CATEGORY.ALGORITHM.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Algorithm
           </S.AsideSmallButton>
         </Link>
         <Link to="/">

@@ -32,7 +32,15 @@ const AsideSticky = () => {
             id={`${null}`}
             onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
           >
-            Return
+            Home
+          </CS.AsideButton>
+        </Link>
+        <Link to="/">
+          <CS.AsideButton
+            id={`${CATEGORY.PORTFOLIO.id}`}
+            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
+          >
+            Portfolio
           </CS.AsideButton>
         </Link>
         <Link to="/">
@@ -41,14 +49,6 @@ const AsideSticky = () => {
             onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
           >
             Project
-          </CS.AsideButton>
-        </Link>
-        <Link to="/">
-          <CS.AsideButton
-            id={`${CATEGORY.ALGORITHM.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Algorithm
           </CS.AsideButton>
         </Link>
         <Link to="/">
