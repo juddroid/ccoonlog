@@ -1,7 +1,6 @@
 import firebase from 'firebase';
 import { useLocation } from 'react-router-dom';
-import { SetterOrUpdater, useSetRecoilState } from 'recoil';
-import { commentEditIDState } from '../../store/Recoil';
+import { SetterOrUpdater } from 'recoil';
 import { ArticleLocationState } from '../../types/types';
 import CommentDeleteButton from './CommentDeleteButton';
 import CommentEditButton from './CommentEditButton';

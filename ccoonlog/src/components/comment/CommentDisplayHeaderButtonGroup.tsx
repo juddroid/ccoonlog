@@ -19,12 +19,11 @@ const CommenDisplayHeaderButtonGroup = ({
   const id = ccid ? ccid : cid;
   const callback = ccid ? setCocommentEditID : setCommentEditID;
   const editID = ccid ? cocommentEditID : commentEditID;
-  const isComment = ccid ? false : true;
 
   return (
     <>
       {editID === id ? (
-        <CommentDisplayHeaderButtonDefault {...{ cid, date }} />
+        <CommentDisplayHeaderButtonDefault {...{ cid, ccid, date }} />
       ) : (
         <CommentDisplayHeaderButtonEdit {...{ id, callback, cid, ccid }} />
       )}
