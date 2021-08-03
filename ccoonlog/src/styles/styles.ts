@@ -818,22 +818,39 @@ export const Comment = {
 };
 
 export const Cocomment = {
-  Cocomment: styled(Comment.Comment)``,
-
-  CocommentInput: styled.div`
+  Cocomment: styled(Comment.Comment)`
+    margin: 0px;
     margin-bottom: ${({ theme }) => theme.margins.base};
   `,
 
+  CocommentInput: styled.div``,
+
   CocommentDisplayBox: styled(Comment.CommentDisplayBox)``,
 
-  CocommentButtonBox: styled(Comment.CommentButtonBox)``,
+  CocommentEditButtonBox: styled(Comment.CommentButtonBox)`
+    margin-bottom: ${({ theme }) => theme.margins.small};
+  `,
 
   CocommentDisplayUpperBox: styled(Comment.CommentDisplayUpperBox)``,
   CocommentDisplayBottomBox: styled(Comment.CommentDisplayBottomBox)``,
 
-  CocommentButton: styled(Comment.CommentButton)``,
+  CocommentButton: styled(Comment.CommentButton)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  `,
 
-  CocommentPawButton: styled(Comment.CommentPawButton)``,
+  CocommentPawButton: styled(Comment.CommentPawButton)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  `,
 
   CocommentDisplayUpperBoxWrapper: styled(
     Comment.CommentDisplayUpperBoxWrapper

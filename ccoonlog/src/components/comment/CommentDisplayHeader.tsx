@@ -2,11 +2,12 @@ import { Comment as S } from '../../styles/styles';
 import { getInfoDate, isAuth } from '../../utils/utils';
 import CommentDisplayHeaderInfoBox from './CommentDisplayHeaderInfoBox';
 import CommentDisplayHeaderButtonGroup from './CommentDisplayHeaderButtonGroup';
-import { IoReturnUpBackOutline } from 'react-icons/io5';
+import CocommentButton from './CocommentButton';
 
 const CommentDisplayHeader = ({
   date,
   cid,
+  ccid,
   name,
   uid,
   updateTime,
@@ -16,24 +17,19 @@ const CommentDisplayHeader = ({
   name: string;
   uid: string;
   updateTime?: string;
+  ccid?: string;
 }) => {
   const infoDate = getInfoDate(date);
   const updateDate = updateTime && getInfoDate(updateTime);
 
   const userAuth = isAuth(uid);
 
-  const handleClickCocommentButton = () => {
-    console.log('cocomment');
-  };
-
   return (
     <S.CommentDisplayHeader>
       <CommentDisplayHeaderInfoBox {...{ name, infoDate, updateDate }} />
       <S.CommentDisplayHeaderButtonBox>
         {userAuth && <CommentDisplayHeaderButtonGroup {...{ cid, date }} />}
-        <S.CommentHeaderButton onClick={handleClickCocommentButton}>
-          <IoReturnUpBackOutline />
-        </S.CommentHeaderButton>
+        {!ccid && <CocommentButton {...{ cid }} />}
       </S.CommentDisplayHeaderButtonBox>
     </S.CommentDisplayHeader>
   );

@@ -4,12 +4,13 @@ import { useState, useEffect } from 'react';
 import { CommentProps } from '../../types/types';
 import CocommentDisplayUpperBox from './CocommentDisplayUpperBox';
 import CocommentDisplayBottomBox from './CocommentDisplayBottomBox';
-import CocommentCancelButton from '../../components/cocomment/CocommentCancelButton';
-import CocommentPawButton from '../../components/cocomment/CocommentPawButton';
+import { useRecoilValue } from 'recoil';
+import { cocommentEditIDState } from '../../store/Recoil';
 
 const Cocomment = ({ cid }: { cid: string }) => {
   const [cocommentList, setCocommentList] =
     useState<CommentProps[] | null>(null);
+  const cocommentEditID = useRecoilValue(cocommentEditIDState);
 
   useEffect(() => {
     const commentRef = firebase.database().ref(`cocomment/${cid}`);
@@ -34,12 +35,10 @@ const Cocomment = ({ cid }: { cid: string }) => {
       <S.Cocomment>
         <S.CocommentDisplayBox>
           <CocommentDisplayUpperBox {...{ cocommentList }} />
-          <CocommentDisplayBottomBox />
+          {cocommentEditID === cid && (
+            <CocommentDisplayBottomBox {...{ cid }} />
+          )}
         </S.CocommentDisplayBox>
-        <S.CocommentButtonBox>
-          <CocommentCancelButton />
-          <CocommentPawButton {...{ cid }} />
-        </S.CocommentButtonBox>
       </S.Cocomment>
     </>
   );

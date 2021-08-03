@@ -1,7 +1,11 @@
 import firebase from '../../firebase';
 import { useState, useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { cocommentInputValueState, isLoggedInState } from '../../store/Recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+  cocommentEditIDState,
+  cocommentInputValueState,
+  isLoggedInState,
+} from '../../store/Recoil';
 import { getLocalStorageData } from '../../utils/utils';
 import { v4 as uuidv4 } from 'uuid';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
@@ -12,6 +16,7 @@ const CocommentPawButton = ({ cid }: { cid: string }) => {
   const [cocommentInputValue, setCocommentInputValue] = useRecoilState(
     cocommentInputValueState
   );
+  const setCocommentEditID = useSetRecoilState(cocommentEditIDState);
   const isLoggedIn = useRecoilValue(isLoggedInState);
   const user = getLocalStorageData(LOCAL.USER);
   const email = user?.email?.split('@')[0] || null;
@@ -34,6 +39,7 @@ const CocommentPawButton = ({ cid }: { cid: string }) => {
     commentRef.set(updateComment);
 
     setCocommentInputValue('');
+    setCocommentEditID(null);
   };
 
   useEffect(() => {
