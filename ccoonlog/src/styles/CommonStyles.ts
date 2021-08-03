@@ -112,6 +112,12 @@ export const Button = {
       font-size: 0.6rem;
       color: #333;
     }
+
+    :disabled {
+      opacity: 0.2;
+      font-size: inherit;
+      cursor: default;
+    }
   `,
 };
 

@@ -20,7 +20,6 @@ export const LogIn = {
     border: 1px solid ${({ theme }) => theme.colors.hotPink};
     border-radius: 16px;
     margin-top: ${({ theme }) => theme.margins.xxxl};
-    margin-left: ${({ theme }) => theme.margins.lg};
     padding: ${({ theme }) => theme.margins.small};
   `,
 };
@@ -191,6 +190,7 @@ export const AsideMain = {
     margin-right: 0.875rem;
     margin-bottom: 1.75rem;
     border-radius: 50%;
+    /* border: 1px solid ${({ theme }) => theme.colors.dark}; */
   `,
 
   ProfileImage: styled.img`
@@ -399,7 +399,7 @@ export const Article = {
     li,
     hr {
       color: ${({ theme }) => theme.colors.dark};
-      line-height: 1.3;
+      line-height: 2;
       margin: 10px 0;
       font-family: Montserrat, -apple-system, BlinkMacSystemFont,
         'Helvetica Neue', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕',
@@ -453,6 +453,15 @@ export const Article = {
       padding: 18px;
       font-size: ${({ theme }) => theme.fontSizes.base};
       border-radius: 5px;
+
+      code {
+        color: #222;
+      }
+    }
+    .toastui-editor-contents td,
+    th,
+    tr {
+      color: ${({ theme }) => theme.colors.dark};
     }
   `,
 };
@@ -721,6 +730,12 @@ export const Comment = {
   CommentPawButton: styled(Button.MenuButton)`
     color: ${({ theme }) => theme.colors.hotPink};
     margin: 0px 0px 0px 3px;
+
+    :disabled {
+      opacity: 0.2;
+      font-size: inherit;
+      cursor: default;
+    }
   `,
 
   CommentButton: styled(Button.MenuButton)`
@@ -760,12 +775,22 @@ export const Comment = {
   CommentDisplayContent: styled.div`
     padding: 10px 20px;
     box-sizing: border-box;
+
+    .toastui-editor-contents p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ol,
+    li,
+    hr {
+      color: ${({ theme }) => theme.colors.dark};
+    }
   `,
 
   CommentEditTextArea: styled.textarea`
-    transition: all ease-in-out 0.4s;
-    background: ${({ theme }) => theme.colors.white};
-
     color: inherit;
     resize: vertical;
     width: 100%;
@@ -776,6 +801,7 @@ export const Comment = {
     border: 1px solid ${({ theme }) => theme.colors.gray};
     box-sizing: border-box;
     display: flex;
+    background: transparent;
   `,
 
   CommentDisplayHeaderTime: styled.div``,

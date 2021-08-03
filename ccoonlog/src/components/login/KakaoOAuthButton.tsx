@@ -8,6 +8,7 @@ const KakaoOAuthButton = () => {
       name={O.KAKAO}
       color={light.colors.black}
       background={light.colors.kakao}
+      disabled={true}
     />
   );
 };

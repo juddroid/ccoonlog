@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 import { useLocation } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { commentEditIDState } from '../../store/Recoil';
 import { ArticleLocationState } from '../../types/types';
 import CommentDeleteButton from './CommentDeleteButton';
@@ -8,7 +8,7 @@ import CommentEditButton from './CommentEditButton';
 
 const CommentDisplayHeaderButtonEdit = ({ cid }: { cid: string }) => {
   const location = useLocation<ArticleLocationState>();
-  const [commentEditID, setCommentEditID] = useRecoilState(commentEditIDState);
+  const setCommentEditID = useSetRecoilState(commentEditIDState);
 
   const handleClickCommentDeleteButton = () => {
     const articleID = location.state.id;

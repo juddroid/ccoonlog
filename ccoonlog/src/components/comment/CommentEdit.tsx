@@ -20,7 +20,9 @@ const CommentEdit = ({ comment }: { comment: string }) => {
     <S.CommentEditTextArea
       value={commentEditInputValue}
       onChange={handleChangeCommentEditTextArea}
-    />
+    >
+      dafldfads
+    </S.CommentEditTextArea>
   );
 };
 

@@ -6,9 +6,12 @@ const OAuthButton = ({
   color,
   background,
   onClick,
+  disabled,
 }: OAuthButtonProps) => {
   return (
-    <S.OAuthButton {...{ color, background, onClick }}>{name}</S.OAuthButton>
+    <S.OAuthButton {...{ color, background, onClick }} disabled={disabled}>
+      {name}
+    </S.OAuthButton>
   );
 };
 

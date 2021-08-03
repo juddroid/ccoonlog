@@ -3,4 +3,5 @@ export interface OAuthButtonProps {
   color?: string;
   background?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabled?: boolean;
 }

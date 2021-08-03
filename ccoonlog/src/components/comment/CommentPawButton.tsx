@@ -6,39 +6,52 @@ import { useLocation } from 'react-router-dom';
 import { ArticleDetailProps } from '../../types/types';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
 import { v4 as uuidv4 } from 'uuid';
+import { getLocalStorageData } from '../../utils/utils';
+import { useEffect, useState } from 'react';
 
 const CommentPawButton = () => {
+  const [pawButtonState, setPawButtonState] = useState(false);
   const [commentInputValue, setCommentInputValue] = useRecoilState(
     commentInputValueState
   );
   const isLoggedIn = useRecoilValue(isLoggedInState);
   const location = useLocation<ArticleDetailProps>();
-  const user = localStorage.getItem(LOCAL.USER);
-  const uid = user && JSON.parse(user);
-  const email = uid?.email.split('@')[0] || null;
+  const user = getLocalStorageData(LOCAL.USER);
+  const email = user?.email?.split('@')[0] || null;
 
   const handleClickPawButton = () => {
     if (!isLoggedIn) return alert('로그인이 필요해요');
 
     const cid = uuidv4();
     const articleID = location.state.id;
-    const name = uid.displayName || email;
+    const name = user.displayName || email;
     const commentRef = firebase.database().ref(`comment/${articleID}/${cid}`);
     const updateComment = {
       cid: cid,
-      uid: uid.uid,
+      uid: user.uid,
       name: name,
       date: `${new Date()}`,
       comment: commentInputValue,
-      userImageURL: uid.photoURL,
+      userImageURL: user.photoURL,
     };
     commentRef.set(updateComment);
 
     setCommentInputValue('');
   };
 
+  useEffect(() => {
+    commentInputValue !== ''
+      ? setPawButtonState(false)
+      : setPawButtonState(true);
+  }, [commentInputValue]);
+
   return (
-    <S.CommentPawButton onClick={handleClickPawButton}>Paw</S.CommentPawButton>
+    <S.CommentPawButton
+      onClick={handleClickPawButton}
+      disabled={pawButtonState}
+    >
+      Paw
+    </S.CommentPawButton>
   );
 };
 
