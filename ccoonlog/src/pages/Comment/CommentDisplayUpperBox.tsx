@@ -1,8 +1,8 @@
 import { CommentProps } from '../../types/types';
-import CommentDisplay from '../../components/comment/CommentDisplay';
-import CommentProfileImageBox from '../../components/comment/CommentProfileImageBox';
+import CommentDisplayUpperBoxWrapper from '../../pages/Comment/CommenDisplayUpperBoxWrapper';
 import { v4 as uuidv4 } from 'uuid';
 import { Comment as S } from '../../styles/styles';
+import Cocomment from '../Cocomment';
 
 const CommentDisplayUpperBox = ({
   commentList,
@@ -15,8 +15,8 @@ const CommentDisplayUpperBox = ({
         .sort((a: any, b: any) => +new Date(a.date) - +new Date(b.date))
         .map((articleComment) => (
           <S.CommentDisplayUpperBox key={uuidv4()}>
-            <CommentProfileImageBox {...{ articleComment }} />
-            <CommentDisplay {...{ articleComment }} />
+            <CommentDisplayUpperBoxWrapper {...{ articleComment }} />
+            <Cocomment cid={articleComment.cid} />
           </S.CommentDisplayUpperBox>
         ))}
     </>

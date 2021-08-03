@@ -768,6 +768,11 @@ export const Comment = {
 
   CommentDisplayUpperBox: styled.div`
     display: flex;
+    flex-direction: column;
+  `,
+
+  CommentDisplayUpperBoxWrapper: styled.div`
+    display: flex;
   `,
 
   CommentDisplayBottomBox: styled.div``,
@@ -810,4 +815,23 @@ export const Comment = {
     color: ${({ theme }) => theme.colors.gray};
     margin-left: 10px;
   `,
+};
+
+export const Cocomment = {
+  Cocomment: styled(Comment.Comment)``,
+
+  CocommentInput: styled.div`
+    margin-bottom: ${({ theme }) => theme.margins.base};
+  `,
+
+  CocommentDisplayBox: styled(Comment.CommentDisplayBox)``,
+
+  CocommentButtonBox: styled(Comment.CommentButtonBox)``,
+
+  CocommentDisplayUpperBox: styled(Comment.CommentDisplayUpperBox)``,
+  CocommentDisplayBottomBox: styled(Comment.CommentDisplayBottomBox)``,
+
+  CocommentButton: styled(Comment.CommentButton)``,
+
+  CocommentPawButton: styled(Comment.CommentPawButton)``,
 };

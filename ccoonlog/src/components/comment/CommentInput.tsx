@@ -1,25 +1,26 @@
 import { ChangeEvent } from 'react';
-import { useRecoilState } from 'recoil';
-import { commentInputValueState } from '../../store/Recoil';
+import { SetterOrUpdater } from 'recoil';
 import { Comment as S } from '../../styles/styles';
 
-const CommentInput = () => {
-  const [commentInputValue, setCommentInputValue] = useRecoilState(
-    commentInputValueState
-  );
-
+const CommentInput = ({
+  state,
+  setState,
+}: {
+  state: string;
+  setState: SetterOrUpdater<string>;
+}) => {
   const handleClickCommentInput = () => {};
   const handleChangeCommentInputValue = (
     e: ChangeEvent<HTMLTextAreaElement>
   ) => {
-    setCommentInputValue(e.target.value);
+    setState(e.target.value);
   };
 
   return (
     <S.CommentInput
       placeholder={`Comment`}
       onClick={handleClickCommentInput}
-      value={commentInputValue}
+      value={state}
       onChange={handleChangeCommentInputValue}
     />
   );
