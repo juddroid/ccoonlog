@@ -24,7 +24,6 @@ const Comment = () => {
       }
 
       comments && setCommentList(comments);
-      console.log(comments);
     });
 
     return () => commentRef.off();
