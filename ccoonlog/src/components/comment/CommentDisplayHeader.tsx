@@ -28,7 +28,9 @@ const CommentDisplayHeader = ({
     <S.CommentDisplayHeader>
       <CommentDisplayHeaderInfoBox {...{ name, infoDate, updateDate }} />
       <S.CommentDisplayHeaderButtonBox>
-        {userAuth && <CommentDisplayHeaderButtonGroup {...{ cid, date }} />}
+        {userAuth && (
+          <CommentDisplayHeaderButtonGroup {...{ cid, ccid, date }} />
+        )}
         {!ccid && <CocommentButton {...{ cid }} />}
       </S.CommentDisplayHeaderButtonBox>
     </S.CommentDisplayHeader>

@@ -1,18 +1,30 @@
 import firebase from 'firebase';
 import { useLocation } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil';
+import { SetterOrUpdater, useSetRecoilState } from 'recoil';
 import { commentEditIDState } from '../../store/Recoil';
 import { ArticleLocationState } from '../../types/types';
 import CommentDeleteButton from './CommentDeleteButton';
 import CommentEditButton from './CommentEditButton';
 
-const CommentDisplayHeaderButtonEdit = ({ cid }: { cid: string }) => {
+const CommentDisplayHeaderButtonEdit = ({
+  id,
+  callback,
+  cid,
+  ccid,
+}: {
+  id: string;
+  callback: SetterOrUpdater<string | null>;
+  cid: string;
+  ccid?: string;
+}) => {
   const location = useLocation<ArticleLocationState>();
-  const setCommentEditID = useSetRecoilState(commentEditIDState);
 
   const handleClickCommentDeleteButton = () => {
     const articleID = location.state.id;
-    const deleteRef = firebase.database().ref(`comment/${articleID}/${cid}`);
+    const deletePath = ccid
+      ? `cocomment/${cid}/${ccid}`
+      : `comment/${articleID}/${id}`;
+    const deleteRef = firebase.database().ref(deletePath);
 
     deleteRef
       .remove()
@@ -21,10 +33,11 @@ const CommentDisplayHeaderButtonEdit = ({ cid }: { cid: string }) => {
   };
 
   const handleClickCommentEditButton = (e: React.MouseEvent) =>
-    setCommentEditID(e.currentTarget.id);
+    callback(e.currentTarget.id);
+
   return (
     <>
-      <CommentEditButton id={cid} onClick={handleClickCommentEditButton} />
+      <CommentEditButton id={id} onClick={handleClickCommentEditButton} />
       <CommentDeleteButton onClick={handleClickCommentDeleteButton} />
     </>
   );
