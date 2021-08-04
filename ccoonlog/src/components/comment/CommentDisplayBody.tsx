@@ -1,53 +1,21 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
-import {
-  cocommentEditIDState,
-  cocommentEditInputValueState,
-  commentEditIDState,
-  commentEditInputValueState,
-} from '../../store/Recoil';
-import { Comment as S } from '../../styles/styles';
-import CommentEdit from './CommentEdit';
-import { Viewer } from '@toast-ui/react-editor';
+import { RecoilState, useRecoilValue } from 'recoil';
+import CommonCommentDisplayBody from '../common/CommonCommentDisplayBody';
 
 const CommentDisplayBody = ({
   comment,
-  cid,
-  ccid,
+  id,
+  recoilValueState,
+  recoilIDState,
 }: {
   comment: string;
-  cid: string;
-  ccid?: string;
+  id: string;
+  recoilValueState: RecoilState<string>;
+  recoilIDState: RecoilState<string>;
 }) => {
-  const commentEditID = useRecoilValue(commentEditIDState);
-  const cocommentEditID = useRecoilValue(cocommentEditIDState);
-  const [commentEditInputValue, setCommentEditInputValue] = useRecoilState(
-    commentEditInputValueState
-  );
-  const [cocommentEditInputValue, setCocommentEditInputValue] = useRecoilState(
-    cocommentEditInputValueState
-  );
-
-  const id = ccid ? ccid : cid;
-  const editID = ccid ? cocommentEditID : commentEditID;
-  const editInputValue = ccid ? cocommentEditInputValue : commentEditInputValue;
-  const setEditInputValue = ccid
-    ? setCocommentEditInputValue
-    : setCommentEditInputValue;
+  const editID = useRecoilValue(recoilIDState);
 
   return (
-    <S.CommentDisplayBody>
-      {editID === id ? (
-        <CommentEdit
-          {...{ comment }}
-          state={editInputValue}
-          setState={setEditInputValue}
-        />
-      ) : (
-        <S.CommentDisplayContent>
-          <Viewer initialValue={comment} />
-        </S.CommentDisplayContent>
-      )}
-    </S.CommentDisplayBody>
+    <CommonCommentDisplayBody {...{ comment, recoilValueState, id, editID }} />
   );
 };
 

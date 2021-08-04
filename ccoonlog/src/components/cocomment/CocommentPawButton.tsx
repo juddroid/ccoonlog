@@ -39,7 +39,7 @@ const CocommentPawButton = ({ cid }: { cid: string }) => {
     commentRef.set(updateComment);
 
     setCocommentInputValue('');
-    setCocommentEditID(null);
+    setCocommentEditID('');
   };
 
   useEffect(() => {

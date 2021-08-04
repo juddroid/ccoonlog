@@ -1,10 +1,10 @@
 import { Comment as S } from '../../styles/styles';
 import { getInfoDate, isAuth } from '../../utils/utils';
-import CommentDisplayHeaderInfoBox from './CommentDisplayHeaderInfoBox';
-import CommentDisplayHeaderButtonGroup from './CommentDisplayHeaderButtonGroup';
-import CocommentButton from './CocommentButton';
+import CommentDisplayHeaderInfoBox from '../comment/CommentDisplayHeaderInfoBox';
+import CommentDisplayHeaderButtonGroup from '../comment/CommentDisplayHeaderButtonGroup';
+import CocommentButton from '../comment/CocommentButton';
 
-const CommentDisplayHeader = ({
+const CommonCommentDisplayHeader = ({
   date,
   cid,
   ccid,
@@ -37,4 +37,4 @@ const CommentDisplayHeader = ({
   );
 };
 
-export default CommentDisplayHeader;
+export default CommonCommentDisplayHeader;

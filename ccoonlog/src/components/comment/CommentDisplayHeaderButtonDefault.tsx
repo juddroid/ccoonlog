@@ -3,7 +3,7 @@ import CommentEditPawButton from './CommentEditPawButton';
 import { useLocation } from 'react-router-dom';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
 import { ArticleLocationState } from '../../types/types';
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 import {
   cocommentEditIDState,
@@ -30,7 +30,7 @@ const CommentDisplayHeaderButtonDefault = ({
 
   const callback = ccid ? setCocommentEditID : setCommentEditID;
   const id = ccid ? ccid : cid;
-  const handleClickCommentEditCancelButton = () => callback(null);
+  const handleClickCommentEditCancelButton = () => callback('');
   const handleClickCommentEditPawButton = () => {
     const articleID = location.state.id;
     const uid = getLocalStorageData(LOCAL.USER);
@@ -61,7 +61,7 @@ const CommentDisplayHeaderButtonDefault = ({
     };
     const update = ccid ? updateCocomment : updateComment;
     commentRef.update(update);
-    callback(null);
+    callback('');
   };
 
   return (

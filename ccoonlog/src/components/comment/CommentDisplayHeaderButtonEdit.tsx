@@ -12,7 +12,7 @@ const CommentDisplayHeaderButtonEdit = ({
   ccid,
 }: {
   id: string;
-  callback: SetterOrUpdater<string | null>;
+  callback: SetterOrUpdater<string>;
   cid: string;
   ccid?: string;
 }) => {
