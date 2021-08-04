@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Comment as S } from '../../styles/styles';
 import { ArticleLocationState, CommentProps } from '../../types/types';
-import CommentCancelButton from '../../components/comment/CommentCancelButton';
-import CommentPawButton from '../../components/comment/CommentPawButton';
-import CommentDisplayBottomBox from './CommentDisplayBottomBox';
-import CommentDisplayUpperBox from './CommentDisplayUpperBox';
+import CommentButtonBox from './CommentButtonBox';
+import CommentDisplayBox from './CommentDisplayBox';
 
 const Comment = () => {
   const [commentList, setCommentList] = useState<CommentProps[] | null>(null);
@@ -34,14 +32,8 @@ const Comment = () => {
 
   return (
     <S.Comment>
-      <S.CommentDisplayBox>
-        <CommentDisplayUpperBox {...{ commentList }} />
-        <CommentDisplayBottomBox />
-      </S.CommentDisplayBox>
-      <S.CommentButtonBox>
-        <CommentCancelButton />
-        <CommentPawButton />
-      </S.CommentButtonBox>
+      <CommentDisplayBox {...{ commentList }} />
+      <CommentButtonBox />
     </S.Comment>
   );
 };

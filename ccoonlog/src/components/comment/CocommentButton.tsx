@@ -9,7 +9,7 @@ const CocommentButton = ({ cid }: { cid: string }) => {
 
   const handleClickCocommentButton = (e: React.MouseEvent) =>
     setCocommentEditID((prev) =>
-      prev === e.currentTarget.id ? null : e.currentTarget.id
+      prev === e.currentTarget.id ? '' : e.currentTarget.id
     );
 
   return (

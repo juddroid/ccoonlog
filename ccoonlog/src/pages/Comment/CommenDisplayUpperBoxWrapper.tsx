@@ -1,4 +1,4 @@
-import CommentDisplay from '../../components/comment/CommentDisplay';
+import CommentDisplay from './CommentDisplay';
 import CommentProfileImageBox from '../../components/comment/CommentProfileImageBox';
 import { Comment as S } from '../../styles/styles';
 import { CommentProps } from '../../types/types';
