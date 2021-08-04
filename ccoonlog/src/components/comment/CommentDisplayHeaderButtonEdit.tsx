@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { useLocation } from 'react-router-dom';
 import { SetterOrUpdater } from 'recoil';
 import { ArticleLocationState } from '../../types/types';

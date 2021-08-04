@@ -3,7 +3,7 @@ import CommentEditPawButton from './CommentEditPawButton';
 import { useLocation } from 'react-router-dom';
 import { LOCAL_STORAGE as LOCAL } from '../../const';
 import { ArticleLocationState } from '../../types/types';
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 import {
   cocommentEditIDState,
