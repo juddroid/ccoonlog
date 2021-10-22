@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from '../../firebase';
 import { useLocation } from 'react-router-dom';
 import { SetterOrUpdater } from 'recoil';
 import { ArticleLocationState } from '../../types/types';
@@ -20,9 +20,7 @@ const CommentDisplayHeaderButtonEdit = ({
 
   const handleClickCommentDeleteButton = () => {
     const articleID = location.state.id;
-    const deletePath = ccid
-      ? `cocomment/${cid}/${ccid}`
-      : `comment/${articleID}/${id}`;
+    const deletePath = ccid ? `cocomment/${cid}/${ccid}` : `comment/${articleID}/${id}`;
     const deleteRef = firebase.database().ref(deletePath);
 
     deleteRef
@@ -31,8 +29,7 @@ const CommentDisplayHeaderButtonEdit = ({
       .catch((error) => console.log('Remove failed: ' + error.message));
   };
 
-  const handleClickCommentEditButton = (e: React.MouseEvent) =>
-    callback(e.currentTarget.id);
+  const handleClickCommentEditButton = (e: React.MouseEvent) => callback(e.currentTarget.id);
 
   return (
     <>
