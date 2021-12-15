@@ -6,6 +6,8 @@ import { LOCAL_STORAGE as LOCAL, CATEGORY_LIST as CATEGORY } from '../../const';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { categoryIDState, isLoggedInState } from '../../store/Recoil';
 import { handleClickFilteringButton } from '../../utils/utils';
+import AsideButton from '../common/Organisms/AsideButton';
+import React, { MouseEventHandler } from 'react';
 
 const AsideSticky = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
@@ -28,50 +30,43 @@ const AsideSticky = () => {
     <S.AsideSticky>
       <S.AsideStickyBox>
         <Link to="/">
-          <CS.AsideButton
+          <AsideButton
+            name={'Home'}
             id={`${null}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Home
-          </CS.AsideButton>
+            onClick={(e: React.MouseEvent) => handleClickFilteringButton(e, setCategoryID)}
+          />
         </Link>
         <Link to="/">
-          <CS.AsideButton
+          <AsideButton
+            name={'Portfolio'}
             id={`${CATEGORY.PORTFOLIO.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Portfolio
-          </CS.AsideButton>
+            onClick={(e: React.MouseEvent) => handleClickFilteringButton(e, setCategoryID)}
+          />
         </Link>
         <Link to="/">
-          <CS.AsideButton
+          <AsideButton
+            name={'Project'}
             id={`${CATEGORY.PERSONAL_PROJECT.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Project
-          </CS.AsideButton>
+            onClick={(e: React.MouseEvent) => handleClickFilteringButton(e, setCategoryID)}
+          />
         </Link>
         <Link to="/">
-          <CS.AsideButton
+          <AsideButton
+            name={'Thinking'}
             id={`${CATEGORY.THINKING.id}`}
-            onClick={(e) => handleClickFilteringButton(e, setCategoryID)}
-          >
-            Thinking
-          </CS.AsideButton>
+            onClick={(e: React.MouseEvent) => handleClickFilteringButton(e, setCategoryID)}
+          />
         </Link>
-
         <Link to="/about">
-          <CS.AsideButton>About</CS.AsideButton>
+          <AsideButton name={'About'} />
         </Link>
         {isLoggedIn ? (
           <Link to="/">
-            <S.LogInButton onClick={handleClickLogOutButton}>
-              LogOut
-            </S.LogInButton>
+            <AsideButton name={'LogOut'} onClick={handleClickLogOutButton} point />
           </Link>
         ) : (
           <Link to="/login">
-            <S.LogInButton>LogIn</S.LogInButton>
+            <AsideButton name={'LogIn'} point />
           </Link>
         )}
       </S.AsideStickyBox>

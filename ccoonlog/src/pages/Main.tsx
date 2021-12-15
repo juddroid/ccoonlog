@@ -9,16 +9,15 @@ import { articleDataForRender, articleDataState } from '../store/Recoil';
 import { TEXT } from '../const';
 
 const Main = () => {
-  const setArticleData =
-    useSetRecoilState<ArticleProps[] | null>(articleDataState);
+  const setArticleData = useSetRecoilState<ArticleProps[] | null>(articleDataState);
   const articleDataRender = useRecoilValue(articleDataForRender);
-
   useEffect(() => {
     const articleRef = firebase.database().ref('article');
+
     articleRef.on('value', (snapshot) => {
       const article = snapshot.val();
-      const articleList = [];
 
+      const articleList = [];
       for (let id in article) {
         articleList.push(article[id]);
       }

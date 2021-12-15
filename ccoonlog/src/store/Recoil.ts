@@ -25,28 +25,20 @@ export const articleDataForRender = selector({
       case 1:
         return articleList.filter(
           (article) =>
-            (article.category &&
-              article.category.map((category) => category.id).includes(0)) ||
-            (article.category &&
-              article.category.map((category) => category.id).includes(1))
+            (article.category && article.category.map((category) => category.id).includes(0)) ||
+            (article.category && article.category.map((category) => category.id).includes(1))
         );
       case 2:
         return articleList.filter(
-          (article) =>
-            article.category &&
-            article.category.map((category) => category.id).includes(2)
+          (article) => article.category && article.category.map((category) => category.id).includes(2)
         );
       case 3:
         return articleList.filter(
-          (article) =>
-            article.category &&
-            article.category.map((category) => category.id).includes(3)
+          (article) => article.category && article.category.map((category) => category.id).includes(3)
         );
       case 4:
         return articleList.filter(
-          (article) =>
-            article.category &&
-            article.category.map((category) => category.id).includes(4)
+          (article) => article.category && article.category.map((category) => category.id).includes(4)
         );
 
       default:
