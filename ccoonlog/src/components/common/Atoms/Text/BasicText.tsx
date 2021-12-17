@@ -1,8 +1,13 @@
 import styled from 'styled-components';
+import { ReactProps } from '../../../../types/types';
 
-export const BasicText = styled.span`
+const BasicText = ({ children }: ReactProps) => {
+  return <StyledBasicText>{children}</StyledBasicText>;
+};
+
+export default BasicText;
+
+export const StyledBasicText = styled.span`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.black};
 `;
-
-export default BasicText;

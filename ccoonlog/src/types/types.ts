@@ -1,3 +1,9 @@
+import React from 'react';
+
+export interface ReactProps {
+  children: React.ReactNode;
+}
+
 export interface ArticleProps {
   id: number;
   title: string;

@@ -1,8 +1,13 @@
 import styled from 'styled-components';
-import BasicText from './BasicText';
+import { ReactProps } from '../../../../types/types';
+import { StyledBasicText } from './BasicText';
 
-const PointText = styled(BasicText)`
-  color: ${({ theme }) => theme.colors.hotPink};
-`;
+const PointText = ({ children }: ReactProps) => {
+  return <StyledPointText>{children}</StyledPointText>;
+};
 
 export default PointText;
+
+const StyledPointText = styled(StyledBasicText)`
+  color: ${({ theme }) => theme.colors.hotPink};
+`;

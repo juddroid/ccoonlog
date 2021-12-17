@@ -1,6 +1,23 @@
 import styled from 'styled-components';
+import { ReactProps } from '../../../../types/types';
+import BasicText from '../Text/BasicText';
 
-const StyledButton = styled.button`
+interface BasicButtonProps extends ReactProps {
+  id?: string;
+  onClick?: any;
+}
+
+const BasicButton = ({ children, id, onClick }: BasicButtonProps) => {
+  return (
+    <StyledBasicButton {...{ id, onClick }}>
+      <BasicText>{children}</BasicText>
+    </StyledBasicButton>
+  );
+};
+
+export default BasicButton;
+
+export const StyledBasicButton = styled.button`
   width: 120px;
   height: 50px;
   outline: none;
@@ -25,5 +42,3 @@ const StyledButton = styled.button`
     color: #333;
   }
 `;
-
-export default StyledButton;

@@ -1,4 +1,4 @@
-import { BasicText, StyledButton } from '../Atoms';
+import { BasicText, BasicButton } from '../Atoms';
 import PointText from '../Atoms/Text/PointText';
 
 type AsideButtonType = {
@@ -10,9 +10,9 @@ type AsideButtonType = {
 
 const AsideButton = ({ id, name, point, onClick }: AsideButtonType) => {
   return (
-    <StyledButton {...{ id, onClick }}>
+    <BasicButton {...{ id, onClick }}>
       {point ? <PointText>{name}</PointText> : <BasicText>{name}</BasicText>}
-    </StyledButton>
+    </BasicButton>
   );
 };
 

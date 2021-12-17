@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
-import { AsideSticky as S } from '../../styles/styles';
-import { Button as CS } from '../../styles/CommonStyles';
+import { AsideSticky as S, ReactToggle } from '../../styles/styles';
 import firebase from '../../firebase';
 import { LOCAL_STORAGE as LOCAL, CATEGORY_LIST as CATEGORY } from '../../const';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { categoryIDState, isLoggedInState } from '../../store/Recoil';
 import { handleClickFilteringButton } from '../../utils/utils';
 import AsideButton from '../common/Organisms/AsideButton';
-import React, { MouseEventHandler } from 'react';
+import StyledButton from '../common/Molecules/StyledButton';
+import React from 'react';
+import { BasicText } from '../common/Atoms';
 
 const AsideSticky = () => {
   const setCategoryID = useSetRecoilState(categoryIDState);
@@ -70,6 +71,7 @@ const AsideSticky = () => {
           </Link>
         )}
       </S.AsideStickyBox>
+      <StyledButton type="basic">{'home'}</StyledButton>
     </S.AsideSticky>
   );
 };
