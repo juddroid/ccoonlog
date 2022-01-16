@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DefaultTextTagNameProps, FONTS_STYLE } from '../../../styles/font';
+import { DefaultTextTagNameProps, FONTS_STYLE } from '../../styles/font';
 
 export interface DefaultTextProps extends DefaultTextTagNameProps {
   bold?: 300 | 400 | 500 | 600 | 700 | 800 | 900 | boolean;

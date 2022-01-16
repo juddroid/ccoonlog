@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { DefaultButton } from '../Button';
-import DefaultFlex from './DefaultFlex';
+import { DefaultFlex } from './index';
 
 export default {
   title: 'Atomics/Flex',
