@@ -106,3 +106,6 @@ dist
 
 .firebase
 .env
+.story
+.storybook
+yarn.lock
