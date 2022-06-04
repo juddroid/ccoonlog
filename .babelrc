@@ -1,0 +1,28 @@
+{
+  "presets": [
+    "next/babel",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "49",
+          "ios": "10"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ],
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": false }],
+    ["@babel/plugin-transform-runtime"]
+  ],
+  "env": {}
+}
