@@ -1,23 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
-  label: string;
-  onClick?: () => void;
+  point?: boolean;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
-export const Button = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ point, children, style, ...props }: ButtonProps) => {
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
+    <StyledButton type={'button'} {...props}>
+      {children}
+    </StyledButton>
   );
 };
+
+const StyledButton = styled.button<ButtonProps>`
+  width: 120px;
+  height: 50px;
+  outline: none;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid #d23669;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 5px 0;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  color: ${({ point }) => (point ? '#d23669' : '#000')};
+`;
