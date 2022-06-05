@@ -1,13 +1,23 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from './Button';
+import GlobalStyles from '../../../styles/GlobalStyles';
+import { Button, DefaultButton } from './';
 
 export default {
   title: 'Atomics/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' },
+    point: { control: 'boolean' },
+    block: { control: 'boolean' },
   },
+  decorators: [
+    (Story) => (
+      <>
+        <GlobalStyles />
+        <Story />
+      </>
+    ),
+  ],
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
@@ -15,6 +25,14 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const ButtonStory = Template.bind({});
 
 ButtonStory.args = {
-  point: true,
   children: 'Button',
+};
+
+const DefaultTemplate: ComponentStory<typeof DefaultButton> = (args) => <DefaultButton {...args} />;
+
+export const Default = DefaultTemplate.bind({});
+
+Default.args = {
+  point: true,
+  children: 'DefaultButton',
 };
