@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import GlobalStyles from '../../../styles/GlobalStyles';
-import { Button, DefaultButton } from './';
+import { Button, DefaultButton, MUIButton, DefaultMUIButton } from './';
 
 export default {
   title: 'Atomics/Button',
@@ -35,4 +35,21 @@ export const Default = DefaultTemplate.bind({});
 Default.args = {
   point: true,
   children: 'DefaultButton',
+};
+
+const MUITemplate: ComponentStory<typeof MUIButton> = (args) => <MUIButton {...args} />;
+
+export const MUI = MUITemplate.bind({});
+
+MUI.args = {
+  variant: 'outlined',
+  children: 'MUIButton',
+};
+
+const DefaultMUITemplate: ComponentStory<typeof DefaultMUIButton> = (args) => <DefaultMUIButton {...args} />;
+
+export const DefaultMUI = DefaultMUITemplate.bind({});
+
+DefaultMUI.args = {
+  children: 'DefaultMUIButton',
 };

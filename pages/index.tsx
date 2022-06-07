@@ -1,10 +1,15 @@
 import type { NextPage } from 'next';
-import { Button, DefaultButton } from '../stories/Atomics/Button';
+import { DefaultButton } from '../stories/Atomics/Button';
+import MUIButton from '../stories/Atomics/Button/MUIButton';
 
 import Text from '../stories/Atomics/Text/Text';
 
 const Index: NextPage = () => {
-  return <DefaultButton block>Text</DefaultButton>;
+  return (
+    <MUIButton variant={'outlined'} style={{ textTransform: 'none' }}>
+      MUIButton
+    </MUIButton>
+  );
 };
 
 export default Index;
