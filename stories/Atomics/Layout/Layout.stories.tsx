@@ -1,7 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import GlobalStyles from '../../../styles/GlobalStyles';
-import { Flex } from './';
+import GlobalStyles from '../../../src/styles/GlobalStyles';
+import { Flex, MUIStack } from './';
+import { DefaultMUIButton } from '../Button';
 
 export default {
   title: 'Atomics/Layout',
@@ -37,4 +38,19 @@ FlexStory.args = {
   style: {
     border: '1px solid',
   },
+};
+
+const StackTemplate: ComponentStory<typeof MUIStack> = (args) => <MUIStack {...args} />;
+
+export const StackStory = StackTemplate.bind({});
+
+StackStory.args = {
+  spacing: 1,
+  children: (
+    <>
+      <DefaultMUIButton variant={'outlined'}>DefaultMUIButton</DefaultMUIButton>
+      <DefaultMUIButton variant={'outlined'}>DefaultMUIButton</DefaultMUIButton>
+      <DefaultMUIButton variant={'outlined'}>DefaultMUIButton</DefaultMUIButton>
+    </>
+  ),
 };

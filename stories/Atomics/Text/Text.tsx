@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import colors from '../../../constants/colors';
-import { TextPropsTagNames, FONTS_STYLE } from '../../../constants/font';
+import colors from '../../../src/constants/colors';
+import { TextPropsTagNames, FONTS_STYLE } from '../../../src/constants/font';
 
 export interface TextProps extends TextPropsTagNames {
   bold?: 300 | 400 | 500 | 600 | 700 | 800 | 900 | boolean;

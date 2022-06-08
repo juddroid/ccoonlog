@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import GlobalStyles from '../../../styles/GlobalStyles';
+import GlobalStyles from '../../../src/styles/GlobalStyles';
 import { Text, DefaultText } from './';
 
 export default {

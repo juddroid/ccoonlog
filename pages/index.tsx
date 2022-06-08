@@ -1,14 +1,23 @@
 import type { NextPage } from 'next';
-import { DefaultButton } from '../stories/Atomics/Button';
 import MUIButton from '../stories/Atomics/Button/MUIButton';
-
-import Text from '../stories/Atomics/Text/Text';
+import MUIStack from '../stories/Atomics/Layout/MUIStack';
+import { useTheme } from 'styled-components';
 
 const Index: NextPage = () => {
+  const theme = useTheme();
+  console.log(theme);
   return (
-    <MUIButton variant={'outlined'} style={{ textTransform: 'none' }}>
-      MUIButton
-    </MUIButton>
+    <MUIStack spacing={2}>
+      <MUIButton variant={'outlined'} style={{ textTransform: 'none', color: theme.point }}>
+        MUIButton
+      </MUIButton>
+      <MUIButton variant={'outlined'} style={{ textTransform: 'none' }}>
+        MUIButton
+      </MUIButton>
+      <MUIButton variant={'outlined'} style={{ textTransform: 'none' }}>
+        MUIButton
+      </MUIButton>
+    </MUIStack>
   );
 };
 
