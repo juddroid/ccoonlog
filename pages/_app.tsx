@@ -1,9 +1,8 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { ThemeProvider as MUIThemeProvider } from '@mui/styles';
+import { StylesProvider, ThemeProvider as MUIThemeProvider } from '@mui/styles';
 import useDarkMode from '../src/hooks/useDarkMode';
 import GlobalStyles from '../src/styles/GlobalStyles';
-import { StylesProvider } from '@mui/styles';
 import lightTheme from '../src/styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {

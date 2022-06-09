@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import MUIStack from '../stories/Atomics/Layout/MUIStack';
 import { useTheme } from 'styled-components';
 import { DefaultMUIButton } from '../stories/Atomics/Button';
+import MUISwitch from '../stories/Atomics/Input/MUISwitch';
 
 const Index: NextPage = () => {
   const theme = useTheme();
@@ -20,6 +21,7 @@ const Index: NextPage = () => {
       <DefaultMUIButton variant={'outlined'} style={{ textTransform: 'none' }}>
         MUIButton
       </DefaultMUIButton>
+      <MUISwitch />
     </MUIStack>
   );
 };

@@ -3,6 +3,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import GlobalStyles from '../../../src/styles/GlobalStyles';
 import { Flex, MUIStack } from './';
 import { DefaultMUIButton } from '../Button';
+import MUIBox from './MUIBox';
+import { DefaultText } from '../Text';
 
 export default {
   title: 'Atomics/Layout',
@@ -53,4 +55,19 @@ StackStory.args = {
       <DefaultMUIButton variant={'outlined'}>DefaultMUIButton</DefaultMUIButton>
     </>
   ),
+};
+
+const BoxTemplate: ComponentStory<typeof MUIBox> = (args) => <MUIBox {...args} />;
+
+export const BoxStory = BoxTemplate.bind({});
+
+BoxStory.args = {
+  sx: {
+    border: 1,
+    backgroundColor: 'primary.dark',
+    p: 2,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  children: <DefaultText>Box</DefaultText>,
 };

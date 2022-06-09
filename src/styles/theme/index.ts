@@ -1,11 +1,21 @@
-import { DefaultTheme } from 'styled-components';
+import { createTheme } from '@mui/material';
 import colors from '../../constants/colors';
 import { calcRem } from '../../utils/func';
+import _ from 'lodash';
 
-const lightTheme = {
+export type ThemeType = typeof lightTheme;
+
+export interface ICoonLogTheme {
+  default: string;
+  point: string;
+}
+
+const muiTheme = createTheme({});
+
+const lightTheme = _.merge(muiTheme, {
   default: colors.grey[900],
   point: colors.hotPink,
-};
+});
 
 const fontSizes = {
   small: calcRem(14),
