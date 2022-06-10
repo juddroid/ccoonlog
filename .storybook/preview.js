@@ -1,26 +1,23 @@
+import React from 'react';
+import GlobalStyles from '../src/styles/GlobalStyles';
+import lightTheme from '../src/styles/theme';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import { StylesProvider, ThemeProvider as MUIThemeProvider } from '@mui/styles';
-import GlobalStyles from '../src/styles/GlobalStyles';
-import { addDecorator } from '@storybook/react';
-import { withThemes } from '@react-theming/storybook-addon';
-import { createTheme } from '@mui/material';
-import { lightTheme } from '../src/styles/theme';
+import { CssBaseline } from '@mui/material';
 
-const providerFn = ({ theme, children }) => {
-  const muiTheme = createTheme(theme);
-  return (
+export const decorators = [
+  (Story) => (
     <StylesProvider injectFirst>
-      <StyledThemeProvider theme={muiTheme}>
-        <MUIThemeProvider theme={muiTheme}>
+      <MUIThemeProvider theme={lightTheme}>
+        <StyledThemeProvider theme={lightTheme}>
           <GlobalStyles />
-          {children}
-        </MUIThemeProvider>
-      </StyledThemeProvider>
+          <CssBaseline />
+          <Story />
+        </StyledThemeProvider>
+      </MUIThemeProvider>
     </StylesProvider>
-  );
-};
-
-// addDecorator(withThemes(null, [lightTheme], { providerFn }));
+  ),
+];
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
