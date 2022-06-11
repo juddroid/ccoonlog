@@ -1,16 +1,15 @@
 import type { NextPage } from 'next';
-import MUIStack from '../stories/Atomics/Layout/MUIStack';
 import { useTheme } from 'styled-components';
-import { DefaultMUIButton } from '../stories/Atomics/Button';
-import MUISwitch from '../stories/Atomics/Input/MUISwitch';
 import { FormGroup, FormControlLabel } from '@mui/material';
+import { DarkModeMUISwitch, MUISwitch } from '../stories/Atomics/Input';
 
 const Index: NextPage = () => {
   const theme = useTheme();
 
   return (
     <FormGroup>
-      <FormControlLabel control={<MUISwitch sx={{ m: 1 }} defaultChecked />} label="iOS style" />
+      <FormControlLabel control={<MUISwitch sx={{ m: 2 }} defaultChecked />} label="switch" />
+      <FormControlLabel control={<DarkModeMUISwitch sx={{ m: 2 }} defaultChecked />} label="darkmode_switch" />
     </FormGroup>
   );
 };
