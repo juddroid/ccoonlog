@@ -5,6 +5,7 @@ import { Flex, MUIStack } from './';
 import { DefaultMUIButton } from '../Button';
 import MUIBox from './MUIBox';
 import { DefaultText } from '../Text';
+import MUIContainer from './MUIContainer';
 
 export default {
   title: 'Atomics/Layout',
@@ -70,4 +71,16 @@ BoxStory.args = {
     justifyContent: 'center',
   },
   children: <DefaultText>Box</DefaultText>,
+};
+
+const ContainerTemplate: ComponentStory<typeof MUIContainer> = (args) => <MUIContainer {...args} />;
+
+export const ContainerStory = ContainerTemplate.bind({});
+
+ContainerStory.args = {
+  sx: {
+    border: 1,
+    backgroundColor: 'primary.dark',
+  },
+  children: <DefaultText>Container</DefaultText>,
 };

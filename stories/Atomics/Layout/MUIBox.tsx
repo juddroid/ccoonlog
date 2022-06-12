@@ -1,6 +1,6 @@
 import { Box, BoxProps } from '@mui/material';
 
-interface MUIBoxProps extends BoxProps {
+export interface MUIBoxProps extends BoxProps {
   children: React.ReactNode;
 }
 
